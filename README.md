@@ -7,7 +7,8 @@
 4. 关键的一步： 在根目录下git clone https://github.com/iissnan/hexo-theme-next themes/next ，安装next主题（远端themes/next是空的，git无法上传，原因不详），然后找到在/source/next_theme_backup 里面的——config.yml配置文件，覆盖/themes/next中的对用文件。
 
 ##在日常的改动流程
-1. 依次执行git add .、git commit -m "..."、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；
-2. 然后才执行hexo clean, hexo g(generate), hexo d(deploy)发布网站到master分支上。
+1. 在提交之前把主题配置文件（即theme/next/_config_yml）复制到source/next_theme_backup中，始终保持最新。
+2. 依次执行git add .、git commit -m "..."、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；
+3. 然后才执行hexo clean, hexo g(generate), hexo d(deploy)发布网站到master分支上。
 
 (注):虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催....的情况，调转顺序就有问题了）。
