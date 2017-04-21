@@ -4,7 +4,7 @@ date: 2017-04-20 18:36:55
 categories: 成长日记
 tags: Markdown
 ---
-第一次写博客还是挺有感觉的，建立github pages, 使用hexo+next搭建博客，然后再把代码同步到github分支上，最后熬夜学习使用markdown写第一篇博客，虽然是抄袭，本文末注有原文章地址，如有侵犯，请联系我，即刻纠错。下面一起来学习markdown语法吧。
+第一次写博客还是挺有感觉的，建立github pages, 使用hexo+next搭建博客，然后再把代码同步到github分支上，最后熬夜学习使用markdown写第一篇博客，本文末注有原文章地址，如有侵犯，请联系我，即刻纠错。下面一起来学习markdown语法吧。
 
 <!--more--> 
 
