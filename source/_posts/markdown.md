@@ -289,7 +289,13 @@ ________________________
         ![Overload 仓助](http://img4.duitang.com/uploads/item/201508/19/20150819131018_vYPyR.thumb.224_0.png) 
         ![Overload 仓助](http://img4.duitang.com/uploads/item/201508/19/20150819131018_vYPyR.thumb.224_0.png "森林贤王")
         ```
-
+      + 自定义图片位置大小
+        ```bash
+        // 直接在md文件中嵌入HTML代码
+        <div align='center'>
+          <img src="./xx.jpg" width = "400" height = "300" alt="图片名称" />
+        </div>
+        ```
       + 参考式
 
         ```
