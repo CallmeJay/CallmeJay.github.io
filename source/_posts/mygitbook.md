@@ -5,3 +5,5 @@ categories: 成长日记
 tags: gitbook
 ---
 [我的gitbook](https://callmejay.gitbooks.io/grow-up/content/)
+
+[JavaScript半知半解](http://www.kancloud.cn/dennis/tgjavascript/241800)
