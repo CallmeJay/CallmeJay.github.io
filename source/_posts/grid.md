@@ -1,14 +1,16 @@
 ---
 title: grid布局
 date: 2017-05-03 16:02:52
-catefories: CSS
+categories: CSS
 tags:
     - css
     - grid
 ---
 ## 简介
 &emsp;&emsp;CSS网格布局（又称“网格”），是一种二维网格布局系统。CSS在处理网页布局方面一直做的不是很好。一开始我们用的是table（表格）布局，然后用float(浮动)，position（定位）和inline-block（行内块）布局，但是这些方法本质上是hack，遗漏了很多功能，例如垂直居中。后来出了flexbox(盒子布局)，解决了很多布局问题，但是它仅仅是一维布局，而不是复杂的二维布局，实际上它们（flexbox与grid）能很好的配合使用。Grid布局是第一个专门为解决布局问题而创建的CSS模块,2012年11月06日成立草案。
-##初步了解和浏览器支持
+<!--more-->
+
+## 初步了解和浏览器支持
 &emsp;&emsp;使用Grid布局非常简单，你只需要给容器（container）定义：display:grid，并设置列（grid-template-columns）和 行（grid-template-rows）的大小，然后用grid-column和grid-row定义容器子元素（grid-item项目）的位置。与flexbox布局类似，一开始项目的排列顺序并不重要，可以放置在容器的任何位置，这也使得你非常容易通过媒体查询重新排列你的项目。想象一下，当你定义整个页面的布局时，你只需要几行CSS就可以完成页面重排以便适应各种屏幕宽度，这得有多么神奇！
 &emsp;&emsp;目前浏览器还不支持Grid布局，IE10和IE11支持老的语法。如果你想体验Grid布局的强大，推荐使用开通过“体验新功能”的Chrome, Opera 或 Firefox， Chrome:打开浏览器，输入chrome://flags，找到"experimental web platform features"，启用并重启浏览器；Opera：输入opera://flags，与Chrome一样；Firefox:输入layout.css.grid.enabled。   
 **浏览器支持情况：**
@@ -43,7 +45,6 @@ tags:
 <div align="center">
     <img src="/images/gridlines.png" alt="grid line" title="grid line">
 </div>
-
 <4>.网格轨道（Grid Track）
 &emsp;&emsp;两个相邻的网格线之间为网格轨道。你可以认为它们是网格的列或行，下面在第二个和第三个网格线之间的黄色部分为网格轨道。
 <div align="center">
