@@ -23,12 +23,12 @@ tags: gulp
     1. 说明：gulpfile.js是gulp项目的配置文件，是位于项目根目录的普通js文件（其实将gulpfile.js放入其他文件夹下亦可）
     2. gulpfile.js文件用法（以gulp-sass为例）
       + 导入工具包 require('node_modules里对应模块')
-        ```
+        ```js
         var gulp = require("gulp");
         var gulp-sass = require("gulp-sass");
         ```
       + 定义一个testLess任务(自定义)
-        ```
+        ```js
         gulp.task('testLess',function(){
         gulp.src('src/less/index.less')     //该任务针对的文件
             .pipe(less())      //该任务调用的模块
@@ -42,7 +42,7 @@ tags: gulp
 ## gulp常用插件
 1. **gulp-uglify(JS压缩)**
 *安装：npm install --save-dev gulp-uglify*
-```
+```js
 var gulp = require('gulp'),
 var rename= require('gulp-rename')
 var uglify= require("gulp-uglify");
@@ -59,7 +59,7 @@ uglify= require("gulp-uglify");
 ```
 2. **gulp-minify-html（html压缩）**
 *安装：npm install --save-dev gulp-minify-html*
-```
+```js
 var gulp = require('gulp'),
 var minifyHtml= require("gulp-minify-html");
 
@@ -73,7 +73,7 @@ gulp.task('default',['minify-html']);
 ```
 3. **gulp-concat (js文件合并)**
 *安装：npm install --save-dev gulp-concat*
-```
+```js
 var gulp = require('gulp'),
 concat= require("gulp-concat");
 
@@ -87,7 +87,7 @@ gulp.task('default',['concat']);
 ```
 4. **gulp-less**
 *安装：npm install –save-dev  gulp-less*
-```
+```js
 var gulp = require('gulp'),
 var less= require("gulp-less");
 
@@ -101,7 +101,7 @@ gulp.task('default',['compile-less']);
 ```
 5. **gulp-sass**
 *安装：npm install –save-dev  gulp-sass*
-```
+```js
 var gulp = require('gulp'),
 var sass= require("gulp-sass");
 
@@ -115,7 +115,7 @@ gulp.task('default',['compile-sass']);
 ```
 6. **gulp-imagemin（图片压缩）**
 *安装：npm install –save-dev  gulp-imagemin*
-```
+```js
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 

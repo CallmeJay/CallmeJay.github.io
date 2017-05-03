@@ -55,7 +55,7 @@ npm install -g --save-dev gulp browser-sync
 ```
 **gulpfile.js代码**
 **静态服务**
-```
+```js
 //加载gulp模块
 var gulp = require('gulp');
 //加载browser-sync模块
@@ -111,7 +111,7 @@ gulp.task('default',['server']);
 ```
 **动态服务**
 *上面的例子中只涉及到了静态服务，但是项目中肯定是要把服务跑起来的，所以就要用到代理服务proxy*
-```
+```js
 /**
  * 代理服务器 + 监听 scss/pug/js 文件
  */

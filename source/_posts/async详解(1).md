@@ -17,7 +17,7 @@ Async提供了大约20个函数，包括常用的 map, reduce, filter, forEach �
 npm install --save async
 ```
   **调用**
-```
+```javascript
 var async = require("async");
 // 或者
 var waterfall = require("async/waterfall");
@@ -27,7 +27,7 @@ var waterfall = require("async/waterfall");
 ### series(tasks, [callback]) （多个函数依次执行，之间没有数据交换）
 有多个异步函数需要依次调用，一个完成之后才能执行下一个。各函数之间没有数据的交换，仅仅需要保证其执行顺序。这时可使用series。
 纯js代码：
-```
+```js
 step1(function(err, v1) {
   step2(function(err, v2) {
     step3(function(err, v3) {
@@ -38,7 +38,7 @@ step1(function(err, v1) {
 ```
 从中可以看到这嵌套还是比较多深的，如果再多几步，会更深。在代码中忽略对了每一层err的处理，否则还都等加上 if(err) return callback(err)，那就更麻烦了。
 对于这种情况，使用async来处理，就是这样的：
-```
+```js
 // 数组形式
 async.series([
     function(callback) {
@@ -84,7 +84,7 @@ async.series({
 如果某个函数出错，则立刻将err和已经执行完的函数的结果值传给parallel最终的callback。其它未执行完的函数的值不会传到最终数据，但要占个位置。
 同时支持json形式的tasks，其最终callback的结果也为json形式。
 示例代码：
-```
+```js
 // 数组形式
 async.parallel([
     function(callback) {
@@ -125,7 +125,7 @@ async.parallel({
 ### waterfall(tasks, [callback]) （多个函数依次执行，且前一个的输出为后一个的输入）
 与seires相似，按顺序依次执行多个函数。不同之处，每一个函数产生的值，都将传给下一个函数。如果中途出错，后面的函数将不会被执行。错误信息以及之前产生的结果，将传给waterfall最终的callback。
 这个函数名为waterfall(瀑布)，可以想像瀑布从上到下，中途冲过一层层突起的石头。注意，该函数不支持json格式的tasks。
-```
+```js
 async.waterfall([
     function(callback) {
         callback(null, 'one', 'two');
@@ -176,7 +176,7 @@ function myLastFunction(arg1, callback) {
 (3) 将数据写入到目录下某文件
 (4) 发送邮件，将文件以附件形式发送给其它人。
 分析该任务，可以知道1与2可以并行执行，3需要等1和2完成，4要等3完成。
-```
+```js
 async.auto({
     get_data: function(callback) {
         console.log('in get_data');

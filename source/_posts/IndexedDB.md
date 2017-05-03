@@ -11,7 +11,7 @@ tags: HTML
 对于只存储某些字段的需求来说，可以使用Local Storage和 Session Storage来完成。但是一旦存储大量的数据，Local Storage和 Session Storage就远远不能满足需求了。这时，IndexedDB的强大之处就会体现出来了。
 <!--more-->
 (1).创建或者打开数据库
-```
+```js
 /* 对不同浏览器的indexedDB进行兼容 */
 const indexeddb = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
 /* 创建或连接数据库 */
@@ -20,7 +20,7 @@ const request = indexeddb.open(name, version);  // name：数据库名，version
 因为indexedDB在不同的浏览器上有兼容性，所以我们需要些一个兼容函数来兼容indexedDB。 
 ************
 (2). 连接到数据库的回调函数
-```
+```js
 request.addEventListener('success', function(event){ 
     // 打开或创建数据库成功
 }, false);
@@ -41,7 +41,7 @@ upgradeneeded状态是在indexedDB创建新的数据库时和indexeddb.open(name
 ********
 (3).创建、删除ObjectStore
 在indexedDB中，ObjectStore类似于数据库的表。
-```
+```js
 request.addEventListener('upgradeneeded', function(event){ 
     // 创建数据库实例
     const db = event.target.result;
@@ -58,7 +58,7 @@ request.addEventListener('upgradeneeded', function(event){
 }, false);
 ```
 可以用如下方法创建一个ObjectStore
-```
+```js
 request.addEventListener('upgradeneeded', function(event){ 
     // 创建数据库实例
     const db = event.target.result;
@@ -81,7 +81,7 @@ request.addEventListener('upgradeneeded', function(event){
 ```
 **********
 (4).数据的增删改查
-```
+```js
 request.addEventListener('success', function(event){ 
     // 创建数据库实例
     const db = event.target.result;
@@ -94,7 +94,7 @@ request.addEventListener('success', function(event){
 }, false);
 ```
 数据库的增删改查
-```
+```js
 // 添加数据，当关键字存在时数据不会添加
 store.add(obj);
 // 更新数据，当关键字存在时覆盖数据，不存在时会添加数据
@@ -110,7 +110,7 @@ g.addEventListener('success', function(event){
 }, false);
 ```
 按索引查找数据
-```
+```js
 const index = store.index(indexName);
 const cursor = index.openCursor(range);
 
@@ -123,7 +123,7 @@ cursor.addEventListener('success', function(event){
 }, false);
 ```
 按索引的范围查找数据
-```
+```js
 const index = store.index(indexName);
 const cursor = index.openCursor(range);
 /**
