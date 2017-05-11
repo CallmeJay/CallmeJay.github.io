@@ -61,4 +61,26 @@ tags:
     <img src="/images/gridarea.png" alt="grid area" title="grid area">
 </div>
 
+## 设置在网格容器上的属性
++ display
++ grid-template-columns
++ grid-template-rows
++ grid-template-areas
++ grid-column-gap
++ grid-row-gap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [点击这里进入原创~](http://www.jianshu.com/p/d183265a8dad#)
