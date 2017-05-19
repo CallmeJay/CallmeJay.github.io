@@ -45,6 +45,10 @@ menu:
   #sitemap: /sitemap.xml
   # commonweal: /404.html
 
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 # Enable/Disable menu icons.
 # Icon Mapping:
