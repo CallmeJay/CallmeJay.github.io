@@ -77,14 +77,7 @@ sitemap:
 
 # Markdown
 ## https://github.com/chjj/marked
-markdown:
-  gfm: true
-  pedantic: false
-  sanitize: false
-  tables: true
-  breaks: true
-  smartLists: true
-  smartypants: true
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

@@ -256,7 +256,7 @@ post_wordcount:
 # Wechat Subscriber
 wechat_subscriber:
   enabled: true
-  qcode: /uploads/wechat.png
+  qcode: /uploads/wechat_subscriber.jpg
   # description: subscribe to my blog by scanning my public wechat account
 
 # Declare license on posts
