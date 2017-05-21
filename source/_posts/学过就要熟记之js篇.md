@@ -1,6 +1,6 @@
 ---
 title: 学过就要熟记之js篇
-date: 2017-05-21 10:43:18
+date: 2017-05-20 10:43:18
 categories: JavaScript
 tags: JavaScript
 ---
