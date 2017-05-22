@@ -8,3 +8,4 @@ tags: JavaScript
 [**用Javascript获取页面元素的位置**](http://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html)
 [**JavaScript的this用法**](http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html)
 [**Javascript 面向对象编程（一）：封装**](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html)
+[**jQuery设计思想**](http://www.ruanyifeng.com/blog/2011/07/jquery_fundamentals.html)

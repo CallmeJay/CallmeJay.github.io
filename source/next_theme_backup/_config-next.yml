@@ -257,7 +257,7 @@ post_wordcount:
 wechat_subscriber:
   enabled: true
   qcode: /uploads/wechat_subscriber.jpg
-  # description: subscribe to my blog by scanning my public wechat account
+  description: 听说关注我之后，大家身体倍儿棒，吃嘛嘛香~
 
 # Declare license on posts
 post_copyright:
