@@ -3,7 +3,7 @@ title: jQuery设计思想
 date: 2017-05-22 22:51:55
 categories: JavaScript
 tags:
-    - JavaSCript
+    - JavaScript
     - jQuery
 ---
 jQuery是目前使用最广泛的javascript函数库。
