@@ -1,6 +1,6 @@
 ---
 title: JavaScript面向对象编程之构造函数的继承
-date: 2017-05-21 15:12:36
+date: 2017-05-27 15:12:36
 categories: JavaScript
 tags: JavaScript
 ---

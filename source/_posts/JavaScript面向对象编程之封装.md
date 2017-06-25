@@ -1,6 +1,6 @@
 ---
 title: JavaScript面向对象编程之封装
-date: 2017-05-21 12:53:40
+date: 2017-05-24 12:53:40
 categories: JavaScript
 tags: JavaScript
 ---

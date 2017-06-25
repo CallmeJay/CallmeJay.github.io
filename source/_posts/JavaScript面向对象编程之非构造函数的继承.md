@@ -1,6 +1,6 @@
 ---
 title: JavaScript面向对象编程之非构造函数的继承
-date: 2017-05-21 16:46:36
+date: 2017-06-01 16:46:36
 categories: JavaScript
 tags: JavaScript
 ---
