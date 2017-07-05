@@ -11,6 +11,7 @@ document.getElementsByClassName(selector);// 获取指定class的元素的集合
 document.getElementsByTagName(selector); // 获取指定标签名的元素集合
 document.getElementsByName(selector); // 获取带有指定名称（name属性）的元素集合
 ```
+<!--more-->
 ## 获取父子兄弟元素
 ```js
 el.parentNode; // 获取直接父元素

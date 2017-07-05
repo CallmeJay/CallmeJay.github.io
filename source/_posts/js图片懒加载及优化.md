@@ -85,6 +85,8 @@ tags: JavaScript
 > 不足:当我一直滚动鼠标的时候，lazyload函数就会不断被延迟，这样只有停下来的时候才会执行，那么再有些需要及时显示的情况下，就显得不那么友好了
 * 节流原理：预设一个执行周期，如果这个周期结束了都还没触发函数，那就会执行一次函数；如果这个周期还没结束就触发了函数，那定时器将重置，开始新周期。
 >达到了想要的效果，既没有频繁的执行也没有延迟执行
+<br/>
+******************
 ## 运用节流函数的图片懒加载代码
 ```html
 <!DOCTYPE html>
@@ -134,27 +136,27 @@ tags: JavaScript
             }
         }
     }
-    采用了节流函数
-        function throttle(fun, delay, time) {
-    let timeout,
+   // 采用了节流函数
+    function throttle(fun, delay, time) {
+        let timeout,
         startTime = new Date();
-    return function() {
-        let context = this,
+        return function() {
+            let context = this,
             args = arguments,
             curTime = new Date();
-        clearTimeout(timeout);
-        // 如果达到了规定的触发时间间隔，触发 handler
-        if (curTime - startTime >= time) {
-            fun.apply(context, args);
-            startTime = curTime;
-            // 没达到触发间隔，重新设定定时器
-        } else {
-            timeout = setTimeout(fun, delay);
-        }
+            clearTimeout(timeout);
+            // 如果达到了规定的触发时间间隔，触发 handler
+            if (curTime - startTime >= time) {
+                fun.apply(context, args);
+                startTime = curTime;
+                // 没达到触发间隔，重新设定定时器
+            } else {
+                timeout = setTimeout(fun, delay);
+            }
+        };
     };
-};
-window.addEventListener('scroll',throttle(lazyload,500,1000));
-    })()
+    window.addEventListener('scroll',throttle(lazyload,500,1000));
+})()
 </script>
 </body>
 </html>
