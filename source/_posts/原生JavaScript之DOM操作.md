@@ -58,7 +58,7 @@ el.scrollWidth/scrollHeight; // 与clientWidth类似，不过如果有滚轮会�
 // 注意，margin与以上都无关
 let W = document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth; // 获取整个浏览器的可视区宽度，由于IE与firefox的实现有差异，所以需要兼容性写法
 ```
-##文档碎片化处理
+## 文档碎片化处理
 js操作dom是一个很耗性能的过程，在某些情况下，不得不进行dom循环操作，我们每次对dom的操作都会触发"重排"，这严重影响到能耗，一般通常采取的做法是尽可能的减少dom操作来减少"重排"。
 面对循环操作dom的过程，我们选择使用文档碎片（creatDocumentFragment），将需要添加到dom中的内容都添加到文档碎片中，然后一次性的将文档碎片添加到dom树，这样就可以有效的减少操作dom的次数，减少重排的发生。
 ```html
