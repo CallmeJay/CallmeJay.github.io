@@ -27,8 +27,8 @@ el.lastElementChild;
 el.nextElementSibling;
 el.previousElementSibling; // 以上四个获取的节点，不包含文本节点，但是在低版本IE里不兼容
 ```
-## “增删改”元素
-```js
+## 增删改元素
+```javascript
 let element = document.createElement(TagName); // 根据标签名创建标签
 let textnode = document.createTextNode(content); // 根据内容创建文本节点
 el.appendChild(element); // 将element标签添加为el的子节点，并且位于最后
@@ -37,7 +37,7 @@ el.removeChild(element); // 删除el的子节点
 el.replaceChild(new, old); // 用new替换old，new可以为新创建的节点也可以为已存在的节点
 el.hasChildNode(); // 判断节点是否包含子节点，包含返回true，不包含返回false.
 el.cloneChild(true/false); // 默认为false，只复制当前节点，为true时它的所有子节点也一起复制。它也是存在内存中，也需要向页面里添加。
-``` 
+```
 ## 操作元素属性
 ```js
 let attr = document.createAttribute(name); // 创建一个属性节点
