@@ -1,8 +1,8 @@
 ---
 title: canvas
 date: 2017-05-12 09:45:25
-categories: Canvas
-tags: canvas
+categories: HTML
+tags: [HTML,canvas]
 ---
 ## 初识
 首先，先获取canvas对象：
