@@ -2,7 +2,7 @@
 title: JavaScript特效三大系列总结
 date: 2017-06-20 19:46:53
 categories: JavaScript
-tags: JavaScript
+tags: DOM
 ---
 今天主要是讲js的DOM元素的位置关系的三大系列：offset系列，scroll系列，client系列。希望你看完之后能更加了解，熟练应用。let's go~
 <!--more-->

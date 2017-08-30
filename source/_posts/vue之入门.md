@@ -1,10 +1,8 @@
 ---
 title: vue之入门
 date: 2017-05-11 10:07:08
-categories: Vue
-tags:
-    - Vue
-    - JavaScript
+categories: JavaScript
+tags: Vue
 ---
 ## 安装
 (1) 前提是下载安装好git和node,在此不赘述。

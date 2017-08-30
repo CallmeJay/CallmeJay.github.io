@@ -2,7 +2,7 @@
 title: 经典前端面试题(JavaScript)
 date: 2017-07-12 21:01:02
 categories: JavaScript
-tags: JavaScript
+tags: 面试题
 ---
 ####  写出简单描述html标签（不带属性的开始标签和结束标签）的正则表达式，并将以下字符串中的html标签去除掉
 ```js

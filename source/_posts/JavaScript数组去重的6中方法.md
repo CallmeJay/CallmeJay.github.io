@@ -2,7 +2,7 @@
 title: JavaScript数组去重的6中方法
 date: 2017-05-17 21:17:57
 categories: JavaScript
-tags: JavaScript
+tags: Array
 ---
 ### 题目说明:
 #### 题目

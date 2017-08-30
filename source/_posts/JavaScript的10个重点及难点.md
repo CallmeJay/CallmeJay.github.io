@@ -17,16 +17,13 @@ tags: JavaScript
 ### 闭包
 对于闭包(closure)，当外部函数返回之后，内部函数依然可以访问外部函数的变量。
 ```js
-function f1()
-{
+function f1(){
     var N = 0; // N是f1函数的局部变量
 
-    function f2() // f2是f1函数的内部函数，是闭包
-    {
+    function f2(){ // f2是f1函数的内部函数，是闭包
         N += 1; // 内部函数f2中使用了外部函数f1中的变量N
         console.log(N);
     }
-
     return f2;
 }
 
@@ -63,14 +60,12 @@ console.log(p.getName()); // 输出Fundebug
 ### prototype
 每个`JavaScript`构造函数都有一个`prototype`属性，用于设置所有实例对象需要共享的属性和方法。`prototype`属性不能列举。`JavaScript`仅支持通过`prototype`属性进行继承属性和方法。
 ```js
-function Rectangle(x, y)
-{
+function Rectangle(x, y){
     this._length = x;
     this._breadth = y;
 }
 
-Rectangle.prototype.getDimensions = function()
-{
+Rectangle.prototype.getDimensions = function(){
     return {
         length: this._length,
         breadth: this._breadth
@@ -190,7 +185,7 @@ user.greetUser.apply(greet1, ["Rahul"]); // 输出"Hola Rahul"
 var user = {
      greet: "Hello!",
      greetUser: function(userName) {
-     console.log(this.greet + " " + userName);
+        console.log(this.greet + " " + userName);
      }
 };
 
@@ -203,18 +198,13 @@ greetBonjour("Rahul") // 输出"Bonjour Rahul"
 ### Memoization
 `Memoization`用于优化比较耗时的计算，通过将计算结果缓存到内存中，这样对于同样的输入值，下次只需要中内存中读取结果。
 ```js
-function memoizeFunction(func)
-{
+function memoizeFunction(func){
     var cache = {};
-    return function()
-    {
+    return function(){
         var key = arguments[0];
-        if (cache[key])
-        {
+        if (cache[key]){
             return cache[key];
-        }
-        else
-        {
+        }else{
             var val = func.apply(this, arguments);
             cache[key] = val;
             return val;
@@ -222,8 +212,7 @@ function memoizeFunction(func)
     };
 }
 
-var fibonacci = memoizeFunction(function(n)
-{
+var fibonacci = memoizeFunction(function(n){
     return (n === 0 || n === 1) ? n : fibonacci(n - 1) + fibonacci(n - 2);
 });
 
@@ -242,38 +231,29 @@ console.log(fibonacci(100)); // 输出354224848179262000000
 
 根据`addMethod`的逻辑，当`f.length`与`arguments.length`不匹配时，就会去调用`old`，直到匹配为止。
 ```js
-function addMethod(object, name, f)
-{　　
+function addMethod(object, name, f){　　
     var old = object[name];　　
-    object[name] = function()
-    {
+    object[name] = function(){
         // f.length为函数定义时的参数个数
         // arguments.length为函数调用时的参数个数　　　　
-        if (f.length === arguments.length)
-        {　　
+        if (f.length === arguments.length){　　
             return f.apply(this, arguments);　　　　
-        }
-        else if (typeof old === "function")
-        {
+        }else if (typeof old === "function"){
             return old.apply(this, arguments);　　　　
         }　　
     };
 }
 
 // 不传参数时，返回所有name
-function find0()
-{　　
+function find0(){　　
     return this.names;
 }
 
 // 传一个参数时，返回firstName匹配的name
-function find1(firstName)
-{　　
+function find1(firstName){　　
     var result = [];　　
-    for (var i = 0; i < this.names.length; i++)
-    {　　　　
-        if (this.names[i].indexOf(firstName) === 0)
-        {　　　　　　
+    for (var i = 0; i < this.names.length; i++){　　　　
+        if (this.names[i].indexOf(firstName) === 0){　　　　　　
             result.push(this.names[i]);　　　　
         }　　
     }　　
@@ -281,13 +261,10 @@ function find1(firstName)
 }
 
 // 传两个参数时，返回firstName和lastName都匹配的name
-function find2(firstName, lastName)
-{　
+function find2(firstName, lastName){　
     var result = [];　　
-    for (var i = 0; i < this.names.length; i++)
-    {　　　　
-        if (this.names[i] === (firstName + " " + lastName))
-        {　　　　　　
+    for (var i = 0; i < this.names.length; i++){　　　　
+        if (this.names[i] === (firstName + " " + lastName)){　　　　　　
             result.push(this.names[i]);　　　　
         }　　
     }　　

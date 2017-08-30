@@ -2,7 +2,7 @@
 title: 让你豁然开朗的AJAX和JSONP
 date: 2017-07-07 22:25:58
 categories: JavaScript
-tags: JavaScript
+tags: ajax
 ---
 ### 先说说JSONP是怎么产生的：
 1、一个众所周知的问题，`Ajax`直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、`web`服务、`WCF`，只要是跨域请求，一律不准；

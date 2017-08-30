@@ -2,7 +2,7 @@
 title: JavaScript数组操作总结
 date: 2017-04-30 21:13:26
 categories: JavaScript
-tags: JavaScript
+tags: Array
 ---
 ### 数组的创建
 数组的创建有两种方法，一种是通过字面量，另一种是通过Array构造函数。

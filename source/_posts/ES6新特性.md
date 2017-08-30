@@ -2,7 +2,7 @@
 title: ES6新特性
 date: 2017-06-28 22:28:04
 categories: JavaScript
-tags: JavaScript
+tags: ES6
 ---
 ## ES6简介
 ​ 历时将近6年的时间来制定的新 ECMAScript 标准 ECMAScript 6（亦称 ECMAScript Harmony，简称 ES6）终于在 2015 年 6 月正式发布。自从上一个标准版本 ES5 在 2009 年发布以后，ES6 就一直以新语法、新特性的优越性吸引著众多 JavaScript 开发者，驱使他们积极尝鲜。

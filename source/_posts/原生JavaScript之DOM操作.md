@@ -2,7 +2,7 @@
 title: 原生JavaScript之DOM操作
 date: 2017-06-11 21:46:40
 categories: JavaScript
-tags: JavaScript
+tags: DOM
 ---
 ## 直接获取元素
 ```js
