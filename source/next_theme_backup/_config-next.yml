@@ -253,9 +253,9 @@ post_wordcount:
   wordcount: false
   min2read: false
 
-# Wechat Subscriber
+Wechat Subscriber
 wechat_subscriber:
-  enabled: true
+  enabled: false
   qcode: /uploads/wechat_subscriber.jpg
   description: 听说关注我之后，大家身体倍儿棒，吃嘛嘛香~
 
