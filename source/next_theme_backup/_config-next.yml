@@ -156,7 +156,8 @@ links:
   #Title: http://example.com/
   阮一峰: http://www.ruanyifeng.com/blog/archives.html
   张鑫旭: http://www.zhangxinxu.com/
-
+  冴羽: https://github.com/mqyqingfeng/Blog
+  廖雪峰: https://www.liaoxuefeng.com/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -249,9 +250,9 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-#reward_comment: Donate comment here
-#wechatpay: /images/wechatpay.jpg
-#alipay: /images/alipay.jpg
+reward_comment: 您的支持是对我最大的鼓励！
+wechatpay: /images/wechatpay.jpg
+alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
 # Declare license on posts
@@ -699,16 +700,16 @@ pace: true
 #pace-theme-minimal
 # For example
 # pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-bounce
+pace_theme: pace-theme-big-counter
 
 # Canvas-nest
-canvas_nest: true
+canvas_nest: false
 
 # three_waves
 three_waves: false
 
 # canvas_lines
-canvas_lines: false
+canvas_lines: true
 
 # canvas_sphere
 canvas_sphere: false
