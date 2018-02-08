@@ -2,7 +2,7 @@
 title: JavaScript面向对象编程之封装
 date: 2017-05-24 12:53:40
 categories: JavaScript
-tags: JavaScript
+tags: 面向对象
 ---
 Javascript是一种基于对象（object-based）的语言，你遇到的所有东西几乎都是对象。但是，它又不是一种真正的面向对象编程（OOP）语言，因为它的语法中没有`class`（类）。
 那么，如果我们要把"属性"（property）和"方法"（method），封装成一个对象，甚至要从原型对象生成一个实例对象，我们应该怎么做呢？

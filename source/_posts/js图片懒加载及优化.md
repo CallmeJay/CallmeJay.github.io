@@ -2,7 +2,7 @@
 title: js图片懒加载及优化
 date: 2017-06-18 22:20:23
 categories: JavaScript
-tags: JavaScript
+tags: image-lazyload
 ---
 ## 为啥要用图片懒加载
 对页面加载速度影响最大的就是图片，一张普通的图片可以达到几M的大小，而代码也许就只有几十KB。当页面图片很多时，页面的加载速度缓慢，几S钟内页面没有加载完成，也许会失去很多的用户。

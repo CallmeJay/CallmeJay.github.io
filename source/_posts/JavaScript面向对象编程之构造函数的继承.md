@@ -2,7 +2,7 @@
 title: JavaScript面向对象编程之构造函数的继承
 date: 2017-05-27 15:12:36
 categories: JavaScript
-tags: JavaScript
+tags: 面向对象
 ---
 ## 前言
 今天要介绍的是，对象之间的"继承"的五种方法。

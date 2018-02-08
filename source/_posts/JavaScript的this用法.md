@@ -2,7 +2,7 @@
 title: JavaScript的this用法
 date: 2017-05-21 11:25:11
 categories: JavaScript
-tags: JavaScript
+tags: this
 ---
 this是Javascript语言的一个关键字。
 它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如:

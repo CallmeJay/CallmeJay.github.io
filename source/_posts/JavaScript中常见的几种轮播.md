@@ -2,7 +2,7 @@
 title: JavaScript中常见的几种轮播
 date: 2017-08-15 21:38:59
 categories: JavaScript
-tags: JavaScript
+tags: 轮播
 ---
 项目中经常用到轮播图，今天就来一起探讨不同模式轮播图的实现方法，与君共勉。
 <!--more-->

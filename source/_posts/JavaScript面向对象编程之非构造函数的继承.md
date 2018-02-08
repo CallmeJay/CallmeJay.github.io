@@ -2,7 +2,7 @@
 title: JavaScript面向对象编程之非构造函数的继承
 date: 2017-06-01 16:46:36
 categories: JavaScript
-tags: JavaScript
+tags: 面向对象
 ---
 ## 什么是"非构造函数"的继承？
 比如，现在有一个对象，叫做"中国人"。

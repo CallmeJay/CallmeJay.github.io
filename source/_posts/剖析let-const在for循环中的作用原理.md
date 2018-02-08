@@ -2,7 +2,7 @@
 title: 剖析let/const在for循环中的作用原理
 date: 2017-07-01 20:26:38
 categories: JavaScript
-tags: JavaScript
+tags: ES6
 ---
 1、先来看一个例子
 ```js
