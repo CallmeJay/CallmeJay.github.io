@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="轮播," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jay's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="项目中经常用到轮播图，今天就来一起探讨不同模式轮播图的实现方法，与君共勉。">
+<meta name="keywords" content="轮播">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中常见的几种轮播">
+<meta property="og:url" content="https://callmejay.github.io/2017/08/15/JavaScript中常见的几种轮播/index.html">
+<meta property="og:site_name" content="Jay&#39;s Blog">
+<meta property="og:description" content="项目中经常用到轮播图，今天就来一起探讨不同模式轮播图的实现方法，与君共勉。">
+<meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/imgScroll.png">
+<meta property="og:updated_time" content="2018-02-10T09:29:37.031Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript中常见的几种轮播">
+<meta name="twitter:description" content="项目中经常用到轮播图，今天就来一起探讨不同模式轮播图的实现方法，与君共勉。">
+<meta name="twitter:image" content="http://oonulpk6h.bkt.clouddn.com/imgScroll.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://callmejay.github.io/2017/08/15/JavaScript中常见的几种轮播/"/>
+
+
+
+
+
+  <title>JavaScript中常见的几种轮播 | Jay's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jay's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">对不起，我要赢！</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/08/15/JavaScript中常见的几种轮播/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay Bein">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript中常见的几种轮播</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T21:38:59+08:00">
+                2017-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>项目中经常用到轮播图，今天就来一起探讨不同模式轮播图的实现方法，与君共勉。<br><a id="more"></a><br><strong>首先奉上轮播图</strong><br><img src="http://oonulpk6h.bkt.clouddn.com/imgScroll.png" alt="轮播图"></p>
+<h3 id="无缝不停轮播"><a href="#无缝不停轮播" class="headerlink" title="无缝不停轮播"></a>无缝不停轮播</h3><p>body布局:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span>   <span class="comment">&lt;!--将ul和li包住,起显示图片的作用--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span>                                 </div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img1.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img2.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img3.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img4.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img1.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>css样式：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span>&#123;</div><div class="line">    <span class="attribute">position</span>: relative;    <span class="comment">/*给要动的元素也就是ul 它的父级加上相对定位*/</span></div><div class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;           </div><div class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">    <span class="attribute">overflow</span>: hidden;       <span class="comment">/*给要动的元素也就是ul 它的父级加上溢出隐藏*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-tag">ul</span>&#123;</div><div class="line">    <span class="attribute">position</span>: absolute;     <span class="comment">/*给要动的元素也就是ul 加上绝对定位,才能保证用left和top;*/</span></div><div class="line">    <span class="attribute">width</span>: <span class="number">3000px</span>;          <span class="comment">/*ul 的宽度为 li 的个数 * li 的宽度*/</span></div><div class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</div><div class="line">    <span class="attribute">list-style</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-tag">ul</span> &gt;<span class="selector-tag">li</span>&#123;</div><div class="line">    <span class="attribute">float</span>: left;    </div><div class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-tag">ul</span> &gt;<span class="selector-tag">li</span> <span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>JS代码:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">".container &gt; ul"</span>);  <span class="comment">//获取ul</span></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>)</span>&#123;                 <span class="comment">//设置定时器 </span></div><div class="line">    <span class="keyword">if</span>(ul.offsetLeft&lt;=<span class="number">-2400</span>)&#123;        <span class="comment">//判断:若ul走到倒数第二张图的时候,让left从0开始运行</span></div><div class="line">        ul.style.left=<span class="number">0</span>+<span class="string">'px'</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">var</span> left = ul.offsetLeft <span class="number">-3</span>;        <span class="comment">//给ul设置速度</span></div><div class="line">        ul.style.left=left+<span class="string">'px'</span>;            </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> time = <span class="number">10</span>;         <span class="comment">//设定一个时间,以控制其轮播的速度</span></div><div class="line">    setTimeout(step,time);            <span class="comment">//定时器内部调用定时器</span></div><div class="line">&#125;,<span class="number">0</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="无缝停顿轮播"><a href="#无缝停顿轮播" class="headerlink" title="无缝停顿轮播"></a>无缝停顿轮播</h3><blockquote>
+<p>停顿轮播在不停轮播的基础上加以改进,判断当ul走到li宽度的倍数时,让定时器的时间加大,就可以起到停顿的效果</p>
+</blockquote>
+<p>​body布局以及css样式不变</p>
+<p>js代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">".container &gt; ul"</span>);   <span class="comment">//获取ul</span></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>)</span>&#123;                  <span class="comment">//设置定时器 </span></div><div class="line">    <span class="keyword">if</span>(ul.offsetLeft&lt;=<span class="number">-2400</span>)&#123;               <span class="comment">//判断:若ul走到倒数第二张图的时候,让left从0开始运行</span></div><div class="line">        ul.style.left = <span class="number">0</span> +<span class="string">'px'</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        speed = <span class="number">-3</span>;     <span class="comment">//给ul设置速度           </span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> time;               </div><div class="line">    <span class="keyword">if</span>(ul.offsetLeft%<span class="number">600</span>==<span class="number">0</span>)&#123;               <span class="comment">//做判断:当ul走到li宽度的倍数时</span></div><div class="line">        time = <span class="number">3000</span>;                          <span class="comment">//设定一个很大的时间,也就是很小的速度</span></div><div class="line">    &#125;<span class="keyword">else</span>&#123;                                  </div><div class="line">        time = <span class="number">10</span>;</div><div class="line">    &#125;</div><div class="line">    ul.style.left=ul.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">    setTimeout(step,time);                  <span class="comment">//定时器内部调用定时器</span></div><div class="line">&#125;,<span class="number">0</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="无缝停顿反向轮播"><a href="#无缝停顿反向轮播" class="headerlink" title="无缝停顿反向轮播"></a>无缝停顿反向轮播</h3><blockquote>
+<p>反向轮播在停顿轮播的基础上加以改进,判断当ul最左边和ul走到最右边,将速度反向;<br>将最后一张重复的li去掉并修改ul的宽度</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">".container &gt; ul"</span>);</div><div class="line"><span class="keyword">var</span> speed = <span class="number">3</span>;</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(ul.offsetLeft&lt;=<span class="number">-1800</span>||ul.offsetLeft&gt;=<span class="number">0</span>)&#123;      <span class="comment">//判断当ul最左边和ul走到最右边,将速度反向;</span></div><div class="line">        speed*=<span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> time = <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span>(ul.offsetLeft%<span class="number">600</span>==<span class="number">0</span>)&#123;                    <span class="comment">//做判断:当ul走到li宽度的倍数时</span></div><div class="line">        time = <span class="number">3000</span>;                             <span class="comment">//设定一个很大的时间,也就是很小的速度</span></div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        time=<span class="number">10</span>;</div><div class="line">    &#125;</div><div class="line">    ul.style.left=ul.offsetLeft+speed+<span class="string">'px'</span>;  </div><div class="line">    setTimeout(step,time);                       <span class="comment">//定时器内部调用定时器</span></div><div class="line">&#125;,<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<h3 id="透明度普通轮播"><a href="#透明度普通轮播" class="headerlink" title="透明度普通轮播"></a>透明度普通轮播</h3><p>​1.body布局上一样;<br>​2.css样式:将所有li 绝对定位,重叠在一起<br>​3.JS:先获取到ul 和 li 并对 li的数组进行遍历 赋值每个的opacity<br>​<strong>注:要在js中遍历li 再给它赋值opacity,而不是在css中直接设置属性是为了在js中好获取到opacity并给它进行修改设置</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">".container &gt; ul"</span>);  <span class="comment">//获取ul</span></div><div class="line"><span class="keyword">var</span> lis = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.container &gt; ul &gt;li'</span>);</div><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;lis.length;i++)&#123;</div><div class="line">    <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;                   <span class="comment">//默认显示第一张图,让其透明度为1;</span></div><div class="line">        lis[i].style.opacity=<span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;                      <span class="comment">//其他图片透明度为0;</span></div><div class="line">        lis[i].style.opacity=<span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> i=<span class="number">0</span>;                        <span class="comment">//重新赋值i </span></div><div class="line"><span class="keyword">var</span> time = <span class="number">50</span>;                  <span class="comment">//设置时间,控制图片转换的速度,时间越大,速度越慢</span></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>)</span>&#123;                 <span class="comment">//设置定时器</span></div><div class="line">    lis[i%<span class="number">4</span>].style.opacity-=<span class="number">0.05</span>;   </div><div class="line">    lis[(i+<span class="number">1</span>)%<span class="number">4</span>].style.opacity=<span class="built_in">parseFloat</span>(lis[(i+<span class="number">1</span>)%<span class="number">4</span>].style.opacity)+<span class="number">0.05</span>;</div><div class="line">    <span class="keyword">if</span>(lis[i%<span class="number">4</span>].style.opacity==<span class="number">0</span>)&#123;</div><div class="line">        i++;</div><div class="line">        time = <span class="number">1000</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        time =<span class="number">50</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    setTimeout(step,time);</div><div class="line">&#125;,<span class="number">0</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="透明度指示器轮播"><a href="#透明度指示器轮播" class="headerlink" title="透明度指示器轮播"></a>透明度指示器轮播</h3><p>body布局:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span>                     </div><div class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"picture"</span>&gt;</span>                           <span class="comment">&lt;!--轮播图片区--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img1.jpg)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img2.jpg)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img3.jpg)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img4.jpg)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img5.jpg)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img/img6.jpg)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"arrow"</span>&gt;</span>                          <span class="comment">&lt;!--左右切换--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"arrowLeft"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"arrowRight"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>                      <span class="comment">&lt;!--指示器--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"margin:0"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>css样式：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &#123;                        <span class="comment">/*整体样式*/</span></div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">    <span class="attribute">overflow</span>: hidden;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">20px</span> auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.picture</span> &#123;             <span class="comment">/*轮播图片区样式*/</span></div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">list-style</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.picture</span> &gt; <span class="selector-tag">li</span> &#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.picture</span> &gt; <span class="selector-tag">li</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span>&#123;                    <span class="comment">/*左右切换区样式*/</span></div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">height</span>: <span class="number">70px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">top</span>: <span class="number">40%</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">list-style</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">70px</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">cursor</span>: pointer;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"img/arrow_left1.png"</span>);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</div><div class="line">    <span class="attribute">float</span>: right;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"img/arrow_right1.png"</span>);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(1)</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"img/arrow_left2.png"</span>);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(2)</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"img/arrow_right2.png"</span>);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> <span class="selector-class">.bottom</span> &#123;                            <span class="comment">/*指示器样式*/</span></div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">    <span class="attribute">width</span>: <span class="number">215px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">top</span>: <span class="number">350px</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">background-color</span>: grey;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.bottom</span> &gt; <span class="selector-tag">ul</span>&#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">height</span>: <span class="number">30px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">205px</span>;</div><div class="line">    <span class="attribute">bottom</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">list-style</span>: none;</div><div class="line">    <span class="attribute">top</span>: <span class="number">5px</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.bottom</span> &gt; <span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span>&#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">30px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span> <span class="number">0</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">background-color</span>: white;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">line-height</span>: <span class="number">30px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">cursor</span>: pointer;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>js代码：<br>​<em>代码分析:</em></p>
+<ol>
+<li>先进行准备工作, 利用for循环将初始化的图片透明度已经指示器的背景色设定好</li>
+<li>给整个container添加事件,当鼠标上来的时候,让自动播放停止</li>
+<li>给左,右”按钮” 点击事件,用以切换上一张下一张图片;</li>
+<li>给指示器onmouseenter事件,使得图片与你的指示器同步,达到随意切换图片的效果;</li>
+<li>定义 图片切换的函数 ,使得以上事件都可以调用它</li>
+<li>定义自动播放的函数</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> container = <span class="built_in">document</span>.querySelector(<span class="string">'.container'</span>);</div><div class="line"><span class="keyword">var</span> pictureLis = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.container &gt; .picture &gt; li'</span>);</div><div class="line"><span class="keyword">var</span> optionLis = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.container &gt; .bottom &gt;ul &gt; li'</span>);</div><div class="line"><span class="keyword">var</span> arrowLeft = <span class="built_in">document</span>.querySelector(<span class="string">'.container .arrow  &gt; .arrowLeft'</span>);</div><div class="line"><span class="keyword">var</span> arrowRight = <span class="built_in">document</span>.querySelector(<span class="string">'.container .arrow &gt; .arrowRight'</span>);</div><div class="line"><span class="keyword">var</span> showIndex = <span class="number">0</span>;  <span class="comment">//当前正在显示的图片的下标</span></div><div class="line"><span class="comment">//初始化</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; pictureLis.length; j++) &#123;</div><div class="line">        <span class="keyword">if</span> (j == <span class="number">0</span>) &#123;</div><div class="line">            optionLis[j].style.backgroundColor=<span class="string">'red'</span>;</div><div class="line">            pictureLis[j].style.opacity = <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            pictureLis[j].style.opacity = <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//给整个container添加事件,当鼠标上来的时候,让自动播放停止</span></div><div class="line">    container.onmouseenter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        clearTimeout(autoPlayId);</div><div class="line"></div><div class="line">    &#125;;</div><div class="line">    container.onmouseleave = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        auto();</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">//给左按钮和右按钮添加点击事件</span></div><div class="line">    arrowLeft.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        optionLis[showIndex % optionLis.length].style.backgroundColor=<span class="string">'white'</span>;</div><div class="line">        <span class="keyword">var</span> preIndex = showIndex<span class="number">-1</span>+pictureLis.length;</div><div class="line">        move(showIndex,preIndex);</div><div class="line">        showIndex=preIndex;</div><div class="line">        optionLis[showIndex%optionLis.length].style.backgroundColor=<span class="string">'red'</span>;</div><div class="line">    &#125;;</div><div class="line">    arrowRight.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        optionLis[showIndex % optionLis.length].style.backgroundColor=<span class="string">'white'</span>;</div><div class="line">        move(showIndex,showIndex+<span class="number">1</span>);</div><div class="line">        showIndex++;</div><div class="line">        optionLis[showIndex%optionLis.length].style.backgroundColor=<span class="string">'red'</span>;</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">//给指示器添加onmouseenter事件,使得图片与指示器同步</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;optionLis.length;i++)&#123;</div><div class="line">        optionLis[i].onmouseenter=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">            move(showIndex,i);</div><div class="line">            optionLis[showIndex%optionLis.length].style.backgroundColor=<span class="string">'white'</span>;</div><div class="line">            optionLis[i%optionLis.length].style.backgroundColor=<span class="string">'red'</span>;</div><div class="line">            showIndex=i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">init(); <span class="comment">//调用初始化</span></div><div class="line"></div><div class="line"><span class="comment">//图片移动</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params">showIndex,nextIndex</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        pictureLis[showIndex % pictureLis.length].style.opacity -= <span class="number">0.05</span>;</div><div class="line">        pictureLis[nextIndex % pictureLis.length].style.opacity =</div><div class="line">            +pictureLis[nextIndex % pictureLis.length].style.opacity + <span class="number">0.05</span>;</div><div class="line">        <span class="keyword">if</span> (pictureLis[showIndex % pictureLis.length].style.opacity &lt;= <span class="number">0</span>||pictureLis[nextIndex%pictureLis.length].style.opacity&gt;=<span class="number">1</span>) <span class="keyword">return</span>;</div><div class="line">        setTimeout(step, <span class="number">5</span>)</div><div class="line">    &#125;, <span class="number">0</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//自动播放</span></div><div class="line"><span class="keyword">var</span> autoPlayId;     <span class="comment">//自动播放定时器id</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">auto</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    autoPlayId = setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">autoStep</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        optionLis[showIndex].style.backgroundColor = <span class="string">"white"</span>;</div><div class="line">        move(showIndex,showIndex+<span class="number">1</span>);    <span class="comment">//切换下一张图片</span></div><div class="line">        showIndex++;</div><div class="line">        <span class="keyword">if</span> (showIndex == pictureLis.length) showIndex = <span class="number">0</span>;</div><div class="line">        optionLis[showIndex%optionLis.length].style.backgroundColor = <span class="string">"red"</span>;</div><div class="line">        autoPlayId = setTimeout(autoStep,<span class="number">2000</span>);</div><div class="line">    &#125;, <span class="number">2000</span>)</div><div class="line">&#125;</div><div class="line">auto();</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持是对我最大的鼓励！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Jay Bein 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jay Bein 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/轮播/" rel="tag"># 轮播</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/20/实现圣杯布局和双飞翼布局/" rel="next" title="实现圣杯布局和双飞翼布局">
+                <i class="fa fa-chevron-left"></i> 实现圣杯布局和双飞翼布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/25/ES6入门之let和const/" rel="prev" title="ES6入门之let和const">
+                ES6入门之let和const <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODMwNC80ODc2"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Jay Bein" />
+            
+              <p class="site-author-name" itemprop="name">Jay Bein</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/CallmeJay" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jaybein1209@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-zero.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/archives.html" title="阮一峰" target="_blank">阮一峰</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/mqyqingfeng/Blog" title="冴羽" target="_blank">冴羽</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.liaoxuefeng.com/" title="廖雪峰" target="_blank">廖雪峰</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#无缝不停轮播"><span class="nav-number">1.</span> <span class="nav-text">无缝不停轮播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无缝停顿轮播"><span class="nav-number">2.</span> <span class="nav-text">无缝停顿轮播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无缝停顿反向轮播"><span class="nav-number">3.</span> <span class="nav-text">无缝停顿反向轮播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度普通轮播"><span class="nav-number">4.</span> <span class="nav-text">透明度普通轮播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度指示器轮播"><span class="nav-number">5.</span> <span class="nav-text">透明度指示器轮播</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jay Bein</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
