@@ -1,5 +1,5 @@
 ---
-title: ES6入门之变量的结构赋值
+title: ES6入门之变量的解构赋值
 date: 2017-08-28 21:35:22
 categories: JavaScript
 tags: ES6
@@ -372,3 +372,4 @@ for (let [,value] of map) {
 ```js
 const { SourceMapConsumer, SourceNode } = require("source-map");
 ```
+>[原文地址](http://es6.ruanyifeng.com/#docs/object#__proto__%E5%B1%9E%E6%80%A7%EF%BC%8CObject-setPrototypeOf%EF%BC%8CObject-getPrototypeOf)
