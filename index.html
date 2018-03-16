@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/08/JavaScript之原型和原型链/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/03/13/ES6入门之对象的扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -323,7 +323,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/08/JavaScript之原型和原型链/" itemprop="url">JavaScript之原型和原型链</a></h2>
+                <a class="post-title-link" href="/2018/03/13/ES6入门之对象的扩展/" itemprop="url">ES6入门之对象的扩展</a></h2>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T22:02:47+08:00">
-                2018-02-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T21:29:47+08:00">
+                2018-03-13
               </time>
             
 
@@ -396,11 +396,10 @@
 
       
         
-          <h3 id="构造函数创建对象"><a href="#构造函数创建对象" class="headerlink" title="构造函数创建对象"></a>构造函数创建对象</h3><p>我们先使用构造函数创建一个对象：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</div><div class="line">person.name = <span class="string">'lili'</span>;</div><div class="line"><span class="built_in">console</span>.log(person.name); <span class="comment">// lili</span></div></pre></td></tr></table></figure></p>
-<p>在这个例子中，Person就是一个构造函数，我们使用new创建了一个实例对象person。<br>
+          <h3 id="属性的简洁表示"><a href="#属性的简洁表示" class="headerlink" title="属性的简洁表示"></a>属性的简洁表示</h3><p>ES6 允许直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="string">'bar'</span>;</div><div class="line"><span class="keyword">const</span> baz = &#123;foo&#125;;</div><div class="line">baz <span class="comment">// &#123;foo: 'bar'&#125;</span></div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="keyword">const</span> baz = &#123;<span class="attr">foo</span>: foo&#125;;</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/08/JavaScript之原型和原型链/#more" rel="contents">
+            <a class="btn" href="/2018/03/13/ES6入门之对象的扩展/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -451,7 +450,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/07/前端跨域整理/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/03/07/JavaScript深入对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -470,7 +469,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/07/前端跨域整理/" itemprop="url">前端跨域整理</a></h2>
+                <a class="post-title-link" href="/2018/03/07/JavaScript深入对象/" itemprop="url">JavaScript深入对象</a></h2>
         
 
         <div class="post-meta">
@@ -482,8 +481,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T23:41:20+08:00">
-                2018-02-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T23:03:40+08:00">
+                2018-03-07
               </time>
             
 
@@ -543,12 +542,10 @@
 
       
         
-          <h3 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h3><blockquote>
-<p>跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。所以我们要通过一些方法使本域的js能够操作其他域的页面对象或者使其他域的js能操作本域的页面对象（iframe之间）。</p>
-</blockquote>
+          <h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><h4 id="简单做法"><a href="#简单做法" class="headerlink" title="简单做法"></a>简单做法</h4><h5 id="使用Object构造函数创建"><a href="#使用Object构造函数创建" class="headerlink" title="使用Object构造函数创建"></a>使用Object构造函数创建</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 对象实例的创建</span></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>() </div><div class="line">obj.key = <span class="string">'value'</span>   <span class="comment">//使用构造函数创建一个空对象，并赋值s</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/07/前端跨域整理/#more" rel="contents">
+            <a class="btn" href="/2018/03/07/JavaScript深入对象/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -599,7 +596,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/07/对缓存的一点理解/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/26/JavaScript深入数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -618,7 +615,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/07/对缓存的一点理解/" itemprop="url">对缓存的一点理解</a></h2>
+                <a class="post-title-link" href="/2018/02/26/JavaScript深入数组/" itemprop="url">JavaScript深入数组</a></h2>
         
 
         <div class="post-meta">
@@ -630,157 +627,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T21:44:29+08:00">
-                2018-02-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/浏览器/" itemprop="url" rel="index">
-                    <span itemprop="name">浏览器</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。</p>
-</blockquote>
-<h3 id="缓存的种类"><a href="#缓存的种类" class="headerlink" title="缓存的种类"></a>缓存的种类</h3><p>很多开发者习惯把cookie、webStorage以及IndexedDB存储的数据也称之为缓存，理由是都是保存在客户端的数据，没有什么区别。其实这是不严谨的，cookie的存在更多的是为了让服务端区别用户，webStorage和IndexedDB则更多用在保存具体的数据和在客户端存储大量结构化数据(文件/blobs)上面。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/07/对缓存的一点理解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/06/JavaScript-彻底理解同步、异步和事件循环（Event-Loop）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay Bein">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/06/JavaScript-彻底理解同步、异步和事件循环（Event-Loop）/" itemprop="url">JavaScript:彻底理解同步、异步和事件循环（Event Loop）</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T21:05:10+08:00">
-                2018-02-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T23:13:39+08:00">
+                2018-02-26
               </time>
             
 
@@ -840,12 +688,10 @@
 
       
         
-          <blockquote>
-<p>学习JavaScript的时候了解到JavaScript是单线程的，刚开始很疑惑，单线程怎么处理网络请求、文件读写等耗时操作呢？效率岂不是会很低？随着对这方面内容的了解和深入，知道了其中的奥秘。本篇文章就主要讲解一下JavaScript怎么处理异步问题。</p>
-</blockquote>
+          <h3 id="数组基础"><a href="#数组基础" class="headerlink" title="数组基础"></a>数组基础</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>数组是应用最广泛的数据存储结构。它被植入到大部分编程语言中。在 ECMAScript 中数组是非常常用的引用类型。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/06/JavaScript-彻底理解同步、异步和事件循环（Event-Loop）/#more" rel="contents">
+            <a class="btn" href="/2018/02/26/JavaScript深入数组/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -896,7 +742,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/09/01/ES6入门之字符串的扩展/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/26/JavaScript深入之继承的多种方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -915,7 +761,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/01/ES6入门之字符串的扩展/" itemprop="url">ES6入门之字符串的扩展</a></h2>
+                <a class="post-title-link" href="/2018/02/26/JavaScript深入之继承的多种方式/" itemprop="url">JavaScript深入之继承的多种方式</a></h2>
         
 
         <div class="post-meta">
@@ -927,8 +773,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T21:38:26+08:00">
-                2017-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T20:55:14+08:00">
+                2018-02-26
               </time>
             
 
@@ -988,10 +834,162 @@
 
       
         
-          <h3 id="字符串的遍历器接口"><a href="#字符串的遍历器接口" class="headerlink" title="字符串的遍历器接口"></a>字符串的遍历器接口</h3><p><code>ES6</code>为字符串添加了遍历器接口（详见《Iterator》一章），使得字符串可以被<code>for...of</code>循环遍历。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> codePoint <span class="keyword">of</span> <span class="string">'foo'</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(codePoint)</div><div class="line">&#125;</div><div class="line"><span class="comment">// "f"</span></div><div class="line"><span class="comment">// "o"</span></div><div class="line"><span class="comment">// "o"</span></div></pre></td></tr></table></figure></p>
+          <h3 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">'Jay'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Parent.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span> (<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">Child.prototype = <span class="keyword">new</span> Parent();</div><div class="line"></div><div class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(child1.getName()); <span class="comment">// Jay</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/01/ES6入门之字符串的扩展/#more" rel="contents">
+            <a class="btn" href="/2018/02/26/JavaScript深入之继承的多种方式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/21/快速掌握JavaScript面试基础3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay Bein">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/21/快速掌握JavaScript面试基础3/" itemprop="url">快速掌握JavaScript面试基础3</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-21T16:49:21+08:00">
+                2018-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="new关键字"><a href="#new关键字" class="headerlink" title="new关键字"></a>new关键字</h3><p>如果使用new关键字来调用函数式很特别的形式。我们把那些用new调用的函数叫做构造函数(constructor function)。</p>
+<p>使用了new的函数到底做了什么事情呢？</p>
+<ul>
+<li>创建一个新的对象</li>
+<li>将对象的prototype设置为构造函数的prototype</li>
+<li>执行构造函数，this执行新构造的对象</li>
+<li>返回该对象。如果构造函数返回对象，那么返回该构造对象。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/21/快速掌握JavaScript面试基础3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1033,7 +1031,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1083,7 +1081,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1094,7 +1092,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1105,7 +1103,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

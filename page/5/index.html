@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/06/11/原生JavaScript之DOM操作/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/07/09/打印样式CSS的技巧和要点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -323,7 +323,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/11/原生JavaScript之DOM操作/" itemprop="url">原生JavaScript之DOM操作</a></h2>
+                <a class="post-title-link" href="/2017/07/09/打印样式CSS的技巧和要点/" itemprop="url">打印样式CSS的技巧和要点</a></h2>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-11T21:46:40+08:00">
-                2017-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T22:07:50+08:00">
+                2017-07-09
               </time>
             
 
@@ -358,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -396,10 +396,16 @@
 
       
         
-          <h2 id="直接获取元素"><a href="#直接获取元素" class="headerlink" title="直接获取元素"></a>直接获取元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(selector); <span class="comment">// 获取指定id的元素</span></div><div class="line"><span class="built_in">document</span>.getElementsByClassName(selector);<span class="comment">// 获取指定class的元素的集合</span></div><div class="line"><span class="built_in">document</span>.getElementsByTagName(selector); <span class="comment">// 获取指定标签名的元素集合</span></div><div class="line"><span class="built_in">document</span>.getElementsByName(selector); <span class="comment">// 获取带有指定名称（name属性）的元素集合</span></div></pre></td></tr></table></figure>
+          <p>不经过任何处理而直接打印网站上的页面会得到一个不理想的效果。</p>
+<p>我们WEB开发人员可以简单采用几个要点来使之达到较为合适的效果：</p>
+<ul>
+<li>使用响应式布局设置打印的效果</li>
+<li>在合适的时候打印背景图片和颜色</li>
+<li>添加显示的网址或页面链接，以供参考</li>
+<li>使用css filter 提高打印的图形效果
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/11/原生JavaScript之DOM操作/#more" rel="contents">
+            <a class="btn" href="/2017/07/09/打印样式CSS的技巧和要点/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -450,7 +456,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/06/07/Chrome中console用法/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/07/07/让你豁然开朗的AJAX和JSONP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -469,7 +475,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/07/Chrome中console用法/" itemprop="url">Chrome控制台console用法</a></h2>
+                <a class="post-title-link" href="/2017/07/07/让你豁然开朗的AJAX和JSONP/" itemprop="url">让你豁然开朗的AJAX和JSONP</a></h2>
         
 
         <div class="post-meta">
@@ -481,8 +487,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T22:55:38+08:00">
-                2017-06-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T22:25:58+08:00">
+                2017-07-07
               </time>
             
 
@@ -542,11 +548,11 @@
 
       
         
-          <p>下面我们来看看console里面具体提供了哪些方法可以供我们平时调试时使用。<br><code>console.dir(console);</code>可以看到有很多方法，下面主要介绍常用的几种方法。</p>
-<p>##　输出信息的四种方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log();<span class="comment">// 用于输出普通信息</span></div><div class="line"><span class="built_in">console</span>.info();<span class="comment">// 用于输出提示性信息（蓝色叹号）</span></div><div class="line"><span class="built_in">console</span>.error();<span class="comment">// 用于输出错误信息（红色X号）</span></div><div class="line"><span class="built_in">console</span>.warn();<span class="comment">// 用于输出警告信息（黄色叹号）</span></div></pre></td></tr></table></figure></p>
+          <h3 id="先说说JSONP是怎么产生的："><a href="#先说说JSONP是怎么产生的：" class="headerlink" title="先说说JSONP是怎么产生的："></a>先说说JSONP是怎么产生的：</h3><p>1、一个众所周知的问题，<code>Ajax</code>直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、<code>web</code>服务、<code>WCF</code>，只要是跨域请求，一律不准；</p>
+<p>2、不过我们又发现，Web页面上调用js文件时则不受是否跨域的影响（不仅如此，我们还发现凡是拥有src这个属性的标签都拥有跨域的能力，比如<code>&lt;script&gt;</code>、<code>&lt;img&gt;</code>、<code>&lt;iframe&gt;</code>）；</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/07/Chrome中console用法/#more" rel="contents">
+            <a class="btn" href="/2017/07/07/让你豁然开朗的AJAX和JSONP/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -597,7 +603,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/06/01/JavaScript面向对象编程之非构造函数的继承/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/07/01/剖析let-const在for循环中的作用原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -616,7 +622,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/01/JavaScript面向对象编程之非构造函数的继承/" itemprop="url">JavaScript面向对象编程之非构造函数的继承</a></h2>
+                <a class="post-title-link" href="/2017/07/01/剖析let-const在for循环中的作用原理/" itemprop="url">剖析let/const在for循环中的作用原理</a></h2>
         
 
         <div class="post-meta">
@@ -628,8 +634,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T16:46:36+08:00">
-                2017-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T20:26:38+08:00">
+                2017-07-01
               </time>
             
 
@@ -689,12 +695,10 @@
 
       
         
-          <h2 id="什么是”非构造函数”的继承？"><a href="#什么是”非构造函数”的继承？" class="headerlink" title="什么是”非构造函数”的继承？"></a>什么是”非构造函数”的继承？</h2><p>比如，现在有一个对象，叫做”中国人”。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Chinese = &#123;</div><div class="line">　　<span class="attr">nation</span>:<span class="string">'中国'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>还有一个对象，叫做”医生”。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Doctor =&#123;</div><div class="line">　　<span class="attr">career</span>:<span class="string">'医生'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>请问怎样才能让”医生”去继承”中国人”，也就是说，我怎样才能生成一个”中国医生”的对象？<br>这里要注意，这两个对象都是普通对象，不是构造函数，无法使用构造函数方法实现”继承”。<br>
+          <p>1、先来看一个例子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=[];  </div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;   </div><div class="line">   a[i]=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(i)&#125;  </div><div class="line">&#125;</div><div class="line">a[<span class="number">1</span>](); <span class="comment">//3</span></div><div class="line">a[<span class="number">2</span>](); <span class="comment">//3</span></div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/01/JavaScript面向对象编程之非构造函数的继承/#more" rel="contents">
+            <a class="btn" href="/2017/07/01/剖析let-const在for循环中的作用原理/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -745,7 +749,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/05/27/JavaScript面向对象编程之构造函数的继承/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/06/28/ES6新特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -764,7 +768,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/27/JavaScript面向对象编程之构造函数的继承/" itemprop="url">JavaScript面向对象编程之构造函数的继承</a></h2>
+                <a class="post-title-link" href="/2017/06/28/ES6新特性/" itemprop="url">ES6新特性</a></h2>
         
 
         <div class="post-meta">
@@ -776,8 +780,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T15:12:36+08:00">
-                2017-05-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T22:28:04+08:00">
+                2017-06-28
               </time>
             
 
@@ -837,12 +841,10 @@
 
       
         
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天要介绍的是，对象之间的”继承”的五种方法。<br>比如，现在有一个”动物”对象的构造函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　<span class="keyword">this</span>.species = <span class="string">"动物"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>还有一个”猫”对象的构造函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</div><div class="line">　　<span class="keyword">this</span>.name = name;</div><div class="line">　　<span class="keyword">this</span>.color = color;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>怎样才能使”猫”继承”动物”呢？<br>
+          <h2 id="ES6简介"><a href="#ES6简介" class="headerlink" title="ES6简介"></a>ES6简介</h2><p>​ 历时将近6年的时间来制定的新 ECMAScript 标准 ECMAScript 6（亦称 ECMAScript Harmony，简称 ES6）终于在 2015 年 6 月正式发布。自从上一个标准版本 ES5 在 2009 年发布以后，ES6 就一直以新语法、新特性的优越性吸引著众多 JavaScript 开发者，驱使他们积极尝鲜。<br>​由于ES6是在2015年发布的，所以也叫ES2015。<br>​以后ESCMAScript标准一年一更新，统一使用年份命名：ES2016、ES2017、….<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/27/JavaScript面向对象编程之构造函数的继承/#more" rel="contents">
+            <a class="btn" href="/2017/06/28/ES6新特性/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -893,7 +895,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/05/24/JavaScript面向对象编程之封装/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/06/20/JavaScript特效三大系列总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -912,7 +914,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/24/JavaScript面向对象编程之封装/" itemprop="url">JavaScript面向对象编程之封装</a></h2>
+                <a class="post-title-link" href="/2017/06/20/JavaScript特效三大系列总结/" itemprop="url">JavaScript特效三大系列总结</a></h2>
         
 
         <div class="post-meta">
@@ -924,8 +926,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-24T12:53:40+08:00">
-                2017-05-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T19:46:53+08:00">
+                2017-06-20
               </time>
             
 
@@ -985,10 +987,10 @@
 
       
         
-          <p>Javascript是一种基于对象（object-based）的语言，你遇到的所有东西几乎都是对象。但是，它又不是一种真正的面向对象编程（OOP）语言，因为它的语法中没有<code>class</code>（类）。<br>那么，如果我们要把”属性”（property）和”方法”（method），封装成一个对象，甚至要从原型对象生成一个实例对象，我们应该怎么做呢？<br>
+          <p>今天主要是讲js的DOM元素的位置关系的三大系列：offset系列，scroll系列，client系列。希望你看完之后能更加了解，熟练应用。let’s go~<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/24/JavaScript面向对象编程之封装/#more" rel="contents">
+            <a class="btn" href="/2017/06/20/JavaScript特效三大系列总结/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1030,7 +1032,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1080,7 +1082,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1091,7 +1093,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1102,7 +1104,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

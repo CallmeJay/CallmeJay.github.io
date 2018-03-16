@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/08/28/ES6入门之变量的结构赋值/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/21/快速掌握JavaScript面试基础2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -323,7 +323,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/28/ES6入门之变量的结构赋值/" itemprop="url">ES6入门之变量的结构赋值</a></h2>
+                <a class="post-title-link" href="/2018/02/21/快速掌握JavaScript面试基础2/" itemprop="url">快速掌握JavaScript面试基础2</a></h2>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T21:35:22+08:00">
-                2017-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-21T12:47:09+08:00">
+                2018-02-21
               </time>
             
 
@@ -396,11 +396,10 @@
 
       
         
-          <h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。<br>以前，为变量赋值，只能直接指定值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">let</span> c = <span class="number">3</span>;</div></pre></td></tr></table></figure></p>
-<p>ES6允许写成下面这样。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div></pre></td></tr></table></figure></p>
+          <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包由一个函数以及该函数定义式所在的环境组成。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> message = <span class="string">`Hi <span class="subst">$&#123;name&#125;</span>`</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">greeting</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(message);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> greeting();</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> sayHiToJon = sayHi(<span class="string">'Jon'</span>);</div><div class="line"><span class="built_in">console</span>.log(sayHiToJon)     <span class="comment">// ƒ() &#123; console.log(message) &#125;</span></div><div class="line"><span class="built_in">console</span>.log(sayHiToJon())   <span class="comment">// 'Hi Jon!'</span></div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/28/ES6入门之变量的结构赋值/#more" rel="contents">
+            <a class="btn" href="/2018/02/21/快速掌握JavaScript面试基础2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -451,7 +450,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/08/25/ES6入门之let和const/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/20/快速掌握JavaScript面试基础1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -470,7 +469,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/25/ES6入门之let和const/" itemprop="url">ES6入门之let和const</a></h2>
+                <a class="post-title-link" href="/2018/02/20/快速掌握JavaScript面试基础1/" itemprop="url">快速掌握JavaScript面试基础1</a></h2>
         
 
         <div class="post-meta">
@@ -482,8 +481,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T21:55:50+08:00">
-                2017-08-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-20T18:15:33+08:00">
+                2018-02-20
               </time>
             
 
@@ -543,10 +542,11 @@
 
       
         
-          <h3 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>ES6 新增了<code>let</code>命令，用来声明变量。它的用法类似于<code>var</code>，但是所声明的变量，只在<code>let</code>命令所在的代码块内有效。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">  <span class="keyword">var</span> b = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">a <span class="comment">// ReferenceError: a is not defined.</span></div><div class="line">b <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+          <h3 id="类型和类型转换"><a href="#类型和类型转换" class="headerlink" title="类型和类型转换"></a>类型和类型转换</h3><p>在JavaScript中有7个内置类型：null,undefined,boolean,number,string,object和symbol（ES6)。</p>
+<p>除了object以外，其他都叫做基本类型。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="number">0</span> <span class="comment">//number</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">true</span> <span class="comment">// boolean</span></div><div class="line"><span class="keyword">typeof</span> <span class="string">'abc'</span> <span class="comment">// string</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// object</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">// undefined</span></div><div class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>(<span class="string">'Hi'</span>) <span class="comment">// symbol</span></div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/25/ES6入门之let和const/#more" rel="contents">
+            <a class="btn" href="/2018/02/20/快速掌握JavaScript面试基础1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -597,7 +597,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/08/15/JavaScript中常见的几种轮播/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/08/JavaScript之原型和原型链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -616,7 +616,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/15/JavaScript中常见的几种轮播/" itemprop="url">JavaScript中常见的几种轮播</a></h2>
+                <a class="post-title-link" href="/2018/02/08/JavaScript之原型和原型链/" itemprop="url">JavaScript之原型和原型链</a></h2>
         
 
         <div class="post-meta">
@@ -628,8 +628,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T21:38:59+08:00">
-                2017-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T22:02:47+08:00">
+                2018-02-08
               </time>
             
 
@@ -689,10 +689,11 @@
 
       
         
-          <p>项目中经常用到轮播图，今天就来一起探讨不同模式轮播图的实现方法，与君共勉。<br>
+          <h3 id="构造函数创建对象"><a href="#构造函数创建对象" class="headerlink" title="构造函数创建对象"></a>构造函数创建对象</h3><p>我们先使用构造函数创建一个对象：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</div><div class="line">person.name = <span class="string">'lili'</span>;</div><div class="line"><span class="built_in">console</span>.log(person.name); <span class="comment">// lili</span></div></pre></td></tr></table></figure></p>
+<p>在这个例子中，Person就是一个构造函数，我们使用new创建了一个实例对象person。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/15/JavaScript中常见的几种轮播/#more" rel="contents">
+            <a class="btn" href="/2018/02/08/JavaScript之原型和原型链/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -743,7 +744,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/07/20/实现圣杯布局和双飞翼布局/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/07/前端跨域整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -762,7 +763,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/20/实现圣杯布局和双飞翼布局/" itemprop="url">实现圣杯布局和双飞翼布局</a></h2>
+                <a class="post-title-link" href="/2018/02/07/前端跨域整理/" itemprop="url">前端跨域整理</a></h2>
         
 
         <div class="post-meta">
@@ -774,8 +775,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-20T22:54:48+08:00">
-                2017-07-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T23:41:20+08:00">
+                2018-02-07
               </time>
             
 
@@ -797,8 +798,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -835,10 +836,12 @@
 
       
         
-          <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>利用浮动特性可以实现一些布局，比较经典的有个圣杯布局，后来经过改进又出现了双飞翼布局，下面就来介绍一下这两种布局。<br>
+          <h3 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h3><blockquote>
+<p>跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。所以我们要通过一些方法使本域的js能够操作其他域的页面对象或者使其他域的js能操作本域的页面对象（iframe之间）。</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/20/实现圣杯布局和双飞翼布局/#more" rel="contents">
+            <a class="btn" href="/2018/02/07/前端跨域整理/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -889,7 +892,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2017/07/19/基于vue配置移动端rem布局/">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/02/07/对缓存的一点理解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
@@ -908,7 +911,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/19/基于vue配置移动端rem布局/" itemprop="url">基于vue配置移动端rem布局</a></h2>
+                <a class="post-title-link" href="/2018/02/07/对缓存的一点理解/" itemprop="url">对缓存的一点理解</a></h2>
         
 
         <div class="post-meta">
@@ -920,8 +923,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T22:18:29+08:00">
-                2017-07-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T21:44:29+08:00">
+                2018-02-07
               </time>
             
 
@@ -943,8 +946,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/浏览器/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器</span>
                   </a>
                 </span>
 
@@ -982,13 +985,12 @@
       
         
           <blockquote>
-<p>今天来聊一聊基于<code>vue-cli</code>配置的移动端屏幕适配问题。</p>
+<p>缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。</p>
 </blockquote>
-<p>配方还是一样：手淘的<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external">lib-flexible</a> + <code>rem</code></p>
-<h3 id="配置-flexible"><a href="#配置-flexible" class="headerlink" title="配置 flexible"></a>配置 flexible</h3><h4 id="安装-lib-flexible"><a href="#安装-lib-flexible" class="headerlink" title="安装 lib-flexible"></a>安装 lib-flexible</h4><p>在命令行中运行如下安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i lib-flexible --save</div></pre></td></tr></table></figure></p>
+<h3 id="缓存的种类"><a href="#缓存的种类" class="headerlink" title="缓存的种类"></a>缓存的种类</h3><p>很多开发者习惯把cookie、webStorage以及IndexedDB存储的数据也称之为缓存，理由是都是保存在客户端的数据，没有什么区别。其实这是不严谨的，cookie的存在更多的是为了让服务端区别用户，webStorage和IndexedDB则更多用在保存具体的数据和在客户端存储大量结构化数据(文件/blobs)上面。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/19/基于vue配置移动端rem布局/#more" rel="contents">
+            <a class="btn" href="/2018/02/07/对缓存的一点理解/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1030,7 +1032,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1080,7 +1082,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1091,7 +1093,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1102,7 +1104,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
