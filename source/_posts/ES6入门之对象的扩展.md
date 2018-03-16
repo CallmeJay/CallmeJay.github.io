@@ -568,7 +568,7 @@ Reflect.ownKeys({ [Symbol()]:0, b:0, 10:0, 2:0, a:0 })
 ### 原型的操作方法
 JavaScript 语言的对象继承是通过原型链实现的。ES6 提供了更多原型对象的操作方法.
 #### \_\_proto\_\_ 属性
-`\_\_proto\_\_`属性（前后各两个下划线），用来读取或设置当前对象的prototype对象。目前，所有浏览器（包括 IE11）都部署了这个属性。
+`__proto__`属性（前后各两个下划线），用来读取或设置当前对象的prototype对象。目前，所有浏览器（包括 IE11）都部署了这个属性。
 ```js
 // es6 的写法
 const obj = {
@@ -580,9 +580,9 @@ obj.__proto__ = someOtherObj;
 var obj = Object.create(someOtherObj);
 obj.method = function() { ... };
 ```
-该属性没有写入 ES6 的正文，而是写入了附录，原因是`\_\_proto\_\_`前后的双下划线，说明它本质上是一个内部属性，而不是一个正式的对外的 API，只是由于浏览器广泛支持，才被加入了 ES6。标准明确规定，只有浏览器必须部署这个属性，其他运行环境不一定需要部署，而且新的代码最好认为这个属性是不存在的。因此，无论从语义的角度，还是从兼容性的角度，都不要使用这个属性，而是使用下面的`Object.setPrototypeOf()`（写操作）、`Object.getPrototypeOf()`（读操作）、`Object.create()`（生成操作）代替。
+该属性没有写入 ES6 的正文，而是写入了附录，原因是`__proto__`前后的双下划线，说明它本质上是一个内部属性，而不是一个正式的对外的 API，只是由于浏览器广泛支持，才被加入了 ES6。标准明确规定，只有浏览器必须部署这个属性，其他运行环境不一定需要部署，而且新的代码最好认为这个属性是不存在的。因此，无论从语义的角度，还是从兼容性的角度，都不要使用这个属性，而是使用下面的`Object.setPrototypeOf()`（写操作）、`Object.getPrototypeOf()`（读操作）、`Object.create()`（生成操作）代替。
 
-实现上，`\_\_proto\_\_`调用的是`Object.prototype.\_\_proto\_\_`，具体实现如下。
+实现上，`__proto__`调用的是`Object.prototype.__proto__`，具体实现如下。
 ```js
 Object.defineProperty(Object.prototype, '__proto__', {
   get() {
@@ -610,13 +610,13 @@ function isObject(value) {
   return Object(value) === value;
 }
 ```
-如果一个对象本身部署了`\_\_proto\_\_`属性，该属性的值就是对象的原型。
+如果一个对象本身部署了`__proto__`属性，该属性的值就是对象的原型。
 ```js
 Object.getPrototypeOf({ __proto__: null })
 // null
 ```
 #### Object.setPrototypeOf()
-`Object.setPrototypeOf`方法的作用与`\_\_proto\_\_`相同，用来设置一个对象的prototype对象，返回参数对象本身。它是 ES6 正式推荐的设置原型对象的方法。
+`Object.setPrototypeOf`方法的作用与`__proto__`相同，用来设置一个对象的prototype对象，返回参数对象本身。它是 ES6 正式推荐的设置原型对象的方法。
 ```js
 // 格式
 Object.setPrototypeOf(object, prototype)
@@ -769,7 +769,7 @@ obj.foo() // "world"
 上面代码中，`super.foo`指向原型对象`proto`的`foo`方法，但是绑定的`this`却还是当前对象`obj`，因此输出的就是`world`。
 ### 遍历对象的方法
 ### Object.keys()
-ES5 引入了``bject.keys`方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。
+ES5 引入了`bject.keys`方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。
 ```js
 var obj = {foo:'bar',baz:42};
 Object.keys(obj);
