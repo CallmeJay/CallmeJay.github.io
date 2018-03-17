@@ -4,14 +4,29 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2017/08/28/ES6%E5%85%A5%E9%97%A8%E4%B9%8B%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/</loc>
-    <lastmod>2018-03-14T14:39:55.256Z</lastmod>
+    <loc>https://callmejay.github.io/2018/03/17/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-03-17T09:23:51.846Z</lastmod>
     <data>
         <display>
-        <title>ES6入门之变量的解构赋值</title>
-        <pubTime>2017-08-28T13:35:22.000Z</pubTime>
+        <title>排序算法</title>
+        <pubTime>2018-03-17T09:19:10.000Z</pubTime>
         
-        <tag>ES6</tag>
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2018/03/13/ES6%E5%85%A5%E9%97%A8%E4%B9%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/</loc>
+    <lastmod>2018-03-16T15:05:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>ES6入门之对象的扩展</title>
+        <pubTime>2018-03-13T13:29:47.000Z</pubTime>
+        
+        <tag>对象</tag>
          
          
            
@@ -24,14 +39,14 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2018/03/13/ES6%E5%85%A5%E9%97%A8%E4%B9%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/</loc>
-    <lastmod>2018-03-14T14:38:28.000Z</lastmod>
+    <loc>https://callmejay.github.io/2017/08/28/ES6%E5%85%A5%E9%97%A8%E4%B9%8B%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/</loc>
+    <lastmod>2018-03-14T14:39:55.256Z</lastmod>
     <data>
         <display>
-        <title>ES6入门之对象的扩展</title>
-        <pubTime>2018-03-13T13:29:47.000Z</pubTime>
+        <title>ES6入门之变量的解构赋值</title>
+        <pubTime>2017-08-28T13:35:22.000Z</pubTime>
         
-        <tag>对象</tag>
+        <tag>ES6</tag>
          
          
            
@@ -164,6 +179,8 @@
 
     
     
+    
+    
   <url>
     <loc>https://callmejay.github.io/2017/07/07/%E8%AE%A9%E4%BD%A0%E8%B1%81%E7%84%B6%E5%BC%80%E6%9C%97%E7%9A%84AJAX%E5%92%8CJSONP/</loc>
     <lastmod>2018-02-10T09:29:37.039Z</lastmod>
@@ -183,8 +200,6 @@
     </data>
     </url>
 
-    
-    
     
     
   <url>
@@ -248,6 +263,66 @@
 
     
   <url>
+    <loc>https://callmejay.github.io/2017/06/11/%E5%8E%9F%E7%94%9FJavaScript%E4%B9%8BDOM%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
+    <data>
+        <display>
+        <title>原生JavaScript之DOM操作</title>
+        <pubTime>2017-06-11T13:46:40.000Z</pubTime>
+        
+        <tag>DOM</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2018/02/07/%E5%AF%B9%E7%BC%93%E5%AD%98%E7%9A%84%E4%B8%80%E7%82%B9%E7%90%86%E8%A7%A3/</loc>
+    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
+    <data>
+        <display>
+        <title>对缓存的一点理解</title>
+        <pubTime>2018-02-07T13:44:29.000Z</pubTime>
+        
+        <tag>cache</tag>
+         
+         
+           
+             
+              <breadCrumb title="浏览器" url="https://callmejay.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2017/07/20/%E5%AE%9E%E7%8E%B0%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80/</loc>
+    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
+    <data>
+        <display>
+        <title>实现圣杯布局和双飞翼布局</title>
+        <pubTime>2017-07-20T14:54:48.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="https://callmejay.github.io/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://callmejay.github.io/2017/07/11/%E5%B8%A6%E4%BD%A0%E8%B5%B0%E8%BF%9BGulp/</loc>
     <lastmod>2018-02-10T09:29:37.037Z</lastmod>
     <data>
@@ -290,59 +365,19 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2018/02/07/%E5%AF%B9%E7%BC%93%E5%AD%98%E7%9A%84%E4%B8%80%E7%82%B9%E7%90%86%E8%A7%A3/</loc>
-    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
+    <loc>https://callmejay.github.io/2017/05/20/%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98%E8%A7%A3%E5%86%B3js%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-02-10T09:29:37.036Z</lastmod>
     <data>
         <display>
-        <title>对缓存的一点理解</title>
-        <pubTime>2018-02-07T13:44:29.000Z</pubTime>
+        <title>使用缓存解决js递归调用性能问题</title>
+        <pubTime>2017-05-20T02:43:18.000Z</pubTime>
         
-        <tag>cache</tag>
-         
-         
-           
-             
-              <breadCrumb title="浏览器" url="https://callmejay.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/06/11/%E5%8E%9F%E7%94%9FJavaScript%E4%B9%8BDOM%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
-    <data>
-        <display>
-        <title>原生JavaScript之DOM操作</title>
-        <pubTime>2017-06-11T13:46:40.000Z</pubTime>
-        
-        <tag>DOM</tag>
+        <tag>递归</tag>
          
          
            
              
               <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/07/20/%E5%AE%9E%E7%8E%B0%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80/</loc>
-    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
-    <data>
-        <display>
-        <title>实现圣杯布局和双飞翼布局</title>
-        <pubTime>2017-07-20T14:54:48.000Z</pubTime>
-        
-        <tag>CSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="CSS" url="https://callmejay.github.io/categories/CSS/"/>
           
         </display>
     </data>
@@ -390,79 +425,19 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2017/05/20/%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98%E8%A7%A3%E5%86%B3js%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-02-10T09:29:37.036Z</lastmod>
+    <loc>https://callmejay.github.io/2017/06/18/js%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD%E5%8F%8A%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2018-02-10T09:29:37.035Z</lastmod>
     <data>
         <display>
-        <title>使用缓存解决js递归调用性能问题</title>
-        <pubTime>2017-05-20T02:43:18.000Z</pubTime>
+        <title>js图片懒加载及优化</title>
+        <pubTime>2017-06-18T14:20:23.000Z</pubTime>
         
-        <tag>递归</tag>
+        <tag>image-lazyload</tag>
          
          
            
              
               <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/05/11/vue%E4%B9%8B%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2018-02-10T09:29:37.036Z</lastmod>
-    <data>
-        <display>
-        <title>vue之入门</title>
-        <pubTime>2017-05-11T02:07:08.000Z</pubTime>
-        
-        <tag>Vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/04/20/markdown/</loc>
-    <lastmod>2018-02-10T09:29:37.035Z</lastmod>
-    <data>
-        <display>
-        <title>Markdown语法</title>
-        <pubTime>2017-04-20T10:36:55.000Z</pubTime>
-        
-        <tag>Markdown</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="https://callmejay.github.io/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/04/23/mygitbook/</loc>
-    <lastmod>2018-02-10T09:29:37.035Z</lastmod>
-    <data>
-        <display>
-        <title>mygitbook</title>
-        <pubTime>2017-04-23T03:11:40.000Z</pubTime>
-        
-        <tag>gitbook</tag>
-         
-         
-           
-             
-              <breadCrumb title="gitbook" url="https://callmejay.github.io/categories/gitbook/"/>
           
         </display>
     </data>
@@ -490,19 +465,19 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2017/06/18/js%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD%E5%8F%8A%E4%BC%98%E5%8C%96/</loc>
+    <loc>https://callmejay.github.io/2017/04/23/mygitbook/</loc>
     <lastmod>2018-02-10T09:29:37.035Z</lastmod>
     <data>
         <display>
-        <title>js图片懒加载及优化</title>
-        <pubTime>2017-06-18T14:20:23.000Z</pubTime>
+        <title>mygitbook</title>
+        <pubTime>2017-04-23T03:11:40.000Z</pubTime>
         
-        <tag>image-lazyload</tag>
+        <tag>gitbook</tag>
          
          
            
              
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
+              <breadCrumb title="gitbook" url="https://callmejay.github.io/categories/gitbook/"/>
           
         </display>
     </data>
@@ -510,22 +485,35 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2017/05/03/grid/</loc>
-    <lastmod>2018-02-10T09:29:37.034Z</lastmod>
+    <loc>https://callmejay.github.io/2017/04/20/markdown/</loc>
+    <lastmod>2018-02-10T09:29:37.035Z</lastmod>
     <data>
         <display>
-        <title>grid布局</title>
-        <pubTime>2017-05-03T08:02:52.000Z</pubTime>
+        <title>Markdown语法</title>
+        <pubTime>2017-04-20T10:36:55.000Z</pubTime>
         
-        <tag>CSS</tag>
-         
-        <tag>grid</tag>
+        <tag>Markdown</tag>
          
          
            
              
-              <breadCrumb title="CSS" url="https://callmejay.github.io/categories/CSS/"/>
+              <breadCrumb title="Markdown" url="https://callmejay.github.io/categories/Markdown/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2016/02/07/hello-world/</loc>
+    <lastmod>2018-02-10T09:29:37.034Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-02-07T15:41:20.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
@@ -552,21 +540,6 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2016/02/07/hello-world/</loc>
-    <lastmod>2018-02-10T09:29:37.034Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2016-02-07T15:41:20.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://callmejay.github.io/2017/04/19/githubPages/</loc>
     <lastmod>2018-02-10T09:29:37.034Z</lastmod>
     <data>
@@ -580,46 +553,6 @@
            
              
               <breadCrumb title="GitHub Pages" url="https://callmejay.github.io/categories/GitHub-Pages/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/05/12/canvas/</loc>
-    <lastmod>2018-02-10T09:29:37.034Z</lastmod>
-    <data>
-        <display>
-        <title>canvas</title>
-        <pubTime>2017-05-12T01:45:25.000Z</pubTime>
-        
-        <tag>canvas</tag>
-         
-         
-           
-             
-              <breadCrumb title="HTML" url="https://callmejay.github.io/categories/HTML/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/05/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%A7%E6%89%BF/</loc>
-    <lastmod>2018-02-10T09:29:37.033Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript面向对象编程之构造函数的继承</title>
-        <pubTime>2017-05-27T07:12:36.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -689,14 +622,14 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2017/04/30/JavaScript%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-02-10T09:29:37.032Z</lastmod>
+    <loc>https://callmejay.github.io/2017/05/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2018-02-10T09:29:37.033Z</lastmod>
     <data>
         <display>
-        <title>JavaScript数组操作总结</title>
-        <pubTime>2017-04-30T13:13:26.000Z</pubTime>
+        <title>JavaScript面向对象编程之构造函数的继承</title>
+        <pubTime>2017-05-27T07:12:36.000Z</pubTime>
         
-        <tag>Array</tag>
+        <tag>面向对象</tag>
          
          
            
@@ -717,6 +650,26 @@
         <pubTime>2017-07-15T13:22:43.000Z</pubTime>
         
         <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2017/04/30/JavaScript%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-02-10T09:29:37.032Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript数组操作总结</title>
+        <pubTime>2017-04-30T13:13:26.000Z</pubTime>
+        
+        <tag>Array</tag>
          
          
            
@@ -757,6 +710,26 @@
         <pubTime>2017-05-21T03:25:11.000Z</pubTime>
         
         <tag>this</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2018/02/06/JavaScript-%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E5%90%8C%E6%AD%A5%E3%80%81%E5%BC%82%E6%AD%A5%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88Event-Loop%EF%BC%89/</loc>
+    <lastmod>2018-02-10T09:29:37.031Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript:彻底理解同步、异步和事件循环（Event Loop）</title>
+        <pubTime>2018-02-06T13:05:10.000Z</pubTime>
+        
+        <tag>Event Loop</tag>
          
          
            
@@ -829,26 +802,6 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2018/02/06/JavaScript-%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E5%90%8C%E6%AD%A5%E3%80%81%E5%BC%82%E6%AD%A5%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88Event-Loop%EF%BC%89/</loc>
-    <lastmod>2018-02-10T09:29:37.031Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript:彻底理解同步、异步和事件循环（Event Loop）</title>
-        <pubTime>2018-02-06T13:05:10.000Z</pubTime>
-        
-        <tag>Event Loop</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://callmejay.github.io/2017/06/28/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</loc>
     <lastmod>2018-02-10T09:29:37.030Z</lastmod>
     <data>
@@ -882,26 +835,6 @@
            
              
               <breadCrumb title="HTML" url="https://callmejay.github.io/categories/HTML/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/06/07/Chrome%E4%B8%ADconsole%E7%94%A8%E6%B3%95/</loc>
-    <lastmod>2018-02-10T09:29:37.029Z</lastmod>
-    <data>
-        <display>
-        <title>Chrome控制台console用法</title>
-        <pubTime>2017-06-07T14:55:38.000Z</pubTime>
-        
-        <tag>console</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -948,26 +881,24 @@
     </url>
 
     
-    
   <url>
-    <loc>https://callmejay.github.io/2017/04/27/Browsersync/</loc>
-    <lastmod>2018-02-10T09:29:37.028Z</lastmod>
+    <loc>https://callmejay.github.io/2017/06/07/Chrome%E4%B8%ADconsole%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2018-02-10T09:29:37.029Z</lastmod>
     <data>
         <display>
-        <title>Browsersync的安装及使用方法</title>
-        <pubTime>2017-04-27T08:34:28.000Z</pubTime>
+        <title>Chrome控制台console用法</title>
+        <pubTime>2017-06-07T14:55:38.000Z</pubTime>
         
-        <tag>Browsersync</tag>
-         
-        <tag>gulp</tag>
+        <tag>console</tag>
          
          
            
              
-              <breadCrumb title="tools" url="https://callmejay.github.io/categories/tools/"/>
+              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
           
         </display>
     </data>
     </url>
 
+    
 </urlset>
