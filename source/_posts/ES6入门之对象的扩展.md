@@ -768,7 +768,7 @@ obj.foo() // "world"
 ```
 上面代码中，`super.foo`指向原型对象`proto`的`foo`方法，但是绑定的`this`却还是当前对象`obj`，因此输出的就是`world`。
 ### 遍历对象的方法
-### Object.keys()
+#### Object.keys()
 ES5 引入了`bject.keys`方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。
 ```js
 var obj = {foo:'bar',baz:42};
