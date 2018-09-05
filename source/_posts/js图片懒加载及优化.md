@@ -35,7 +35,7 @@ tags: image-lazyload
     </style>
 </head>
 <body>
-     <img src="" data-src="http://pic.58pic.com/58pic/17/18/97/01U58PIC4Xr_1024.jpg" alt="">
+    <img src="" data-src="http://pic.58pic.com/58pic/17/18/97/01U58PIC4Xr_1024.jpg" alt="">
     <img src="" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
     <img src="" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="">
     <img src="" data-src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01N203pHTU7/Wr5314kcLAtVCi.jpg!t" alt="">
@@ -52,7 +52,7 @@ tags: image-lazyload
     let img = document.getElementsByTagName("img");
     let n = 0; //存储图片加载到的位置，避免每次都从第一张图片开始遍历
     lazyload(); //页面载入完毕加载可是区域内的图片
-     window.onscroll = lazyload;
+    window.onscroll = lazyload;
     function lazyload() { //监听页面滚动事件
         let seeHeight = document.documentElement.clientHeight; //可见区域高度
         let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; //滚动条距离顶部高度
@@ -106,7 +106,7 @@ tags: image-lazyload
     </style>
 </head>
 <body>
-     <img src="" data-src="http://pic.58pic.com/58pic/17/18/97/01U58PIC4Xr_1024.jpg" alt="">
+    <img src="" data-src="http://pic.58pic.com/58pic/17/18/97/01U58PIC4Xr_1024.jpg" alt="">
     <img src="" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
     <img src="" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="">
     <img src="" data-src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01N203pHTU7/Wr5314kcLAtVCi.jpg!t" alt="">
@@ -136,7 +136,7 @@ tags: image-lazyload
             }
         }
     }
-   // 采用了节流函数
+    // 采用了节流函数
     function throttle(fun, delay, time) {
         let timeout,
         startTime = new Date();

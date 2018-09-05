@@ -11,7 +11,7 @@ type: about
 
 > **职位：** `前端工程师`
 
->**邮箱：** `291977464@qq.com`
+>**邮箱：** `jaybein1209@gmail.com`
 
 > **QQ:**&emsp;&ensp;291977464
 
