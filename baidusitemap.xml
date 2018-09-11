@@ -425,7 +425,6 @@
 
     
     
-    
   <url>
     <loc>https://callmejay.github.io/2017/07/07/%E8%AE%A9%E4%BD%A0%E8%B1%81%E7%84%B6%E5%BC%80%E6%9C%97%E7%9A%84AJAX%E5%92%8CJSONP/</loc>
     <lastmod>2018-02-10T09:29:37.039Z</lastmod>
@@ -445,6 +444,7 @@
     </data>
     </url>
 
+    
     
     
   <url>
@@ -488,6 +488,26 @@
 
     
   <url>
+    <loc>https://callmejay.github.io/2017/07/11/%E5%B8%A6%E4%BD%A0%E8%B5%B0%E8%BF%9BGulp/</loc>
+    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
+    <data>
+        <display>
+        <title>带你走进Gulp</title>
+        <pubTime>2017-07-11T15:05:47.000Z</pubTime>
+        
+        <tag>gulp</tag>
+         
+         
+           
+             
+              <breadCrumb title="gulp" url="https://callmejay.github.io/categories/gulp/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://callmejay.github.io/2017/06/11/%E5%8E%9F%E7%94%9FJavaScript%E4%B9%8BDOM%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2018-02-10T09:29:37.037Z</lastmod>
     <data>
@@ -501,26 +521,6 @@
            
              
               <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2018/02/07/%E5%AF%B9%E7%BC%93%E5%AD%98%E7%9A%84%E4%B8%80%E7%82%B9%E7%90%86%E8%A7%A3/</loc>
-    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
-    <data>
-        <display>
-        <title>对缓存的一点理解</title>
-        <pubTime>2018-02-07T13:44:29.000Z</pubTime>
-        
-        <tag>cache</tag>
-         
-         
-           
-             
-              <breadCrumb title="浏览器" url="https://callmejay.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
           
         </display>
     </data>
@@ -550,6 +550,26 @@
 
     
   <url>
+    <loc>https://callmejay.github.io/2018/02/07/%E5%AF%B9%E7%BC%93%E5%AD%98%E7%9A%84%E4%B8%80%E7%82%B9%E7%90%86%E8%A7%A3/</loc>
+    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
+    <data>
+        <display>
+        <title>对缓存的一点理解</title>
+        <pubTime>2018-02-07T13:44:29.000Z</pubTime>
+        
+        <tag>cache</tag>
+         
+         
+           
+             
+              <breadCrumb title="浏览器" url="https://callmejay.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://callmejay.github.io/2017/07/20/%E5%AE%9E%E7%8E%B0%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80/</loc>
     <lastmod>2018-02-10T09:29:37.037Z</lastmod>
     <data>
@@ -570,19 +590,19 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2017/07/11/%E5%B8%A6%E4%BD%A0%E8%B5%B0%E8%BF%9BGulp/</loc>
-    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
+    <loc>https://callmejay.github.io/2018/02/07/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/</loc>
+    <lastmod>2018-02-10T09:29:37.036Z</lastmod>
     <data>
         <display>
-        <title>带你走进Gulp</title>
-        <pubTime>2017-07-11T15:05:47.000Z</pubTime>
+        <title>前端跨域整理</title>
+        <pubTime>2018-02-07T15:41:20.000Z</pubTime>
         
-        <tag>gulp</tag>
+        <tag>跨域</tag>
          
          
            
              
-              <breadCrumb title="gulp" url="https://callmejay.github.io/categories/gulp/"/>
+              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -630,46 +650,6 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2018/02/07/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2018-02-10T09:29:37.036Z</lastmod>
-    <data>
-        <display>
-        <title>前端跨域整理</title>
-        <pubTime>2018-02-07T15:41:20.000Z</pubTime>
-        
-        <tag>跨域</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/04/23/mygitbook/</loc>
-    <lastmod>2018-02-10T09:29:37.035Z</lastmod>
-    <data>
-        <display>
-        <title>mygitbook</title>
-        <pubTime>2017-04-23T03:11:40.000Z</pubTime>
-        
-        <tag>gitbook</tag>
-         
-         
-           
-             
-              <breadCrumb title="gitbook" url="https://callmejay.github.io/categories/gitbook/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://callmejay.github.io/2017/04/20/markdown/</loc>
     <lastmod>2018-02-10T09:29:37.035Z</lastmod>
     <data>
@@ -710,15 +690,20 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2016/02/07/hello-world/</loc>
-    <lastmod>2018-02-10T09:29:37.034Z</lastmod>
+    <loc>https://callmejay.github.io/2017/04/23/mygitbook/</loc>
+    <lastmod>2018-02-10T09:29:37.035Z</lastmod>
     <data>
         <display>
-        <title>Hello World</title>
-        <pubTime>2016-02-07T15:41:20.000Z</pubTime>
+        <title>mygitbook</title>
+        <pubTime>2017-04-23T03:11:40.000Z</pubTime>
         
+        <tag>gitbook</tag>
+         
          
            
+             
+              <breadCrumb title="gitbook" url="https://callmejay.github.io/categories/gitbook/"/>
+          
         </display>
     </data>
     </url>
@@ -739,6 +724,21 @@
              
               <breadCrumb title="GitHub Pages" url="https://callmejay.github.io/categories/GitHub-Pages/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2016/02/07/hello-world/</loc>
+    <lastmod>2018-02-10T09:29:37.034Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-02-07T15:41:20.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
@@ -847,14 +847,14 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2017/07/15/JavaScript%E7%9A%8410%E4%B8%AA%E9%87%8D%E7%82%B9%E5%8F%8A%E9%9A%BE%E7%82%B9/</loc>
+    <loc>https://callmejay.github.io/2017/06/20/JavaScript%E7%89%B9%E6%95%88%E4%B8%89%E5%A4%A7%E7%B3%BB%E5%88%97%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2018-02-10T09:29:37.032Z</lastmod>
     <data>
         <display>
-        <title>JavaScript的10个重点及难点</title>
-        <pubTime>2017-07-15T13:22:43.000Z</pubTime>
+        <title>JavaScript特效三大系列总结</title>
+        <pubTime>2017-06-20T11:46:53.000Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>DOM</tag>
          
          
            
@@ -867,14 +867,14 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2017/06/20/JavaScript%E7%89%B9%E6%95%88%E4%B8%89%E5%A4%A7%E7%B3%BB%E5%88%97%E6%80%BB%E7%BB%93/</loc>
+    <loc>https://callmejay.github.io/2017/07/15/JavaScript%E7%9A%8410%E4%B8%AA%E9%87%8D%E7%82%B9%E5%8F%8A%E9%9A%BE%E7%82%B9/</loc>
     <lastmod>2018-02-10T09:29:37.032Z</lastmod>
     <data>
         <display>
-        <title>JavaScript特效三大系列总结</title>
-        <pubTime>2017-06-20T11:46:53.000Z</pubTime>
+        <title>JavaScript的10个重点及难点</title>
+        <pubTime>2017-07-15T13:22:43.000Z</pubTime>
         
-        <tag>DOM</tag>
+        <tag>JavaScript</tag>
          
          
            
@@ -907,26 +907,6 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2017/08/15/JavaScript%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E8%BD%AE%E6%92%AD/</loc>
-    <lastmod>2018-02-10T09:29:37.031Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript中常见的几种轮播</title>
-        <pubTime>2017-08-15T13:38:59.000Z</pubTime>
-        
-        <tag>轮播</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://callmejay.github.io/2018/02/08/JavaScript%E4%B9%8B%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
     <lastmod>2018-02-10T09:29:37.031Z</lastmod>
     <data>
@@ -947,12 +927,52 @@
 
     
   <url>
+    <loc>https://callmejay.github.io/2017/08/15/JavaScript%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E8%BD%AE%E6%92%AD/</loc>
+    <lastmod>2018-02-10T09:29:37.031Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript中常见的几种轮播</title>
+        <pubTime>2017-08-15T13:38:59.000Z</pubTime>
+        
+        <tag>轮播</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://callmejay.github.io/2017/06/28/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</loc>
     <lastmod>2018-02-10T09:29:37.030Z</lastmod>
     <data>
         <display>
         <title>ES6新特性</title>
         <pubTime>2017-06-28T14:28:04.000Z</pubTime>
+        
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2017/08/25/ES6%E5%85%A5%E9%97%A8%E4%B9%8Blet%E5%92%8Cconst/</loc>
+    <lastmod>2018-02-10T09:29:37.029Z</lastmod>
+    <data>
+        <display>
+        <title>ES6入门之let和const</title>
+        <pubTime>2017-08-25T13:55:50.000Z</pubTime>
         
         <tag>ES6</tag>
          
@@ -995,26 +1015,6 @@
         <pubTime>2017-06-07T14:55:38.000Z</pubTime>
         
         <tag>console</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2017/08/25/ES6%E5%85%A5%E9%97%A8%E4%B9%8Blet%E5%92%8Cconst/</loc>
-    <lastmod>2018-02-10T09:29:37.029Z</lastmod>
-    <data>
-        <display>
-        <title>ES6入门之let和const</title>
-        <pubTime>2017-08-25T13:55:50.000Z</pubTime>
-        
-        <tag>ES6</tag>
          
          
            
