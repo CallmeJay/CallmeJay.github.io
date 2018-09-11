@@ -154,11 +154,11 @@ links_title: Links
 #links_layout: inline
 links:
   #Title: http://example.com/
-  阮一峰: http://www.ruanyifeng.com/blog/archives.html
-  张鑫旭: http://www.zhangxinxu.com/
-  冴羽: https://github.com/mqyqingfeng/Blog
-  廖雪峰: https://www.liaoxuefeng.com/
-
+  mqyqingfeng: https://github.com/mqyqingfeng/Blog
+  Web-Series: https://github.com/wxyyxc1992/Web-Series
+  InterviewMap: https://github.com/InterviewMap/CS-Interview-Knowledge-Map
+  KieSun: https://github.com/KieSun/Front-end-knowledge
+  amandakelake: https://github.com/amandakelake/blog
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
@@ -178,7 +178,7 @@ toc:
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 #creative_commons: by-nc-sa
-creative_commons: zero
+creative_commons: by-nc-sa
 
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
