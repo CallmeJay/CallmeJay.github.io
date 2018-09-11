@@ -98,7 +98,8 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/message&queue">
 <meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/ajax%E7%BA%BF%E7%A8%8B">
-<meta property="og:updated_time" content="2018-02-10T09:29:37.031Z">
+<meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/event_loop.png">
+<meta property="og:updated_time" content="2018-09-10T07:43:22.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript:彻底理解同步、异步和事件循环（Event Loop）">
 <meta name="twitter:description" content="学习JavaScript的时候了解到JavaScript是单线程的，刚开始很疑惑，单线程怎么处理网络请求、文件读写等耗时操作呢？效率岂不是会很低？随着对这方面内容的了解和深入，知道了其中的奥秘。本篇文章就主要讲解一下JavaScript怎么处理异步问题。">
@@ -450,6 +451,43 @@
 <blockquote>
 <p>异步过程的回调函数，一定不在当前这一轮事件循环中执行。</p>
 </blockquote>
+<h3 id="宏队列和微队列"><a href="#宏队列和微队列" class="headerlink" title="宏队列和微队列"></a>宏队列和微队列</h3><p><strong>宏队列，macrotask，也叫tasks。</strong> 一些异步任务的回调会依次进入macro task queue，等待后续被调用，这些异步任务包括：</p>
+<ul>
+<li>setTimeout</li>
+<li>setInterval</li>
+<li>setImmediate (Node独有)</li>
+<li>requestAnimationFrame (浏览器独有)</li>
+<li>I/O</li>
+<li>UI rendering (浏览器独有)</li>
+</ul>
+<p><strong>微队列，microtask，也叫jobs。</strong> 另一些异步任务的回调会依次进入micro task queue，等待后续被调用，这些异步任务包括：</p>
+<ul>
+<li>process.nextTick (Node独有)</li>
+<li>Promise</li>
+<li>Object.observe</li>
+<li>MutationObserver</li>
+</ul>
+<p>（注：这里只针对浏览器和NodeJS）</p>
+<h3 id="浏览器的Event-Loop"><a href="#浏览器的Event-Loop" class="headerlink" title="浏览器的Event Loop"></a>浏览器的Event Loop</h3><p><img src="http://oonulpk6h.bkt.clouddn.com/event_loop.png" alt="event loop"></p>
+<p>这张图将浏览器的Event Loop完整的描述了出来，我来讲执行一个JavaScript代码的具体流程：</p>
+<ol>
+<li>执行全局Script同步代码，这些同步代码有一些是同步语句，有一些是异步语句（比如setTimeout等）；</li>
+<li>全局Script代码执行完毕后，调用栈Stack会清空；</li>
+<li>从微队列microtask queue中取出位于队首的回调任务，放入调用栈Stack中执行，执行完后microtask queue长度减1；</li>
+<li>继续取出位于队首的任务，放入调用栈Stack中执行，以此类推，直到直到把microtask queue中的所有任务都执行完毕。<strong>注意，如果在执行microtask的过程中，又产生了microtask，那么会加入到队列的末尾，也会在这个周期被调用执行</strong>；</li>
+<li>microtask queue中的所有任务都执行完毕，此时microtask queue为空队列，调用栈Stack也为空；</li>
+<li>取出宏队列macrotask queue中位于队首的任务，放入Stack中执行；</li>
+<li>执行完毕后，调用栈Stack为空；</li>
+<li>重复第3-7个步骤；</li>
+<li>重复第3-7个步骤；</li>
+<li>……</li>
+</ol>
+<p><strong>可以看到，这就是浏览器的事件循环Event Loop这里归纳3个重点：</strong></p>
+<ol>
+<li>宏队列macrotask一次只从队列中取一个任务执行，执行完后就去执行微任务队列中的任务；</li>
+<li>微任务队列中所有的任务都会被依次取出来执行，知道microtask queue为空；</li>
+<li>图中没有画UI rendering的节点，因为这个是由浏览器自行判断决定的，但是只要执行UI rendering，它的节点是在执行完所有的microtask之后，下一个macrotask之前，紧跟着执行UI render。</li>
+</ol>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>引用一篇文章中提到的考察JavaScript异步机制的面试题来具体介绍。</p>
 <blockquote>
 <p>执行下面这段代码，执行后，在 5s 内点击两下，过一段时间（&gt;5s）后，再点击两下，整个过程的输出结果是什么？</p>
@@ -637,7 +675,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -697,8 +735,8 @@
           
           
             <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/publicdomain/zero/1.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-zero.svg" alt="Creative Commons" />
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
               </a>
             </div>
           
@@ -713,19 +751,23 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.ruanyifeng.com/blog/archives.html" title="阮一峰" target="_blank">阮一峰</a>
+                    <a href="https://github.com/mqyqingfeng/Blog" title="mqyqingfeng" target="_blank">mqyqingfeng</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                    <a href="https://github.com/wxyyxc1992/Web-Series" title="Web-Series" target="_blank">Web-Series</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://github.com/mqyqingfeng/Blog" title="冴羽" target="_blank">冴羽</a>
+                    <a href="https://github.com/InterviewMap/CS-Interview-Knowledge-Map" title="InterviewMap" target="_blank">InterviewMap</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.liaoxuefeng.com/" title="廖雪峰" target="_blank">廖雪峰</a>
+                    <a href="https://github.com/KieSun/Front-end-knowledge" title="KieSun" target="_blank">KieSun</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/amandakelake/blog" title="amandakelake" target="_blank">amandakelake</a>
                   </li>
                 
               </ul>
@@ -747,7 +789,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步与异步"><span class="nav-number">1.</span> <span class="nav-text">同步与异步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同步"><span class="nav-number">1.1.</span> <span class="nav-text">同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步"><span class="nav-number">1.2.</span> <span class="nav-text">异步</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程与多线程"><span class="nav-number">2.</span> <span class="nav-text">单线程与多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS引擎"><span class="nav-number">2.2.</span> <span class="nav-text">JS引擎</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息队列与事件循环"><span class="nav-number">3.</span> <span class="nav-text">消息队列与事件循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">4.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步与事件"><span class="nav-number">5.</span> <span class="nav-text">异步与事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结一下"><span class="nav-number">6.</span> <span class="nav-text">总结一下</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步与异步"><span class="nav-number">1.</span> <span class="nav-text">同步与异步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同步"><span class="nav-number">1.1.</span> <span class="nav-text">同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步"><span class="nav-number">1.2.</span> <span class="nav-text">异步</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程与多线程"><span class="nav-number">2.</span> <span class="nav-text">单线程与多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS引擎"><span class="nav-number">2.2.</span> <span class="nav-text">JS引擎</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息队列与事件循环"><span class="nav-number">3.</span> <span class="nav-text">消息队列与事件循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宏队列和微队列"><span class="nav-number">4.</span> <span class="nav-text">宏队列和微队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的Event-Loop"><span class="nav-number">5.</span> <span class="nav-text">浏览器的Event Loop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">6.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步与事件"><span class="nav-number">7.</span> <span class="nav-text">异步与事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结一下"><span class="nav-number">8.</span> <span class="nav-text">总结一下</span></a></li></ol></div>
             
 
           </div>
