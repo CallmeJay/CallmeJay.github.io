@@ -23,7 +23,7 @@ typeof Symbol('Hi') // symbol
 
 **Null**表示值为空。一个变量我们可以将其赋值为null,表示当前没有值。
 
-* 隐士转换
+* 隐式转换
 
 ```js
 var name = 'Joey';
