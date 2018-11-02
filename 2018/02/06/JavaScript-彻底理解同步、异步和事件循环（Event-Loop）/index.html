@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/message&queue">
 <meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/ajax%E7%BA%BF%E7%A8%8B">
 <meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/event_loop.png">
-<meta property="og:updated_time" content="2018-09-10T07:43:22.083Z">
+<meta property="og:updated_time" content="2018-11-01T09:35:20.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript:彻底理解同步、异步和事件循环（Event Loop）">
 <meta name="twitter:description" content="学习JavaScript的时候了解到JavaScript是单线程的，刚开始很疑惑，单线程怎么处理网络请求、文件读写等耗时操作呢？效率岂不是会很低？随着对这方面内容的了解和深入，知道了其中的奥秘。本篇文章就主要讲解一下JavaScript怎么处理异步问题。">
@@ -453,6 +453,7 @@
 </blockquote>
 <h3 id="宏队列和微队列"><a href="#宏队列和微队列" class="headerlink" title="宏队列和微队列"></a>宏队列和微队列</h3><p><strong>宏队列，macrotask，也叫tasks。</strong> 一些异步任务的回调会依次进入macro task queue，等待后续被调用，这些异步任务包括：</p>
 <ul>
+<li>script</li>
 <li>setTimeout</li>
 <li>setInterval</li>
 <li>setImmediate (Node独有)</li>
@@ -485,7 +486,7 @@
 <p><strong>可以看到，这就是浏览器的事件循环Event Loop这里归纳3个重点：</strong></p>
 <ol>
 <li>宏队列macrotask一次只从队列中取一个任务执行，执行完后就去执行微任务队列中的任务；</li>
-<li>微任务队列中所有的任务都会被依次取出来执行，知道microtask queue为空；</li>
+<li>微任务队列中所有的任务都会被依次取出来执行，直到microtask queue为空；</li>
 <li>图中没有画UI rendering的节点，因为这个是由浏览器自行判断决定的，但是只要执行UI rendering，它的节点是在执行完所有的microtask之后，下一个macrotask之前，紧跟着执行UI render。</li>
 </ol>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>引用一篇文章中提到的考察JavaScript异步机制的面试题来具体介绍。</p>
@@ -686,7 +687,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -697,7 +698,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -768,6 +769,10 @@
                 
                   <li class="links-of-blogroll-item">
                     <a href="https://github.com/amandakelake/blog" title="amandakelake" target="_blank">amandakelake</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.kancloud.cn/dennis/tgjavascript/241800" title="JavaScript半知半解" target="_blank">JavaScript半知半解</a>
                   </li>
                 
               </ul>
