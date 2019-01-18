@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://callmejay.github.io/2019/01/14/JavaScript%E5%B8%B8%E7%94%A8%E5%87%A0%E7%A7%8D%E7%BB%A7%E6%89%BF%E6%96%B9%E6%A1%88/</loc>
+    
+    <lastmod>2019-01-18T07:29:00.092Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://callmejay.github.io/2018/10/30/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93(1)/</loc>
     
-    <lastmod>2018-11-02T07:18:16.041Z</lastmod>
+    <lastmod>2019-01-02T09:59:27.478Z</lastmod>
     
   </url>
   
@@ -170,14 +177,14 @@
   </url>
   
   <url>
-    <loc>https://callmejay.github.io/categories/index.html</loc>
+    <loc>https://callmejay.github.io/achives/index.html</loc>
     
     <lastmod>2018-02-10T09:29:37.039Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://callmejay.github.io/achives/index.html</loc>
+    <loc>https://callmejay.github.io/categories/index.html</loc>
     
     <lastmod>2018-02-10T09:29:37.039Z</lastmod>
     
@@ -219,6 +226,13 @@
   </url>
   
   <url>
+    <loc>https://callmejay.github.io/2018/02/07/%E5%AF%B9%E7%BC%93%E5%AD%98%E7%9A%84%E4%B8%80%E7%82%B9%E7%90%86%E8%A7%A3/</loc>
+    
+    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://callmejay.github.io/2017/07/11/%E5%B8%A6%E4%BD%A0%E8%B5%B0%E8%BF%9BGulp/</loc>
     
     <lastmod>2018-02-10T09:29:37.037Z</lastmod>
@@ -226,9 +240,9 @@
   </url>
   
   <url>
-    <loc>https://callmejay.github.io/2018/02/07/%E5%AF%B9%E7%BC%93%E5%AD%98%E7%9A%84%E4%B8%80%E7%82%B9%E7%90%86%E8%A7%A3/</loc>
+    <loc>https://callmejay.github.io/2018/02/07/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/</loc>
     
-    <lastmod>2018-02-10T09:29:37.037Z</lastmod>
+    <lastmod>2018-02-10T09:29:37.036Z</lastmod>
     
   </url>
   
@@ -247,9 +261,9 @@
   </url>
   
   <url>
-    <loc>https://callmejay.github.io/2018/02/07/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/</loc>
+    <loc>https://callmejay.github.io/2017/04/20/markdown/</loc>
     
-    <lastmod>2018-02-10T09:29:37.036Z</lastmod>
+    <lastmod>2018-02-10T09:29:37.035Z</lastmod>
     
   </url>
   
@@ -268,20 +282,6 @@
   </url>
   
   <url>
-    <loc>https://callmejay.github.io/2017/04/20/markdown/</loc>
-    
-    <lastmod>2018-02-10T09:29:37.035Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://callmejay.github.io/2017/04/19/githubPages/</loc>
-    
-    <lastmod>2018-02-10T09:29:37.034Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://callmejay.github.io/2016/02/07/hello-world/</loc>
     
     <lastmod>2018-02-10T09:29:37.034Z</lastmod>
@@ -289,9 +289,9 @@
   </url>
   
   <url>
-    <loc>https://callmejay.github.io/2017/05/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%A7%E6%89%BF/</loc>
+    <loc>https://callmejay.github.io/2017/04/19/githubPages/</loc>
     
-    <lastmod>2018-02-10T09:29:37.033Z</lastmod>
+    <lastmod>2018-02-10T09:29:37.034Z</lastmod>
     
   </url>
   
@@ -311,6 +311,13 @@
   
   <url>
     <loc>https://callmejay.github.io/2017/05/02/async%E8%AF%A6%E8%A7%A3(1)/</loc>
+    
+    <lastmod>2018-02-10T09:29:37.033Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://callmejay.github.io/2017/05/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%A7%E6%89%BF/</loc>
     
     <lastmod>2018-02-10T09:29:37.033Z</lastmod>
     
@@ -338,6 +345,13 @@
   </url>
   
   <url>
+    <loc>https://callmejay.github.io/2017/05/17/JavaScript%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E7%9A%846%E4%B8%AD%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2018-02-10T09:29:37.031Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://callmejay.github.io/2018/02/08/JavaScript%E4%B9%8B%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
     
     <lastmod>2018-02-10T09:29:37.031Z</lastmod>
@@ -346,13 +360,6 @@
   
   <url>
     <loc>https://callmejay.github.io/2017/08/15/JavaScript%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E8%BD%AE%E6%92%AD/</loc>
-    
-    <lastmod>2018-02-10T09:29:37.031Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://callmejay.github.io/2017/05/17/JavaScript%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E7%9A%846%E4%B8%AD%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-02-10T09:29:37.031Z</lastmod>
     

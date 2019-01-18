@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Jay&#39;s Blog">
 <meta property="og:description" content="new 语法糖的实现1, 创建一个新的对象2, 链接到原型3, 绑定this4, 返回新的对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-02T07:18:16.041Z">
+<meta property="og:updated_time" content="2019-01-02T09:59:27.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试知识总结（1)">
 <meta name="twitter:description" content="new 语法糖的实现1, 创建一个新的对象2, 链接到原型3, 绑定this4, 返回新的对象">
@@ -355,11 +355,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
 
           
 
@@ -400,6 +395,16 @@
 <p>接下来对 <code>defineReactive</code>改造</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defineReactive</span>(<span class="params">data,key,value</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">  observe(value);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> dp = <span class="keyword">new</span> Dep();</span><br><span class="line"></span><br><span class="line">  <span class="built_in">Object</span>.defineProperty(data,key,&#123;</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span>,</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span> <span class="title">reactiveGetter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'get value'</span>)</span><br><span class="line">      <span class="comment">// 将 Watcher 添加到订阅</span></span><br><span class="line">      <span class="keyword">if</span>(Dep.target)&#123;</span><br><span class="line">        dp.addSub(Dep.target);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> value;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    set: <span class="function"><span class="keyword">function</span> <span class="title">reactiveSetter</span>(<span class="params">newVal</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'set value'</span>)</span><br><span class="line">      value = newVal;</span><br><span class="line">      <span class="comment">// 执行 watcher 的 update 方法</span></span><br><span class="line">      dp.notify();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上实现了一个简易的双向绑定，核心思路就是手动触发一次属性的 getter 来实现发布订阅的添加。</p>
+<h3 id="前端缓存"><a href="#前端缓存" class="headerlink" title="前端缓存"></a>前端缓存</h3><p>在介绍缓存的时候，我们习惯将缓存分为强缓存和协商缓存两种。两者的主要区别是使用本地缓存的时候，是否需要向服务器验证本地缓存是否依旧有效。顾名思义，协商缓存，就是需要和服务器进行协商，最终确定是否使用本地缓存。</p>
+<h3 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h3><p>强制缓存判断HTTP首部字段：Cache-control，Expires。</p>
+<p>Expires是一个绝对时间，即服务器时间。浏览器检查当前时间，如果还没到失效时间就直接使用缓存文件。但是该方法存在一个问题：服务器时间与客户端时间可能不一致。因此该字段已经很少使用，是HTTP1.0标准下的字段。</p>
+<p>Cache-control中的max-age保存一个相对时间。例如Cache-Control: max-age = 484200，表示浏览器收到文件后，缓存在484200s内均有效。如果同时存在Cache-control和Expires，浏览器总是使用Cache-control。</p>
+<h3 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h3><p>协商缓存通过HTTP的Last-Modified，Etag字段进行判断。</p>
+<p>Last-Modified是第一次请求资源时，服务器返回的字段，表示最后一次更新的时间。下一次浏览器请求资源时就发送If-Modified-Since字段。服务器用本地Last-Modified时间与If-Modified-Since时间比较，如果不一致则认为缓存已过期并返回新资源给浏览器；如果时间一致则发送304状态码，让浏览器继续使用缓存。</p>
+<p>Etag：资源的实体标识（哈希字符串），当资源内容更新时，Etag会改变。服务器会判断Etag是否发生变化，如果变化则返回新资源，否则返回304。</p>
+<blockquote>
+<p>附<a href="https://juejin.im/post/5c136bd16fb9a049d37efc47" target="_blank" rel="noopener">前端缓存最佳实践</a></p>
+</blockquote>
 
       
     </div>
@@ -468,6 +473,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/14/JavaScript常用几种继承方案/" rel="prev" title="JavaScript常用几种继承方案">
+                JavaScript常用几种继承方案 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -553,7 +562,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -671,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#new-语法糖的实现"><span class="nav-number">1.</span> <span class="nav-text">new 语法糖的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟实现Call-和-apply"><span class="nav-number">2.</span> <span class="nav-text">模拟实现Call 和 apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue双向绑定的简单实现（数据劫持和发布订阅）"><span class="nav-number">3.</span> <span class="nav-text">Vue双向绑定的简单实现（数据劫持和发布订阅）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#new-语法糖的实现"><span class="nav-number">1.</span> <span class="nav-text">new 语法糖的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟实现Call-和-apply"><span class="nav-number">2.</span> <span class="nav-text">模拟实现Call 和 apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue双向绑定的简单实现（数据劫持和发布订阅）"><span class="nav-number">3.</span> <span class="nav-text">Vue双向绑定的简单实现（数据劫持和发布订阅）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端缓存"><span class="nav-number">4.</span> <span class="nav-text">前端缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制缓存"><span class="nav-number">5.</span> <span class="nav-text">强制缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协商缓存"><span class="nav-number">6.</span> <span class="nav-text">协商缓存</span></a></li></ol></div>
             
 
           </div>
@@ -698,7 +707,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -722,26 +731,6 @@
 
 
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
 
 
 
