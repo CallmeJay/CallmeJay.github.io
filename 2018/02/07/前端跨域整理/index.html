@@ -81,25 +81,25 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jay's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml" />
 
 
 
 
 
 
-<meta name="description" content="什么是跨域？ 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦">
+<meta name="description" content="什么是跨域？ 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入 iframe 或是 ajax 应用上带来了">
 <meta name="keywords" content="跨域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端跨域整理">
 <meta property="og:url" content="https://callmejay.github.io/2018/02/07/前端跨域整理/index.html">
-<meta property="og:site_name" content="Jay&#39;s Blog">
-<meta property="og:description" content="什么是跨域？ 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦">
+<meta property="og:site_name" content="Jay Bein&#39;s Blog">
+<meta property="og:description" content="什么是跨域？ 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入 iframe 或是 ajax 应用上带来了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-10T09:29:37.036Z">
+<meta property="og:updated_time" content="2019-02-18T10:48:28.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端跨域整理">
-<meta name="twitter:description" content="什么是跨域？ 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦">
+<meta name="twitter:description" content="什么是跨域？ 跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入 iframe 或是 ajax 应用上带来了">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title>前端跨域整理 | Jay's Blog</title>
+  <title>前端跨域整理 | Jay Bein's Blog</title>
   
 
 
@@ -165,12 +165,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jay's Blog</span>
+        <span class="site-title">Jay Bein's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">知其然，知其所以然。</h1>
+        <h1 class="site-subtitle" itemprop="description">有事做，有人爱，有所期待。</h1>
       
   </div>
 
@@ -258,22 +258,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -315,7 +319,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
+      <meta itemprop="name" content="Jay Bein's Blog">
     </span>
 
     
@@ -396,76 +400,88 @@
 
       
         <h3 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h3><blockquote>
-<p>跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。所以我们要通过一些方法使本域的js能够操作其他域的页面对象或者使其他域的js能操作本域的页面对象（iframe之间）。</p>
+<p>跨域一词从字面意思看，就是跨域名嘛，但实际上跨域的范围绝对不止那么狭隘。具体概念如下：只要协议、域名、端口有任何一个不同，都被当作是不同的域。之所以会产生跨域这个问题呢，其实也很容易想明白，要是随便引用外部文件，不同标签下的页面引用类似的彼此的文件，浏览器很容易懵逼的，安全也得不到保障了就。什么事，都是安全第一嘛。但在安全限制的同时也给注入 iframe 或是 ajax 应用上带来了不少麻烦。所以我们要通过一些方法使本域的 js 能够操作其他域的页面对象或者使其他域的 js 能操作本域的页面对象（iframe 之间）。</p>
 </blockquote>
 <a id="more"></a>
-<p>下面是具体的跨域情况详解：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">URL                      说明       是否允许通信</span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://www.a.com/b.js     同一域名下   允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/lab/a.js</span><br><span class="line">http://www.a.com/script/b.js 同一域名下不同文件夹 允许</span><br><span class="line"></span><br><span class="line">http://www.a.com:8000/a.js</span><br><span class="line">http://www.a.com/b.js     同一域名，不同端口  不允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">https://www.a.com/b.js 同一域名，不同协议 不允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://70.32.92.74/b.js 域名和域名对应ip 不允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://script.a.com/b.js 主域相同，子域不同 不允许（cookie这种情况下也不允许访问）</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://a.com/b.js 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）</span><br><span class="line"></span><br><span class="line">http://www.cnblogs.com/a.js</span><br><span class="line">http://www.a.com/b.js 不同域名 不允许</span><br></pre></td></tr></table></figure></p>
+<p>下面是具体的跨域情况详解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">URL                      说明       是否允许通信</span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://www.a.com/b.js     同一域名下   允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/lab/a.js</span><br><span class="line">http://www.a.com/script/b.js 同一域名下不同文件夹 允许</span><br><span class="line"></span><br><span class="line">http://www.a.com:8000/a.js</span><br><span class="line">http://www.a.com/b.js     同一域名，不同端口  不允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">https://www.a.com/b.js 同一域名，不同协议 不允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://70.32.92.74/b.js 域名和域名对应ip 不允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://script.a.com/b.js 主域相同，子域不同 不允许（cookie这种情况下也不允许访问）</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://a.com/b.js 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）</span><br><span class="line"></span><br><span class="line">http://www.cnblogs.com/a.js</span><br><span class="line">http://www.a.com/b.js 不同域名 不允许</span><br></pre></td></tr></table></figure>
 <p><strong>这里我们需要注意两点:</strong></p>
 <ul>
 <li>如果是协议和端口造成的跨域问题“前台”是无能为力的；</li>
-<li>在跨域问题上，域仅仅是通过“URL的首部”来识别而不会去尝试判断相同的ip地址对应着两个域或两个域是否在同一个ip上。(“URL的首部”指window.location.protocol +window.location.host，也可以理解为“Domains, protocols and ports must match”。)</li>
+<li>在跨域问题上，域仅仅是通过“URL 的首部”来识别而不会去尝试判断相同的 ip 地址对应着两个域或两个域是否在同一个 ip 上。(“URL 的首部”指 window.location.protocol +window.location.host，也可以理解为“Domains, protocols and ports must match”。)</li>
 </ul>
-<h3 id="通过document-domain跨域"><a href="#通过document-domain跨域" class="headerlink" title="通过document.domain跨域"></a>通过document.domain跨域</h3><blockquote>
-<p>前面说过了，浏览器有一个同源策略，其限制之一是不能通过ajax的方法去请求不同源中的文档。第二个限制是浏览器中不同域的框架之间是不能进行js的交互操作的。不同的框架之间是可以获取window对象的，但却无法获取相应的属性和方法。比如，有一个页面，它的地址是<code>www.damonare.cn/a.html</code> ， 在这个页面里面有一个iframe，它的src是<code>damonare.cn/b.html</code>, 很显然，这个页面与它里面的iframe框架是不同域的，所以我们是无法通过在页面中书写js代码来获取iframe中的东西的：</p>
+<h3 id="通过-document-domain-跨域"><a href="#通过-document-domain-跨域" class="headerlink" title="通过 document.domain 跨域"></a>通过 document.domain 跨域</h3><blockquote>
+<p>前面说过了，浏览器有一个同源策略，其限制之一是不能通过 ajax 的方法去请求不同源中的文档。第二个限制是浏览器中不同域的框架之间是不能进行 js 的交互操作的。不同的框架之间是可以获取 window 对象的，但却无法获取相应的属性和方法。比如，有一个页面，它的地址是<code>www.damonare.cn/a.html</code> ， 在这个页面里面有一个 iframe，它的 src 是<code>damonare.cn/b.html</code>, 很显然，这个页面与它里面的 iframe 框架是不同域的，所以我们是无法通过在页面中书写 js 代码来获取 iframe 中的东西的：</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'ifame'</span>);</span><br><span class="line">        <span class="keyword">var</span> win = iframe.contentWindow;<span class="comment">//可以获取到iframe里的window对象，但该window对象的属性和方法几乎是不可用的</span></span><br><span class="line">        <span class="keyword">var</span> doc = win.document;<span class="comment">//这里获取不到iframe里的document对象</span></span><br><span class="line">        <span class="keyword">var</span> name = win.name;<span class="comment">//这里同样获取不到window对象的name属性</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;iframe id = "iframe" src="http:/</span><span class="regexp">/damonare.cn/</span>b.html<span class="string">" onload = "</span>test()<span class="string">"&gt;&lt;/iframe&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这个时候，<code>document.domain</code>就可以派上用场了，我们只要把<code>www.damonare.cn/a.html</code>和<code>damonare.cn/b.html</code>这两个页面的<code>document.domain</code>都设成相同的域名就可以了。但要注意的是，<code>document.domain</code>的设置是有限制的，我们只能把<code>document.domain</code>设置成自身或更高一级的父域，且主域必须相同。</p>
 </blockquote>
-<p>在页面<code>www.damonare.cn/a.html</code>中设置<code>document.domain</code>:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe id = <span class="string">"iframe"</span> src=<span class="string">"http://damonare.cn/b.html"</span> onload = <span class="string">"test()"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="built_in">document</span>.domain = <span class="string">'damonare.cn'</span>;<span class="comment">//设置成主域</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>).contentWindow);<span class="comment">//contentWindow 可取得子窗口的 window 对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>在页面<code>damonare.cn/b.html</code>中也设置<code>document.domain</code>:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="built_in">document</span>.domain = <span class="string">'damonare.cn'</span>;<span class="comment">//在iframe载入这个页面也设置document.domain，使之与主页面的document.domain相同</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在页面<code>www.damonare.cn/a.html</code>中设置<code>document.domain</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe id = <span class="string">"iframe"</span> src=<span class="string">"http://damonare.cn/b.html"</span> onload = <span class="string">"test()"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="built_in">document</span>.domain = <span class="string">'damonare.cn'</span>;<span class="comment">//设置成主域</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>).contentWindow);<span class="comment">//contentWindow 可取得子窗口的 window 对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在页面<code>damonare.cn/b.html</code>中也设置<code>document.domain</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  <span class="built_in">document</span>.domain =</span><br><span class="line">  <span class="string">'damonare.cn'</span>;<span class="comment">//在iframe载入这个页面也设置document.domain，使之与主页面的document.domain相同</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>修改<code>document.domain</code>的方法只适用于不同子域的框架间的交互。</strong></p>
-<h3 id="通过location-hash跨域"><a href="#通过location-hash跨域" class="headerlink" title="通过location.hash跨域"></a>通过location.hash跨域</h3><blockquote>
-<p>因为父窗口可以对iframe进行URL读写，iframe也可以读写父窗口的URL，URL有一部分被称为hash，就是#号及其后面的字符，它一般用于浏览器锚点定位，Server端并不关心这部分，应该说HTTP请求过程中不会携带hash，所以这部分的修改不会产生HTTP请求，但是会产生浏览器历史记录。此方法的原理就是改变URL的hash部分来进行双向通信。每个window通过改变其他 window的location来发送消息（由于两个页面不在同一个域下IE、Chrome不允许修改parent.location.hash的值，所以要借助于父窗口域名下的一个代理iframe），并通过监听自己的URL的变化来接收消息。这个方式的通信会造成一些不必要的浏览器历史记录，而且有些浏览器不支持onhashchange事件，需要轮询来获知URL的改变，最后，这样做也存在缺点，诸如数据直接暴露在了url中，数据容量和类型都有限等。</p>
+<h3 id="通过-location-hash-跨域"><a href="#通过-location-hash-跨域" class="headerlink" title="通过 location.hash 跨域"></a>通过 location.hash 跨域</h3><blockquote>
+<p>因为父窗口可以对 iframe 进行 URL 读写，iframe 也可以读写父窗口的 URL，URL 有一部分被称为 hash，就是#号及其后面的字符，它一般用于浏览器锚点定位，Server 端并不关心这部分，应该说 HTTP 请求过程中不会携带 hash，所以这部分的修改不会产生 HTTP 请求，但是会产生浏览器历史记录。此方法的原理就是改变 URL 的 hash 部分来进行双向通信。每个 window 通过改变其他 window 的 location 来发送消息（由于两个页面不在同一个域下 IE、Chrome 不允许修改 parent.location.hash 的值，所以要借助于父窗口域名下的一个代理 iframe），并通过监听自己的 URL 的变化来接收消息。这个方式的通信会造成一些不必要的浏览器历史记录，而且有些浏览器不支持 onhashchange 事件，需要轮询来获知 URL 的改变，最后，这样做也存在缺点，诸如数据直接暴露在了 url 中，数据容量和类型都有限等。</p>
 </blockquote>
-<p>假如父页面是baidu.com/a.html,iframe嵌入的页面为google.com/b.html（此处省略了域名等url属性），要实现此两个页面间的通信可以通过以下方法。<br>1, a.html传送数据到b.html</p>
+<p>假如父页面是 baidu.com/a.html,iframe 嵌入的页面为 google.com/b.html（此处省略了域名等 url 属性），要实现此两个页面间的通信可以通过以下方法。<br>1, a.html 传送数据到 b.html</p>
 <ul>
-<li>a.html下修改iframe的src为google.com/b.html#paco</li>
-<li>b.html监听到url发生变化，触发相应操作</li>
+<li>a.html 下修改 iframe 的 src 为 google.com/b.html#paco</li>
+<li>b.html 监听到 url 发生变化，触发相应操作</li>
 </ul>
-<p>2, b.html传送数据到a.html，由于两个页面不在同一个域下IE、Chrome不允许修改parent.location.hash的值，所以要借助于父窗口域名下的一个代理iframe</p>
+<p>2, b.html 传送数据到 a.html，由于两个页面不在同一个域下 IE、Chrome 不允许修改 parent.location.hash 的值，所以要借助于父窗口域名下的一个代理 iframe</p>
 <ul>
-<li>b.html下创建一个隐藏的iframe，此iframe的src是baidu.com域下的，并挂上要传送的hash数据，如src=”www.baidu.com/proxy.html#…”</li>
-<li>proxy.html监听到url发生变化，修改a.html的url（因为a.html和proxy.html同域，所以proxy.html可修改a.html的url hash）</li>
-<li>a.html监听到url发生变化，触发相应操作</li>
+<li>b.html 下创建一个隐藏的 iframe，此 iframe 的 src 是 baidu.com 域下的，并挂上要传送的 hash 数据，如 src=”www.baidu.com/proxy.html#…”</li>
+<li>proxy.html 监听到 url 发生变化，修改 a.html 的 url（因为 a.html 和 proxy.html 同域，所以 proxy.html 可修改 a.html 的 url hash）</li>
+<li>a.html 监听到 url 发生变化，触发相应操作</li>
 </ul>
-<p>b.html页面的关键代码如下:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;  </span><br><span class="line">    parent.location.hash = <span class="string">'data'</span>;  </span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;  </span><br><span class="line">    <span class="comment">// ie、chrome的安全机制无法修改parent.location.hash，  </span></span><br><span class="line">    <span class="keyword">var</span> ifrproxy = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);  </span><br><span class="line">    ifrproxy.style.display = <span class="string">'none'</span>;  </span><br><span class="line">    ifrproxy.src = <span class="string">"http://www.baidu.com/proxy.html#data"</span>;  </span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(ifrproxy);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>proxy.html页面的关键代码如下 :<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//因为parent.parent（即baidu.com/a.html）和baidu.com/proxy.html属于同一个域，所以可以改变其location.hash的值  </span></span><br><span class="line">parent.parent.location.hash = self.location.hash.substring(<span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
-<h3 id="通过HTML5的postMessage方法跨域"><a href="#通过HTML5的postMessage方法跨域" class="headerlink" title="通过HTML5的postMessage方法跨域"></a>通过HTML5的postMessage方法跨域</h3><blockquote>
-<p>高级浏览器Internet Explorer 8+, chrome，Firefox , Opera  和 Safari 都将支持这个功能。这个功能主要包括接受信息的”message”事件和发送消息的”postMessage”方法。</p>
+<p>b.html 页面的关键代码如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  parent.location.hash = <span class="string">"data"</span>;</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="comment">// ie、chrome的安全机制无法修改parent.location.hash，</span></span><br><span class="line">  <span class="keyword">var</span> ifrproxy = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">  ifrproxy.style.display = <span class="string">"none"</span>;</span><br><span class="line">  ifrproxy.src = <span class="string">"http://www.baidu.com/proxy.html#data"</span>;</span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(ifrproxy);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>proxy.html 页面的关键代码如下 :</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//因为parent.parent（即baidu.com/a.html）和baidu.com/proxy.html属于同一个域，所以可以改变其location.hash的值</span></span><br><span class="line">parent.parent.location.hash = self.location.hash.substring(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="通过-HTML5-的-postMessage-方法跨域"><a href="#通过-HTML5-的-postMessage-方法跨域" class="headerlink" title="通过 HTML5 的 postMessage 方法跨域"></a>通过 HTML5 的 postMessage 方法跨域</h3><blockquote>
+<p>高级浏览器 Internet Explorer 8+, chrome，Firefox , Opera 和 Safari 都将支持这个功能。这个功能主要包括接受信息的”message”事件和发送消息的”postMessage”方法。</p>
 </blockquote>
-<p>比如damonare.cn域的A页面通过iframe嵌入了一个google.com域的B页面，可以通过以下方法实现A和B的通信。</p>
-<p>A页面通过postMessage方法发送消息：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.getElementById(<span class="string">'ifr'</span>);</span><br><span class="line">    <span class="keyword">var</span> targetOrigin = <span class="string">'http://www.google.com'</span>;</span><br><span class="line">    ifr.contentWindow.postMessage(<span class="string">'hello'</span>,targetOrigin);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>postMessage的使用方法：</strong></p>
+<p>比如 damonare.cn 域的 A 页面通过 iframe 嵌入了一个 google.com 域的 B 页面，可以通过以下方法实现 A 和 B 的通信。</p>
+<p>A 页面通过 postMessage 方法发送消息：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> ifr = <span class="built_in">document</span>.getElementById(<span class="string">"ifr"</span>);</span><br><span class="line">  <span class="keyword">var</span> targetOrigin = <span class="string">"http://www.google.com"</span>;</span><br><span class="line">  ifr.contentWindow.postMessage(<span class="string">"hello"</span>, targetOrigin);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>postMessage 的使用方法：</strong></p>
 <ul>
 <li>otherWindow.postMessage(message, targetOrigin);</li>
-<li>otherWindow:指目标窗口，也就是给哪个window发消息，是 window.frames属性的成员或者由window.open方法创建的窗口</li>
-<li>message:是要发送的消息，类型为String、Object(IE8、9 不支持)<br>targetOrigin:是限定消息接收范围，不限制请使用 ‘*’</li>
+<li>otherWindow:指目标窗口，也就是给哪个 window 发消息，是 window.frames 属性的成员或者由 window.open 方法创建的窗口</li>
+<li>message:是要发送的消息，类型为 String、Object(IE8、9 不支持)<br>targetOrigin:是限定消息接收范围，不限制请使用 ‘*’</li>
 </ul>
-<p>B页面通过message事件监听并接受消息:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = ev.data; <span class="comment">// 消息</span></span><br><span class="line">    <span class="keyword">var</span> origin = ev.origin; <span class="comment">// 消息来源地址</span></span><br><span class="line">    <span class="keyword">var</span> source = ev.source; <span class="comment">// 源window对象 </span></span><br><span class="line">    <span class="keyword">if</span>(origin == <span class="string">'http://www.baidu.com'</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data); <span class="comment">// hello</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.addEventListener != <span class="string">'undefined'</span>) &#123;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>,onmessage,<span class="literal">false</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">window</span>.attachEvent != <span class="string">'undefined'</span>) &#123; <span class="comment">// ie</span></span><br><span class="line">    <span class="built_in">window</span>.attachEvent(<span class="string">'message'</span>,onmessage);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>同理，也可以B页面发送消息，然后A页面监听并接受消息。</p>
-<h3 id="通过jsonp跨域"><a href="#通过jsonp跨域" class="headerlink" title="通过jsonp跨域"></a>通过jsonp跨域</h3><blockquote>
-<p>刚才说的这几种都是双向通信的，即两个iframe，页面与iframe或是页面与页面之间的，下面说几种单项跨域的（一般用来获取数据），因为通过script标签引入的js是不受同源策略的限制的。所以我们可以通过script标签引入一个js或者是一个其他后缀形式（如php，jsp等）的文件，此文件返回一个js函数的调用。</p>
+<p>B 页面通过 message 事件监听并接受消息:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> data = ev.data; <span class="comment">// 消息</span></span><br><span class="line">  <span class="keyword">var</span> origin = ev.origin; <span class="comment">// 消息来源地址</span></span><br><span class="line">  <span class="keyword">var</span> source = ev.source; <span class="comment">// 源window对象</span></span><br><span class="line">  <span class="keyword">if</span> (origin == <span class="string">"http://www.baidu.com"</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data); <span class="comment">// hello</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.addEventListener != <span class="string">"undefined"</span>) &#123;</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">"message"</span>, onmessage, <span class="literal">false</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.attachEvent != <span class="string">"undefined"</span>) &#123;</span><br><span class="line">  <span class="comment">// ie</span></span><br><span class="line">  <span class="built_in">window</span>.attachEvent(<span class="string">"message"</span>, onmessage);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同理，也可以 B 页面发送消息，然后 A 页面监听并接受消息。</p>
+<h3 id="通过-jsonp-跨域"><a href="#通过-jsonp-跨域" class="headerlink" title="通过 jsonp 跨域"></a>通过 jsonp 跨域</h3><blockquote>
+<p>刚才说的这几种都是双向通信的，即两个 iframe，页面与 iframe 或是页面与页面之间的，下面说几种单项跨域的（一般用来获取数据），因为通过 script 标签引入的 js 是不受同源策略的限制的。所以我们可以通过 script 标签引入一个 js 或者是一个其他后缀形式（如 php，jsp 等）的文件，此文件返回一个 js 函数的调用。</p>
 </blockquote>
-<p>比如，有个a.html页面，它里面的代码需要利用ajax获取一个不同域上的json数据，假设这个json数据地址是damonare.cn/data.php, 那么a.html中的代码就可以这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dosomething</span>(<span class="params">jsondata</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//处理获得的json数据</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="http:/</span><span class="regexp">/example.com/</span>data.php?callback=dosomething<span class="string">"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>我们看到获取数据的地址后面还有一个callback参数，按惯例是用这个参数名，但是你用其他的也一样。当然如果获取数据的jsonp地址页面不是你自己能控制的，就得按照提供数据的那一方的规定格式来操作了。</p>
-<p>因为是当做一个js文件来引入的，所以<code>damonare.cn/data.php</code>返回的必须是一个能执行的js文件，所以这个页面的php代码可能是这样的(一定要和后端约定好哦):<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$callback = $_GET[<span class="string">'callback'</span>];<span class="comment">//得到回调函数名</span></span><br><span class="line">$data = array(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>);<span class="comment">//要返回的数据</span></span><br><span class="line">echo $callback.<span class="string">'('</span>.json_encode($data).<span class="string">')'</span>;<span class="comment">//输出</span></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>比如，有个 a.html 页面，它里面的代码需要利用 ajax 获取一个不同域上的 json 数据，假设这个 json 数据地址是 damonare.cn/data.php, 那么 a.html 中的代码就可以这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dosomething</span>(<span class="params">jsondata</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//处理获得的json数据</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="http:/</span><span class="regexp">/example.com/</span>data.php?callback=dosomething<span class="string">"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我们看到获取数据的地址后面还有一个 callback 参数，按惯例是用这个参数名，但是你用其他的也一样。当然如果获取数据的 jsonp 地址页面不是你自己能控制的，就得按照提供数据的那一方的规定格式来操作了。</p>
+<p>因为是当做一个 js 文件来引入的，所以<code>damonare.cn/data.php</code>返回的必须是一个能执行的 js 文件，所以这个页面的 php 代码可能是这样的(一定要和后端约定好哦):</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$callback = $_GET[<span class="string">'callback'</span>];<span class="comment">//得到回调函数名</span></span><br><span class="line">$data = array(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>);<span class="comment">//要返回的数据</span></span><br><span class="line">echo $callback.<span class="string">'('</span>.json_encode($data).<span class="string">')'</span>;<span class="comment">//输出</span></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <p>最终，输出结果为：dosomething([‘a’,’b’,’c’]);</p>
-<p>如果你的页面使用jquery，那么通过它封装的方法就能很方便的来进行jsonp操作了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    $.getJSON(<span class="string">'http://example.com/data.php?callback=?,function(jsondata)'</span>)&#123;</span><br><span class="line">        <span class="comment">//处理获得的json数据</span></span><br><span class="line">    &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>jquery会自动生成一个全局函数来替换callback=?中的问号，之后获取到数据后又会自动销毁，实际上就是起一个临时代理函数的作用。$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。</p>
-<p>JSONP的优缺点：</p>
+<p>如果你的页面使用 jquery，那么通过它封装的方法就能很方便的来进行 jsonp 操作了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  $.getJSON(<span class="string">'http://example.com/data.php?callback=?,function(jsondata)'</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//处理获得的json数据</span></span><br><span class="line">  &#125;</span><br><span class="line">  );</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>jquery 会自动生成一个全局函数来替换 callback=?中的问号，之后获取到数据后又会自动销毁，实际上就是起一个临时代理函数的作用。\$.getJSON 方法会自动判断是否跨域，不跨域的话，就调用普通的 ajax 方法；跨域的话，则会以异步加载 js 文件的形式来调用 jsonp 的回调函数。</p>
+<p>JSONP 的优缺点：</p>
 <ul>
-<li>JSONP的优点是：它不像XMLHttpRequest对象实现的Ajax请求那样受到同源策略的限制；它的兼容性更好，在更加古老的浏览器中都可以运行，不需要XMLHttpRequest或ActiveX的支持；并且在请求完毕后可以通过调用callback的方式回传结果。</li>
-<li>JSONP的缺点则是：它只支持GET请求而不支持POST等其它类型的HTTP请求；它只支持跨域HTTP请求这种情况，不能解决不同域的两个页面之间如何进行JavaScript调用的问题。</li>
+<li>JSONP 的优点是：它不像 XMLHttpRequest 对象实现的 Ajax 请求那样受到同源策略的限制；它的兼容性更好，在更加古老的浏览器中都可以运行，不需要 XMLHttpRequest 或 ActiveX 的支持；并且在请求完毕后可以通过调用 callback 的方式回传结果。</li>
+<li>JSONP 的缺点则是：它只支持 GET 请求而不支持 POST 等其它类型的 HTTP 请求；它只支持跨域 HTTP 请求这种情况，不能解决不同域的两个页面之间如何进行 JavaScript 调用的问题。</li>
 </ul>
-<h3 id="通过CORS跨域"><a href="#通过CORS跨域" class="headerlink" title="通过CORS跨域"></a>通过CORS跨域</h3><blockquote>
-<p>CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。<strong>CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</strong>目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。</p>
+<h3 id="通过-CORS-跨域"><a href="#通过-CORS-跨域" class="headerlink" title="通过 CORS 跨域"></a>通过 CORS 跨域</h3><blockquote>
+<p>CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。<strong>CORS 背后的基本思想就是使用自定义的 HTTP 头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</strong>目前，所有浏览器都支持该功能，IE 浏览器不能低于 IE10。整个 CORS 通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS 通信与同源的 AJAX 通信没有差别，代码完全一样。浏览器一旦发现 AJAX 请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。</p>
 </blockquote>
-<p><strong>因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</strong></p>
-<p>平时的ajax请求可能是这样的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">'text/javascript'</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> xhr = XMLHttpRequest();</span><br><span class="line">    xhr.open(<span class="string">'GET'</span>,<span class="string">'/getSomething'</span>,<span class="literal">true</span>);</span><br><span class="line">    xhr.send();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>以上getSomething部分是相对路径，如果我们要使用CORS，相关Ajax代码可能如下所示：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">'text/javascript'</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> xhr = XMLHttpRequest();</span><br><span class="line">    xhr.open(<span class="string">'GET'</span>,<span class="string">'http://jaybein.site/getSomething'</span>,<span class="literal">true</span>);</span><br><span class="line">    xhr.send();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>因此，实现 CORS 通信的关键是服务器。只要服务器实现了 CORS 接口，就可以跨源通信。</strong></p>
+<p>平时的 ajax 请求可能是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  <span class="keyword">var</span> xhr = XMLHttpRequest(); xhr.open(<span class="string">'GET'</span>,<span class="string">'/getSomething'</span>,<span class="literal">true</span>); xhr.send();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以上 getSomething 部分是相对路径，如果我们要使用 CORS，相关 Ajax 代码可能如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  <span class="keyword">var</span> xhr = XMLHttpRequest();</span><br><span class="line">  xhr.open(<span class="string">'GET'</span>,<span class="string">'http://jaybein.site/getSomething'</span>,<span class="literal">true</span>); xhr.send();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p>代码与之前的区别就在于相对路径换成了其他域的绝对路径，也就是你要跨域访问的接口地址。</p>
-<p>服务器端对于CORS的支持，主要就是通过设置<code>Access-Control-Allow-Origin</code>来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。关于CORS更多了解可以看下阮一峰老师的这一篇文章：<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">跨域资源共享CORS详解</a></p>
+<p>服务器端对于 CORS 的支持，主要就是通过设置<code>Access-Control-Allow-Origin</code>来进行的。如果浏览器检测到相应的设置，就可以允许 Ajax 进行跨域的访问。关于 CORS 更多了解可以看下阮一峰老师的这一篇文章：<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">跨域资源共享 CORS 详解</a></p>
 
       
     </div>
@@ -623,7 +639,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -634,7 +650,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -645,7 +661,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -719,7 +735,7 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.kancloud.cn/dennis/tgjavascript/241800" title="JavaScript半知半解" target="_blank">JavaScript半知半解</a>
+                    <a href="https://github.com/yygmind/blog" title="木易杨" target="_blank">木易杨</a>
                   </li>
                 
               </ul>
@@ -741,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是跨域？"><span class="nav-number">1.</span> <span class="nav-text">什么是跨域？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过document-domain跨域"><span class="nav-number">2.</span> <span class="nav-text">通过document.domain跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过location-hash跨域"><span class="nav-number">3.</span> <span class="nav-text">通过location.hash跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过HTML5的postMessage方法跨域"><span class="nav-number">4.</span> <span class="nav-text">通过HTML5的postMessage方法跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过jsonp跨域"><span class="nav-number">5.</span> <span class="nav-text">通过jsonp跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过CORS跨域"><span class="nav-number">6.</span> <span class="nav-text">通过CORS跨域</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是跨域？"><span class="nav-number">1.</span> <span class="nav-text">什么是跨域？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-document-domain-跨域"><span class="nav-number">2.</span> <span class="nav-text">通过 document.domain 跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-location-hash-跨域"><span class="nav-number">3.</span> <span class="nav-text">通过 location.hash 跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-HTML5-的-postMessage-方法跨域"><span class="nav-number">4.</span> <span class="nav-text">通过 HTML5 的 postMessage 方法跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-jsonp-跨域"><span class="nav-number">5.</span> <span class="nav-text">通过 jsonp 跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-CORS-跨域"><span class="nav-number">6.</span> <span class="nav-text">通过 CORS 跨域</span></a></li></ol></div>
             
 
           </div>
@@ -947,324 +963,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

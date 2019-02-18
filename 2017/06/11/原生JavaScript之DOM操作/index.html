@@ -81,25 +81,25 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jay's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml" />
 
 
 
 
 
 
-<meta name="description" content="直接获取元素1234document.getElementById(selector); // 获取指定id的元素document.getElementsByClassName(selector);// 获取指定class的元素的集合document.getElementsByTagName(selector); // 获取指定标签名的元素集合document.getElementsByName(">
+<meta name="description" content="直接获取元素1234document.getElementById(selector); // 获取指定id的元素document.getElementsByClassName(selector); // 获取指定class的元素的集合document.getElementsByTagName(selector); // 获取指定标签名的元素集合document.getElementsByName">
 <meta name="keywords" content="DOM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原生JavaScript之DOM操作">
 <meta property="og:url" content="https://callmejay.github.io/2017/06/11/原生JavaScript之DOM操作/index.html">
-<meta property="og:site_name" content="Jay&#39;s Blog">
-<meta property="og:description" content="直接获取元素1234document.getElementById(selector); // 获取指定id的元素document.getElementsByClassName(selector);// 获取指定class的元素的集合document.getElementsByTagName(selector); // 获取指定标签名的元素集合document.getElementsByName(">
+<meta property="og:site_name" content="Jay Bein&#39;s Blog">
+<meta property="og:description" content="直接获取元素1234document.getElementById(selector); // 获取指定id的元素document.getElementsByClassName(selector); // 获取指定class的元素的集合document.getElementsByTagName(selector); // 获取指定标签名的元素集合document.getElementsByName">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-10T09:29:37.037Z">
+<meta property="og:updated_time" content="2019-02-18T10:49:06.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原生JavaScript之DOM操作">
-<meta name="twitter:description" content="直接获取元素1234document.getElementById(selector); // 获取指定id的元素document.getElementsByClassName(selector);// 获取指定class的元素的集合document.getElementsByTagName(selector); // 获取指定标签名的元素集合document.getElementsByName(">
+<meta name="twitter:description" content="直接获取元素1234document.getElementById(selector); // 获取指定id的元素document.getElementsByClassName(selector); // 获取指定class的元素的集合document.getElementsByTagName(selector); // 获取指定标签名的元素集合document.getElementsByName">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title>原生JavaScript之DOM操作 | Jay's Blog</title>
+  <title>原生JavaScript之DOM操作 | Jay Bein's Blog</title>
   
 
 
@@ -165,12 +165,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jay's Blog</span>
+        <span class="site-title">Jay Bein's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">知其然，知其所以然。</h1>
+        <h1 class="site-subtitle" itemprop="description">有事做，有人爱，有所期待。</h1>
       
   </div>
 
@@ -258,22 +258,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -315,7 +319,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
+      <meta itemprop="name" content="Jay Bein's Blog">
     </span>
 
     
@@ -395,13 +399,14 @@
       
 
       
-        <h2 id="直接获取元素"><a href="#直接获取元素" class="headerlink" title="直接获取元素"></a>直接获取元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(selector); <span class="comment">// 获取指定id的元素</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByClassName(selector);<span class="comment">// 获取指定class的元素的集合</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(selector); <span class="comment">// 获取指定标签名的元素集合</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByName(selector); <span class="comment">// 获取带有指定名称（name属性）的元素集合</span></span><br></pre></td></tr></table></figure>
+        <h2 id="直接获取元素"><a href="#直接获取元素" class="headerlink" title="直接获取元素"></a>直接获取元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(selector); <span class="comment">// 获取指定id的元素</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByClassName(selector); <span class="comment">// 获取指定class的元素的集合</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(selector); <span class="comment">// 获取指定标签名的元素集合</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByName(selector); <span class="comment">// 获取带有指定名称（name属性）的元素集合</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="获取父子兄弟元素"><a href="#获取父子兄弟元素" class="headerlink" title="获取父子兄弟元素"></a>获取父子兄弟元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">el.parentNode; <span class="comment">// 获取直接父元素</span></span><br><span class="line">el.offsetParent; <span class="comment">// 用于计算定位的父元素(position属性为relative、absolute或fixed的最近的父元素),若不存在这样的父元素，则为body，但是在低版本IE中可能为html</span></span><br><span class="line">el.childNodes; <span class="comment">// 所有子节点的集合，包含文本节点(换行或空白)</span></span><br><span class="line">el.children; <span class="comment">// 所有子元素的集合，不包含文本节点</span></span><br><span class="line">el.firstChild;</span><br><span class="line">el.lastChild;</span><br><span class="line">el.nextSibling;</span><br><span class="line">el.previousSibling; <span class="comment">// 以上四个获取的节点，都包含文本节点</span></span><br><span class="line">el.firstElementChild;</span><br><span class="line">el.lastElementChild;</span><br><span class="line">el.nextElementSibling;</span><br><span class="line">el.previousElementSibling; <span class="comment">// 以上四个获取的节点，不包含文本节点，但是在低版本IE里不兼容</span></span><br></pre></td></tr></table></figure>
 <h2 id="增删改元素"><a href="#增删改元素" class="headerlink" title="增删改元素"></a>增删改元素</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> element = <span class="built_in">document</span>.createElement(TagName); <span class="comment">// 根据标签名创建标签</span></span><br><span class="line"><span class="keyword">let</span> textnode = <span class="built_in">document</span>.createTextNode(content); <span class="comment">// 根据内容创建文本节点</span></span><br><span class="line">el.appendChild(element); <span class="comment">// 将element标签添加为el的子节点，并且位于最后</span></span><br><span class="line">el.insertBefore(element, child); <span class="comment">// 将element标签添加为el的子节点，并且位于child之前，child参数为空则与appendChild方法效果一致</span></span><br><span class="line">el.removeChild(element); <span class="comment">// 删除el的子节点</span></span><br><span class="line">el.replaceChild(<span class="keyword">new</span>, old); <span class="comment">// 用new替换old，new可以为新创建的节点也可以为已存在的节点</span></span><br><span class="line">el.hasChildNode(); <span class="comment">// 判断节点是否包含子节点，包含返回true，不包含返回false.</span></span><br><span class="line">el.cloneChild(<span class="literal">true</span>/<span class="literal">false</span>); <span class="comment">// 默认为false，只复制当前节点，为true时它的所有子节点也一起复制。它也是存在内存中，也需要向页面里添加。</span></span><br></pre></td></tr></table></figure>
-<h2 id="操作元素属性"><a href="#操作元素属性" class="headerlink" title="操作元素属性"></a>操作元素属性</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> attr = <span class="built_in">document</span>.createAttribute(name); <span class="comment">// 创建一个属性节点</span></span><br><span class="line">attr.value = <span class="string">"value"</span>; <span class="comment">// 为属性节点添加属性值</span></span><br><span class="line">el.setAttributeNode(attr); <span class="comment">// 将一个属性节点添加到el上</span></span><br><span class="line">el.setAttribute(name, value); <span class="comment">// 设置el上的属性，若此属性不存在则添加</span></span><br><span class="line">el.getAttribute(name); <span class="comment">// 获取el上的属性</span></span><br><span class="line">el.removeAttribute(name); <span class="comment">// 删除el上的属性</span></span><br><span class="line">el.id;  <span class="comment">// 元素的id名</span></span><br><span class="line">el.className; <span class="comment">// 元素的class名</span></span><br></pre></td></tr></table></figure>
-<h2 id="获取元素的高宽"><a href="#获取元素的高宽" class="headerlink" title="获取元素的高宽"></a>获取元素的高宽</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">el.style.width/height; <span class="comment">// 获取元素content的宽高，但是若未设置style会得到空，这个留待后面再说</span></span><br><span class="line">el.clientWidth/clientHeight; <span class="comment">// 获取元素可视区的宽高，即为content+padding  元素相对于视窗可见部分的left和top，</span></span><br><span class="line">el.offsetWidth/offsetHeight; <span class="comment">// 获取元素占位宽高，即为content+padding+border   相当于绝对定位的位置left和top</span></span><br><span class="line">el.scrollWidth/scrollHeight; <span class="comment">// 与clientWidth类似，不过如果有滚轮会包括滚轮的宽度  // 滚轮的left和top</span></span><br><span class="line"><span class="comment">// 注意，margin与以上都无关</span></span><br><span class="line"><span class="keyword">let</span> W = <span class="built_in">document</span>.body.clientWidth || <span class="built_in">window</span>.innerWidth || <span class="built_in">document</span>.documentElement.clientWidth; <span class="comment">// 获取整个浏览器的可视区宽度，由于IE与firefox的实现有差异，所以需要兼容性写法</span></span><br></pre></td></tr></table></figure>
-<h2 id="文档碎片化处理"><a href="#文档碎片化处理" class="headerlink" title="文档碎片化处理"></a>文档碎片化处理</h2><p>js操作dom是一个很耗性能的过程，在某些情况下，不得不进行dom循环操作，我们每次对dom的操作都会触发”重排”，这严重影响到能耗，一般通常采取的做法是尽可能的减少dom操作来减少”重排”。<br>面对循环操作dom的过程，我们选择使用文档碎片（creatDocumentFragment），将需要添加到dom中的内容都添加到文档碎片中，然后一次性的将文档碎片添加到dom树，这样就可以有效的减少操作dom的次数，减少重排的发生。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> oFragment = <span class="built_in">document</span>.createDocumentFragment();</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementById(<span class="string">"list"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> oLi = <span class="literal">null</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i= <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span></span><br><span class="line"><span class="javascript">            oLi = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span></span><br><span class="line"><span class="javascript">            oLi.appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">'item'</span>+(i)));</span></span><br><span class="line"><span class="undefined">            oFragment.appendChild(oLi);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        ul.appendChild(oFragment);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="操作元素属性"><a href="#操作元素属性" class="headerlink" title="操作元素属性"></a>操作元素属性</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> attr = <span class="built_in">document</span>.createAttribute(name); <span class="comment">// 创建一个属性节点</span></span><br><span class="line">attr.value = <span class="string">"value"</span>; <span class="comment">// 为属性节点添加属性值</span></span><br><span class="line">el.setAttributeNode(attr); <span class="comment">// 将一个属性节点添加到el上</span></span><br><span class="line">el.setAttribute(name, value); <span class="comment">// 设置el上的属性，若此属性不存在则添加</span></span><br><span class="line">el.getAttribute(name); <span class="comment">// 获取el上的属性</span></span><br><span class="line">el.removeAttribute(name); <span class="comment">// 删除el上的属性</span></span><br><span class="line">el.id; <span class="comment">// 元素的id名</span></span><br><span class="line">el.className; <span class="comment">// 元素的class名</span></span><br></pre></td></tr></table></figure>
+<h2 id="获取元素的高宽"><a href="#获取元素的高宽" class="headerlink" title="获取元素的高宽"></a>获取元素的高宽</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">el.style.width / height; <span class="comment">// 获取元素content的宽高，但是若未设置style会得到空，这个留待后面再说</span></span><br><span class="line">el.clientWidth / clientHeight; <span class="comment">// 获取元素可视区的宽高，即为content+padding  元素相对于视窗可见部分的left和top，</span></span><br><span class="line">el.offsetWidth / offsetHeight; <span class="comment">// 获取元素占位宽高，即为content+padding+border   相当于绝对定位的位置left和top</span></span><br><span class="line">el.scrollWidth / scrollHeight; <span class="comment">// 与clientWidth类似，不过如果有滚轮会包括滚轮的宽度  // 滚轮的left和top</span></span><br><span class="line"><span class="comment">// 注意，margin与以上都无关</span></span><br><span class="line"><span class="keyword">let</span> W =</span><br><span class="line">  <span class="built_in">document</span>.body.clientWidth ||</span><br><span class="line">  <span class="built_in">window</span>.innerWidth ||</span><br><span class="line">  <span class="built_in">document</span>.documentElement.clientWidth; <span class="comment">// 获取整个浏览器的可视区宽度，由于IE与firefox的实现有差异，所以需要兼容性写法</span></span><br></pre></td></tr></table></figure>
+<h2 id="文档碎片化处理"><a href="#文档碎片化处理" class="headerlink" title="文档碎片化处理"></a>文档碎片化处理</h2><p>js 操作 dom 是一个很耗性能的过程，在某些情况下，不得不进行 dom 循环操作，我们每次对 dom 的操作都会触发”重排”，这严重影响到能耗，一般通常采取的做法是尽可能的减少 dom 操作来减少”重排”。<br>面对循环操作 dom 的过程，我们选择使用文档碎片（creatDocumentFragment），将需要添加到 dom 中的内容都添加到文档碎片中，然后一次性的将文档碎片添加到 dom 树，这样就可以有效的减少操作 dom 的次数，减少重排的发生。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> oFragment = <span class="built_in">document</span>.createDocumentFragment();</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementById(<span class="string">"list"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> oLi = <span class="literal">null</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span></span><br><span class="line"><span class="javascript">      oLi = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span></span><br><span class="line"><span class="javascript">      oLi.appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">"item"</span> + i));</span></span><br><span class="line"><span class="undefined">      oFragment.appendChild(oLi);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    ul.appendChild(oFragment);</span></span><br><span class="line"><span class="undefined">  &#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -461,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/07/Chrome中console用法/" rel="next" title="Chrome控制台console用法">
-                <i class="fa fa-chevron-left"></i> Chrome控制台console用法
+              <a href="/2017/06/01/JavaScript面向对象编程之非构造函数的继承/" rel="next" title="JavaScript面向对象编程之非构造函数的继承">
+                <i class="fa fa-chevron-left"></i> JavaScript面向对象编程之非构造函数的继承
               </a>
             
           </div>
@@ -471,8 +476,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/15/疯狂HCJ讲义（一）/" rel="prev" title="疯狂HCJ讲义（一）">
-                疯狂HCJ讲义（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/18/js图片懒加载及优化/" rel="prev" title="js图片懒加载及优化">
+                js图片懒加载及优化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -559,7 +564,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -570,7 +575,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -581,7 +586,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -655,7 +660,7 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.kancloud.cn/dennis/tgjavascript/241800" title="JavaScript半知半解" target="_blank">JavaScript半知半解</a>
+                    <a href="https://github.com/yygmind/blog" title="木易杨" target="_blank">木易杨</a>
                   </li>
                 
               </ul>
@@ -883,324 +888,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

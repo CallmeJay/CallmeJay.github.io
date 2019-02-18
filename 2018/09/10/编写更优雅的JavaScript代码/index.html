@@ -81,7 +81,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jay's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml" />
 
 
 
@@ -93,10 +93,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="编写更优雅的JavaScript代码">
 <meta property="og:url" content="https://callmejay.github.io/2018/09/10/编写更优雅的JavaScript代码/index.html">
-<meta property="og:site_name" content="Jay&#39;s Blog">
+<meta property="og:site_name" content="Jay Bein&#39;s Blog">
 <meta property="og:description" content="代码技巧优先 ES6 新特性写法1234567891011121314151617181920212223242526272829303132333435// 箭头函数function foo()&amp;#123;  console.log(&apos;hello world&apos;)&amp;#125;const foo = () =&amp;gt; console.log(&apos;hello world&apos;)// 数组去重const fo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-10T07:44:58.088Z">
+<meta property="og:updated_time" content="2019-02-18T10:51:10.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编写更优雅的JavaScript代码">
 <meta name="twitter:description" content="代码技巧优先 ES6 新特性写法1234567891011121314151617181920212223242526272829303132333435// 箭头函数function foo()&amp;#123;  console.log(&apos;hello world&apos;)&amp;#125;const foo = () =&amp;gt; console.log(&apos;hello world&apos;)// 数组去重const fo">
@@ -135,7 +135,7 @@
 
 
 
-  <title>编写更优雅的JavaScript代码 | Jay's Blog</title>
+  <title>编写更优雅的JavaScript代码 | Jay Bein's Blog</title>
   
 
 
@@ -165,12 +165,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jay's Blog</span>
+        <span class="site-title">Jay Bein's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">知其然，知其所以然。</h1>
+        <h1 class="site-subtitle" itemprop="description">有事做，有人爱，有所期待。</h1>
       
   </div>
 
@@ -258,22 +258,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -315,7 +319,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
+      <meta itemprop="name" content="Jay Bein's Blog">
     </span>
 
     
@@ -395,19 +399,20 @@
       
 
       
-        <h3 id="代码技巧"><a href="#代码技巧" class="headerlink" title="代码技巧"></a>代码技巧</h3><h4 id="优先-ES6-新特性写法"><a href="#优先-ES6-新特性写法" class="headerlink" title="优先 ES6 新特性写法"></a>优先 ES6 新特性写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 箭头函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> foo = <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组去重</span></span><br><span class="line"><span class="keyword">const</span> formatArray = <span class="function"><span class="params">arr</span> =&gt;</span> [...new <span class="built_in">Set</span>(arr)]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组合并</span></span><br><span class="line"><span class="keyword">const</span> newArr = [...arr1, ...arr2, <span class="string">'value'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象浅拷贝</span></span><br><span class="line"><span class="keyword">const</span> newObj = &#123;...obj&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解构赋值</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;<span class="attr">name</span>: <span class="string">'bao'</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;</span><br><span class="line"><span class="keyword">const</span> &#123; name, age &#125; = person</span><br><span class="line"></span><br><span class="line"><span class="comment">// 常见对象属性取值前判断对象是否存在</span></span><br><span class="line"><span class="comment">// 如下是 react + antd 渲染 table 的简单代码，对象存在性判断 + 默认值设置</span></span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; downloadList &#125; = <span class="keyword">this</span>.props.store.downloadList</span><br><span class="line">  <span class="keyword">let</span> items = downloadList &amp;&amp; downloadList.items || []</span><br><span class="line">  <span class="keyword">let</span> itemCount = downloadList &amp;&amp; downloadList.itemCount || <span class="number">10</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Table</span> <span class="attr">dataSource</span>=<span class="string">&#123;items&#125;</span> <span class="attr">pagination</span>=<span class="string">&#123;&#123;total:</span> <span class="attr">itemCount</span>&#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">// 优化后</span></span><br><span class="line"><span class="xml">render()&#123;</span></span><br><span class="line"><span class="xml">  const &#123; items, itemCount &#125; = this.props.manageStore.downloadList || &#123;&#125;</span></span><br><span class="line">  return &lt;Table dataSource=&#123;items || []&#125; pagination=&#123;&#123;total: itemCount || 10&#125;&#125;/&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="代码技巧"><a href="#代码技巧" class="headerlink" title="代码技巧"></a>代码技巧</h3><h4 id="优先-ES6-新特性写法"><a href="#优先-ES6-新特性写法" class="headerlink" title="优先 ES6 新特性写法"></a>优先 ES6 新特性写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 箭头函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> foo = <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组去重</span></span><br><span class="line"><span class="keyword">const</span> formatArray = <span class="function"><span class="params">arr</span> =&gt;</span> [...new <span class="built_in">Set</span>(arr)]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组合并</span></span><br><span class="line"><span class="keyword">const</span> newArr = [...arr1, ...arr2, <span class="string">'value'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象浅拷贝</span></span><br><span class="line"><span class="keyword">const</span> newObj = &#123;...obj&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解构赋值</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;<span class="attr">name</span>: <span class="string">'bao'</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;</span><br><span class="line"><span class="keyword">const</span> &#123; name, age &#125; = person</span><br><span class="line"></span><br><span class="line"><span class="comment">// 常见对象属性取值前判断对象是否存在</span></span><br><span class="line"><span class="comment">// 如下是 react + antd 渲染 table 的简单代码，对象存在性判断 + 默认值设置</span></span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; downloadList &#125; = <span class="keyword">this</span>.props.store.downloadList</span><br><span class="line">  <span class="keyword">let</span> items = downloadList &amp;&amp; downloadList.items || []</span><br><span class="line">  <span class="keyword">let</span> itemCount = downloadList &amp;&amp; downloadList.itemCount || <span class="number">10</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Table</span> <span class="attr">dataSource</span>=<span class="string">&#123;items&#125;</span> <span class="attr">pagination</span>=<span class="string">&#123;&#123;total:</span> <span class="attr">itemCount</span>&#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">// 优化后</span></span><br><span class="line"><span class="xml">render()&#123;</span></span><br><span class="line"><span class="xml">  const &#123; items, itemCount &#125; = this.props.manageStore.downloadList || &#123;&#125;</span></span><br><span class="line">  return &lt;Table dataSource=&#123;items || []&#125; pagination=&#123;&#123;total: itemCount || 10&#125;&#125;/&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h4 id="优化逻辑判断语句"><a href="#优化逻辑判断语句" class="headerlink" title="优化逻辑判断语句"></a>优化逻辑判断语句</h4><p>大量的 if else 逻辑判断难以维护，且性能较差，可用多种方式代替</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象配置法</span></span><br><span class="line"><span class="comment">// 函数内部有条件判断，且 return 值时，满足条件立即return，而不要在结尾return</span></span><br><span class="line"><span class="keyword">const</span> foo = <span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (v === <span class="string">'name'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'bao'</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (v === <span class="string">'age'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'18'</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (v === <span class="string">'height'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'180'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> cfg = &#123;</span><br><span class="line">  name: <span class="string">'bao'</span>,</span><br><span class="line">  age: <span class="string">'18'</span>,</span><br><span class="line">  height: <span class="string">'180'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> foo = <span class="function"><span class="params">v</span> =&gt;</span> cfg[v]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组配置法</span></span><br><span class="line"><span class="keyword">if</span> (value === <span class="string">'hello'</span> || value === <span class="string">'world'</span> || value === <span class="string">'blabla'</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 配置数组形式</span></span><br><span class="line"><span class="keyword">const</span> rightValue = [<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="string">'blabla'</span>]</span><br><span class="line"><span class="keyword">if</span> (rightValue.includes[value]) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="善用-amp-amp-、-和-三元运算"><a href="#善用-amp-amp-、-和-三元运算" class="headerlink" title="善用 &amp;&amp; 、 || 和 三元运算"></a>善用 &amp;&amp; 、 || 和 三元运算</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (name === <span class="string">'bao'</span>) &#123;</span><br><span class="line">  someFunc()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">name === <span class="string">'bao'</span> &amp;&amp; someFunc()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (name === <span class="string">'bao'</span>) &#123;</span><br><span class="line">  someFunc()</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  elseFunc()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">name === <span class="string">'bao'</span> ? someFunc() : elseFunc()</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象配置法</span></span><br><span class="line"><span class="comment">// 函数内部有条件判断，且 return 值时，满足条件立即return，而不要在结尾return</span></span><br><span class="line"><span class="keyword">const</span> foo = <span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (v === <span class="string">"name"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"bao"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (v === <span class="string">"age"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"18"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (v === <span class="string">"height"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"180"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> cfg = &#123;</span><br><span class="line">  name: <span class="string">"bao"</span>,</span><br><span class="line">  age: <span class="string">"18"</span>,</span><br><span class="line">  height: <span class="string">"180"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> foo = <span class="function"><span class="params">v</span> =&gt;</span> cfg[v];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组配置法</span></span><br><span class="line"><span class="keyword">if</span> (value === <span class="string">"hello"</span> || value === <span class="string">"world"</span> || value === <span class="string">"blabla"</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 配置数组形式</span></span><br><span class="line"><span class="keyword">const</span> rightValue = [<span class="string">"hello"</span>, <span class="string">"world"</span>, <span class="string">"blabla"</span>];</span><br><span class="line"><span class="keyword">if</span> (rightValue.includes[value]) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="善用-amp-amp-、-和-三元运算"><a href="#善用-amp-amp-、-和-三元运算" class="headerlink" title="善用 &amp;&amp; 、 || 和 三元运算"></a>善用 &amp;&amp; 、 || 和 三元运算</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (name === <span class="string">"bao"</span>) &#123;</span><br><span class="line">  someFunc();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">name === <span class="string">"bao"</span> &amp;&amp; someFunc();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (name === <span class="string">"bao"</span>) &#123;</span><br><span class="line">  someFunc();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  elseFunc();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">name === <span class="string">"bao"</span> ? someFunc() : elseFunc();</span><br></pre></td></tr></table></figure>
 <h4 id="对象属性变量应用"><a href="#对象属性变量应用" class="headerlink" title="对象属性变量应用"></a>对象属性变量应用</h4><p>如在 react 中，调用 action 方法来获取数据，不同条件执行不同方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isMember) &#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="keyword">await</span> actions.getMemberInfo(params)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="keyword">await</span> actions.getCommonUserInfo(params)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> actionName = isMember ? <span class="string">'getMemberInfo'</span> : <span class="string">'getCommonUserInfo'</span></span><br><span class="line"><span class="keyword">let</span> res = <span class="keyword">await</span> actions[actionName](params)</span><br></pre></td></tr></table></figure>
-<h4 id="用-Array-map-Array-filter-代替数组-for-循环实现简易写法"><a href="#用-Array-map-Array-filter-代替数组-for-循环实现简易写法" class="headerlink" title="用 Array.map(), Array.filter() 代替数组 for 循环实现简易写法"></a>用 Array.map(), Array.filter() 代替数组 for 循环实现简易写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="string">'A'</span>, <span class="string">'B'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 取出 arr 中数字项为新数组</span></span><br><span class="line"><span class="keyword">let</span> numArr = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> arr)&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> arr[i] === <span class="string">'number'</span>)&#123;</span><br><span class="line">    numArr.push(arr[i])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 改用filter</span></span><br><span class="line"><span class="keyword">let</span> numArr2 = arr.filter(<span class="function"><span class="params">item</span> =&gt;</span> <span class="keyword">typeof</span> item === <span class="string">'number'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(numArr2) <span class="comment">// [1,2,3,4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 获得新数组，元素是 arr 每个元素作为 value, key 为 arr 下标的对象, 不修改 arr</span></span><br><span class="line"><span class="keyword">let</span> strArr = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> arr)&#123;</span><br><span class="line">  strArr.push(&#123;[i]: arr[i]&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 改用 map</span></span><br><span class="line"><span class="keyword">let</span> strArr2 = arr.map(<span class="function">(<span class="params">item, i</span>) =&gt;</span> (&#123;[i]: arr[i]&#125;))</span><br><span class="line"><span class="built_in">console</span>.log(strArr2) <span class="comment">// [ &#123; '0': 1 &#125;,&#123; '1': 2 &#125;,&#123; '2': 3 &#125;, &#123; '3': 4 &#125;, &#123; '4': 'A' &#125;, &#123; '5': 'B' &#125; ]</span></span><br></pre></td></tr></table></figure>
-<h4 id="浅拷贝、深拷贝-复杂数据类型对象深拷贝建议使用库来实现，如-lodash-cloneDeep"><a href="#浅拷贝、深拷贝-复杂数据类型对象深拷贝建议使用库来实现，如-lodash-cloneDeep" class="headerlink" title="浅拷贝、深拷贝 复杂数据类型对象深拷贝建议使用库来实现，如 lodash.cloneDeep"></a>浅拷贝、深拷贝 复杂数据类型对象深拷贝建议使用库来实现，如 <a href="http://lodash.think2011.net/cloneDeep" target="_blank" rel="noopener">lodash.cloneDeep</a></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浅拷贝</span></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">a</span>: <span class="number">11</span>, <span class="attr">b</span>: &#123; <span class="attr">ba</span>: <span class="number">22</span> &#125; &#125;</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;...obj1&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj2); <span class="comment">// ​​​​​&#123; a: 11, b: &#123; ba: 22 &#125; &#125;​​​​​</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1 === obj2); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2.b === obj1.b); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 深拷贝，这种方法需要对象能够被 json 序列化</span></span><br><span class="line"><span class="keyword">let</span> obj3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj1))</span><br><span class="line"><span class="built_in">console</span>.log(obj3); <span class="comment">//  ​​​​​&#123; a: 11, b: &#123; ba: 22 &#125; &#125;​​​​​</span></span><br><span class="line"><span class="built_in">console</span>.log(obj3===obj1); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(obj3.b===obj1.b); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isMember) &#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="keyword">await</span> actions.getMemberInfo(params);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="keyword">await</span> actions.getCommonUserInfo(params);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> actionName = isMember ? <span class="string">"getMemberInfo"</span> : <span class="string">"getCommonUserInfo"</span>;</span><br><span class="line"><span class="keyword">let</span> res = <span class="keyword">await</span> actions[actionName](params);</span><br></pre></td></tr></table></figure>
+<h4 id="用-Array-map-Array-filter-代替数组-for-循环实现简易写法"><a href="#用-Array-map-Array-filter-代替数组-for-循环实现简易写法" class="headerlink" title="用 Array.map(), Array.filter() 代替数组 for 循环实现简易写法"></a>用 Array.map(), Array.filter() 代替数组 for 循环实现简易写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="string">"A"</span>, <span class="string">"B"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 取出 arr 中数字项为新数组</span></span><br><span class="line"><span class="keyword">let</span> numArr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> arr) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> arr[i] === <span class="string">"number"</span>) &#123;</span><br><span class="line">    numArr.push(arr[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 改用filter</span></span><br><span class="line"><span class="keyword">let</span> numArr2 = arr.filter(<span class="function"><span class="params">item</span> =&gt;</span> <span class="keyword">typeof</span> item === <span class="string">"number"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(numArr2); <span class="comment">// [1,2,3,4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 获得新数组，元素是 arr 每个元素作为 value, key 为 arr 下标的对象, 不修改 arr</span></span><br><span class="line"><span class="keyword">let</span> strArr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> arr) &#123;</span><br><span class="line">  strArr.push(&#123; [i]: arr[i] &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 改用 map</span></span><br><span class="line"><span class="keyword">let</span> strArr2 = arr.map(<span class="function">(<span class="params">item, i</span>) =&gt;</span> (&#123; [i]: arr[i] &#125;));</span><br><span class="line"><span class="built_in">console</span>.log(strArr2); <span class="comment">// [ &#123; '0': 1 &#125;,&#123; '1': 2 &#125;,&#123; '2': 3 &#125;, &#123; '3': 4 &#125;, &#123; '4': 'A' &#125;, &#123; '5': 'B' &#125; ]</span></span><br></pre></td></tr></table></figure>
+<h4 id="浅拷贝、深拷贝-复杂数据类型对象深拷贝建议使用库来实现，如-lodash-cloneDeep"><a href="#浅拷贝、深拷贝-复杂数据类型对象深拷贝建议使用库来实现，如-lodash-cloneDeep" class="headerlink" title="浅拷贝、深拷贝 复杂数据类型对象深拷贝建议使用库来实现，如 lodash.cloneDeep"></a>浅拷贝、深拷贝 复杂数据类型对象深拷贝建议使用库来实现，如 <a href="http://lodash.think2011.net/cloneDeep" target="_blank" rel="noopener">lodash.cloneDeep</a></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浅拷贝</span></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">a</span>: <span class="number">11</span>, <span class="attr">b</span>: &#123; <span class="attr">ba</span>: <span class="number">22</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123; ...obj1 &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj2); <span class="comment">// ​​​​​&#123; a: 11, b: &#123; ba: 22 &#125; &#125;​​​​​</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1 === obj2); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2.b === obj1.b); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 深拷贝，这种方法需要对象能够被 json 序列化</span></span><br><span class="line"><span class="keyword">let</span> obj3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj1));</span><br><span class="line"><span class="built_in">console</span>.log(obj3); <span class="comment">//  ​​​​​&#123; a: 11, b: &#123; ba: 22 &#125; &#125;​​​​​</span></span><br><span class="line"><span class="built_in">console</span>.log(obj3 === obj1); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(obj3.b === obj1.b); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <h3 id="更高效的代码"><a href="#更高效的代码" class="headerlink" title="更高效的代码"></a>更高效的代码</h3><h4 id="使用局部变量代替引用类型查找"><a href="#使用局部变量代替引用类型查找" class="headerlink" title="使用局部变量代替引用类型查找"></a>使用局部变量代替引用类型查找</h4><p>局部变量的读取速度最快，而引用类型的数据读取需要按引用指针去查找，所以可以对多次使用的引用类型属性 使用局部变量读取一次，重复使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  person: &#123;</span><br><span class="line">    man: &#123;</span><br><span class="line">      bao: &#123;</span><br><span class="line">        age: <span class="number">18</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> age = obj.person.man.bao.age</span><br><span class="line"><span class="comment">// use age do many things</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  person: &#123;</span><br><span class="line">    man: &#123;</span><br><span class="line">      bao: &#123;</span><br><span class="line">        age: <span class="number">18</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> age = obj.person.man.bao.age;</span><br><span class="line"><span class="comment">// use age do many things</span></span><br></pre></td></tr></table></figure>
 <h4 id="删除多个对象属性时先使属性为-null"><a href="#删除多个对象属性时先使属性为-null" class="headerlink" title="删除多个对象属性时先使属性为 null"></a>删除多个对象属性时先使属性为 null</h4><p>删除属性时，js 引擎会去查找该属性的值是否是其他对象的引用，所以删除前提前赋值为 null，可以减少 js 引擎的检测过程，提高效率</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  person: &#123;</span><br><span class="line">    man: &#123;</span><br><span class="line">      bao: &#123;</span><br><span class="line">        age: <span class="number">18</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.person = <span class="literal">null</span></span><br><span class="line"><span class="keyword">delete</span> obj.person</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  person: &#123;</span><br><span class="line">    man: &#123;</span><br><span class="line">      bao: &#123;</span><br><span class="line">        age: <span class="number">18</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.person = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">delete</span> obj.person;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -476,8 +481,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/30/面试知识总结(1)/" rel="prev" title="面试知识总结（1)">
-                面试知识总结（1) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/30/基础知识总结-1/" rel="prev" title="基础知识总结-1">
+                基础知识总结-1 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -564,7 +569,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -575,7 +580,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -586,7 +591,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -660,7 +665,7 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.kancloud.cn/dennis/tgjavascript/241800" title="JavaScript半知半解" target="_blank">JavaScript半知半解</a>
+                    <a href="https://github.com/yygmind/blog" title="木易杨" target="_blank">木易杨</a>
                   </li>
                 
               </ul>
@@ -888,324 +893,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

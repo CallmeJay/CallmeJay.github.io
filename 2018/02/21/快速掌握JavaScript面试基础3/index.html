@@ -81,25 +81,25 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jay's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml" />
 
 
 
 
 
 
-<meta name="description" content="new关键字如果使用new关键字来调用函数式很特别的形式。我们把那些用new调用的函数叫做构造函数(constructor function)。 使用了new的函数到底做了什么事情呢？  创建一个新的对象 将对象的prototype设置为构造函数的prototype 执行构造函数，this执行新构造的对象 返回该对象。如果构造函数返回对象，那么返回该构造对象。">
+<meta name="description" content="new 关键字如果使用 new 关键字来调用函数式很特别的形式。我们把那些用 new 调用的函数叫做构造函数(constructor function)。 使用了 new 的函数到底做了什么事情呢？  创建一个新的对象 将对象的 prototype 设置为构造函数的 prototype 执行构造函数，this 执行新构造的对象 返回该对象。如果构造函数返回对象，那么返回该构造对象。">
 <meta name="keywords" content="基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速掌握JavaScript面试基础3">
 <meta property="og:url" content="https://callmejay.github.io/2018/02/21/快速掌握JavaScript面试基础3/index.html">
-<meta property="og:site_name" content="Jay&#39;s Blog">
-<meta property="og:description" content="new关键字如果使用new关键字来调用函数式很特别的形式。我们把那些用new调用的函数叫做构造函数(constructor function)。 使用了new的函数到底做了什么事情呢？  创建一个新的对象 将对象的prototype设置为构造函数的prototype 执行构造函数，this执行新构造的对象 返回该对象。如果构造函数返回对象，那么返回该构造对象。">
+<meta property="og:site_name" content="Jay Bein&#39;s Blog">
+<meta property="og:description" content="new 关键字如果使用 new 关键字来调用函数式很特别的形式。我们把那些用 new 调用的函数叫做构造函数(constructor function)。 使用了 new 的函数到底做了什么事情呢？  创建一个新的对象 将对象的 prototype 设置为构造函数的 prototype 执行构造函数，this 执行新构造的对象 返回该对象。如果构造函数返回对象，那么返回该构造对象。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-22T09:52:56.000Z">
+<meta property="og:updated_time" content="2019-02-18T10:50:28.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速掌握JavaScript面试基础3">
-<meta name="twitter:description" content="new关键字如果使用new关键字来调用函数式很特别的形式。我们把那些用new调用的函数叫做构造函数(constructor function)。 使用了new的函数到底做了什么事情呢？  创建一个新的对象 将对象的prototype设置为构造函数的prototype 执行构造函数，this执行新构造的对象 返回该对象。如果构造函数返回对象，那么返回该构造对象。">
+<meta name="twitter:description" content="new 关键字如果使用 new 关键字来调用函数式很特别的形式。我们把那些用 new 调用的函数叫做构造函数(constructor function)。 使用了 new 的函数到底做了什么事情呢？  创建一个新的对象 将对象的 prototype 设置为构造函数的 prototype 执行构造函数，this 执行新构造的对象 返回该对象。如果构造函数返回对象，那么返回该构造对象。">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title>快速掌握JavaScript面试基础3 | Jay's Blog</title>
+  <title>快速掌握JavaScript面试基础3 | Jay Bein's Blog</title>
   
 
 
@@ -165,12 +165,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jay's Blog</span>
+        <span class="site-title">Jay Bein's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">知其然，知其所以然。</h1>
+        <h1 class="site-subtitle" itemprop="description">有事做，有人爱，有所期待。</h1>
       
   </div>
 
@@ -258,22 +258,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -315,7 +319,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
+      <meta itemprop="name" content="Jay Bein's Blog">
     </span>
 
     
@@ -395,58 +399,66 @@
       
 
       
-        <h3 id="new关键字"><a href="#new关键字" class="headerlink" title="new关键字"></a>new关键字</h3><p>如果使用new关键字来调用函数式很特别的形式。我们把那些用new调用的函数叫做构造函数(constructor function)。</p>
-<p>使用了new的函数到底做了什么事情呢？</p>
+        <h3 id="new-关键字"><a href="#new-关键字" class="headerlink" title="new 关键字"></a>new 关键字</h3><p>如果使用 new 关键字来调用函数式很特别的形式。我们把那些用 new 调用的函数叫做构造函数(constructor function)。</p>
+<p>使用了 new 的函数到底做了什么事情呢？</p>
 <ul>
 <li>创建一个新的对象</li>
-<li>将对象的prototype设置为构造函数的prototype</li>
-<li>执行构造函数，this执行新构造的对象</li>
+<li>将对象的 prototype 设置为构造函数的 prototype</li>
+<li>执行构造函数，this 执行新构造的对象</li>
 <li>返回该对象。如果构造函数返回对象，那么返回该构造对象。<a id="more"></a>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 为了更好地理解底层，我们来定义new关键字</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myNew</span>(<span class="params">constructor, ...arguments</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">  <span class="built_in">Object</span>.setPrototypeOf(obj, <span class="keyword">constructor</span>.prototype);</span><br><span class="line">  return <span class="keyword">constructor</span>.apply(obj, arguments) || obj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用new和不使用的区别在哪里呢？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bird</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.wings = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 普通的函数调用 */</span></span><br><span class="line"><span class="keyword">let</span> fakeBird = Bird();</span><br><span class="line"><span class="built_in">console</span>.log(fakeBird);    <span class="comment">// undefined</span></span><br><span class="line"><span class="comment">/* 使用new调用 */</span></span><br><span class="line"><span class="keyword">let</span> realBird= <span class="keyword">new</span> Bird();</span><br><span class="line"><span class="built_in">console</span>.log(realBird)     <span class="comment">// &#123; wings: 2 &#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>为了便于对比理解，译者额外增加了测试了一种情况：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MBird</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.wings =<span class="number">2</span>; </span><br><span class="line">  <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> realMBrid = <span class="keyword">new</span> MBird();</span><br><span class="line"><span class="built_in">console</span>.log(realMBird) <span class="comment">// &#123; wings: 2 &#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>你会发现，这一句return “hello”并没有生效！</p>
-<h3 id="原型和继承"><a href="#原型和继承" class="headerlink" title="原型和继承"></a>原型和继承</h3><p>原型(Prototype)是JavaScript中最容易搞混的概念，其中一个原因是prototype可以用在两个不同的情形下。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 为了更好地理解底层，我们来定义new关键字</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myNew</span>(<span class="params">constructor, ...arguments</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">  <span class="built_in">Object</span>.setPrototypeOf(obj, <span class="keyword">constructor</span>.prototype);</span><br><span class="line">  return <span class="keyword">constructor</span>.apply(obj, arguments) || obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用 new 和不使用的区别在哪里呢？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bird</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.wings = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 普通的函数调用 */</span></span><br><span class="line"><span class="keyword">let</span> fakeBird = Bird();</span><br><span class="line"><span class="built_in">console</span>.log(fakeBird); <span class="comment">// undefined</span></span><br><span class="line"><span class="comment">/* 使用new调用 */</span></span><br><span class="line"><span class="keyword">let</span> realBird = <span class="keyword">new</span> Bird();</span><br><span class="line"><span class="built_in">console</span>.log(realBird); <span class="comment">// &#123; wings: 2 &#125;</span></span><br></pre></td></tr></table></figure>
+<p>为了便于对比理解，译者额外增加了测试了一种情况：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MBird</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.wings = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> realMBrid = <span class="keyword">new</span> MBird();</span><br><span class="line"><span class="built_in">console</span>.log(realMBird); <span class="comment">// &#123; wings: 2 &#125;</span></span><br></pre></td></tr></table></figure>
+<p>你会发现，这一句 return “hello”并没有生效！</p>
+<h3 id="原型和继承"><a href="#原型和继承" class="headerlink" title="原型和继承"></a>原型和继承</h3><p>原型(Prototype)是 JavaScript 中最容易搞混的概念，其中一个原因是 prototype 可以用在两个不同的情形下。</p>
 <ul>
-<li><p>原型关系<br>每一个对象都有一个prototype对象，里面包含了所有它的原型的属性。<br>.__proto__是一个不正规的机制(ES6中提供)，用来获取一个对象的prototype。你可以理解为它指向对象的parent。<br>所有普通的对象都继承.constructor属性，它指向该对象的构造函数。当一个对象通过构造函数实现的时候，__proto__属性指向构造函数的构造函数的.prototype。Object.getPrototypeOf()是ES5的标准函数，用来获取一个对象的原型。</p>
+<li><p>原型关系<br>每一个对象都有一个 prototype 对象，里面包含了所有它的原型的属性。<br>.__proto__是一个不正规的机制(ES6 中提供)，用来获取一个对象的 prototype。你可以理解为它指向对象的 parent。<br>所有普通的对象都继承.constructor 属性，它指向该对象的构造函数。当一个对象通过构造函数实现的时候，__proto__属性指向构造函数的构造函数的.prototype。Object.getPrototypeOf()是 ES5 的标准函数，用来获取一个对象的原型。</p>
 </li>
-<li><p>原型属性<br>每一个函数都有一个.prototype属性，它包含了所有可以被继承的属性。该对象默认包含了指向原构造函数的.constructor属性。每一个使用构造函数创建的对象都有一个构造函数属性。</p>
+<li><p>原型属性<br>每一个函数都有一个.prototype 属性，它包含了所有可以被继承的属性。该对象默认包含了指向原构造函数的.constructor 属性。每一个使用构造函数创建的对象都有一个构造函数属性。</p>
 </li>
 </ul>
-<p>接下来通过例子来帮助理解：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">breed, name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.breed = breed,</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line">Dog.prototype.describe = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> is a <span class="subst">$&#123;<span class="keyword">this</span>.breed&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> rusty = <span class="keyword">new</span> Dog(<span class="string">'Beagle'</span>, <span class="string">'Rusty'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* .prototype 属性包含了构造函数以及构造函数中在prototype上定义的属性。*/</span></span><br><span class="line"><span class="built_in">console</span>.log(Dog.prototype)  <span class="comment">// &#123; describe: ƒ , constructor: ƒ &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用Dog构造函数构造的对象 */</span></span><br><span class="line"><span class="built_in">console</span>.log(rusty)   <span class="comment">//  &#123; breed: "Beagle", name: "Rusty" &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 从构造函数的原型中继承下来的属性或函数 */</span></span><br><span class="line"><span class="built_in">console</span>.log(rusty.describe())   <span class="comment">// "Rusty is a Beagle"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* .__proto__ 属性指向构造函数的.prototype属性 */</span></span><br><span class="line"><span class="built_in">console</span>.log(rusty.__proto__)    <span class="comment">// &#123; describe: ƒ , constructor: ƒ &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* .constructor 属性指向构造函数 */</span></span><br><span class="line"><span class="built_in">console</span>.log(rusty.constructor)  <span class="comment">// ƒ Dog(breed, name) &#123; ... &#125;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>原型链是指对象之间通过prototype链接起来，形成一个有向的链条。当访问一个对象的某个属性的时候，JavaScript引擎会首先查看该对象是否包含该属性。如果没有，就去查找对象的prototype中是否包含。以此类推，直到找到该属性或则找到最后一个对象。最后一个对象的prototype默认为null。</p>
-<h3 id="拥有vs继承"><a href="#拥有vs继承" class="headerlink" title="拥有vs继承"></a>拥有vs继承</h3><p>一个对象有两种属性，分别是它自身定义的和继承的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123; &#125;</span><br><span class="line">Car.prototype.wheels = <span class="number">4</span>;</span><br><span class="line">Car.prototype.airbags = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> Car();</span><br><span class="line">myCar.color = <span class="string">'black'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  原型链中的属性也可以通过in来查看:  */</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'airbags'</span> <span class="keyword">in</span> myCar)  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(myCar.wheels)        <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(myCar.year)          <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*  通过hasOwnProperty来查看是否拥有该属性:  */</span></span><br><span class="line"><span class="built_in">console</span>.log(myCar.hasOwnProperty(<span class="string">'airbags'</span>))  <span class="comment">// false — Inherited</span></span><br><span class="line"><span class="built_in">console</span>.log(myCar.hasOwnProperty(<span class="string">'color'</span>))    <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<p>Object.create(obj) 创建一个新的对象，prototype指向obj。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dog = &#123; <span class="attr">legs</span>: <span class="number">4</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> myDog = <span class="built_in">Object</span>.create(dog);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myDog.hasOwnProperty(<span class="string">'legs'</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(myDog.legs)                    <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(myDog.__proto__ === dog)       <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="继承是引用传值"><a href="#继承是引用传值" class="headerlink" title="继承是引用传值"></a>继承是引用传值</h3><p>继承属性都是通过引用的形式。看例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> objProt = &#123; <span class="attr">text</span>: <span class="string">'original'</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> objAttachedToProt = <span class="built_in">Object</span>.create(objProt);</span><br><span class="line"><span class="built_in">console</span>.log(objAttachedToProt.text)   <span class="comment">// original</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 我们更改objProt的text属性，objAttachedToProt的text属性同样更改了</span></span><br><span class="line">objProt.text = <span class="string">'prototype property changed'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(objAttachedToProt.text)   <span class="comment">// prototype property changed</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 但是如果我们讲一个新的对象赋值给objProt，那么objAttachedToProt的text属性不受影响</span></span><br><span class="line">objProt = &#123; <span class="attr">text</span>: <span class="string">'replacing property'</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(objAttachedToProt.text)   <span class="comment">// prototype property changed</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="异步JavaScript"><a href="#异步JavaScript" class="headerlink" title="异步JavaScript"></a>异步JavaScript</h3><p>JavaScript是一个单线程程序语言，也就是说JavaScript引擎一次只能执行某一段代码。它导致的问题就是：如果有一段代码需要耗费很长的时间执行，其它的操作就被卡住了。JavaScript使用Call Stack来记录函数的调用。一个Call Stack可以看成是一摞书。最后一本书放在最上面，也最先被移走。最先放的书在最底层，最后被移走。</p>
-<p>为了避免复杂代码占用CPU太长时间，一个解法就是定义异步回调函数。我们自己来定义一个异步函数看看：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greetingAsync</span>(<span class="params">name, callback</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> greeting = <span class="string">"hello, "</span> + name ;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">_</span> =&gt;</span> callback(greeting),<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greetingAsync(<span class="string">"fundebug"</span>, <span class="built_in">console</span>.log);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"start greeting"</span>);</span><br></pre></td></tr></table></figure></p>
-<p>我们在greetingAsync中构造了greeting语句，然后通过setTimeout定义了异步，callback函数，是为了让用户自己去定义greeting的具体方式。为方便起见，我们时候直接使用console.log。</p>
-<p>上面代码执行首先会打印start greeting，然后才是hello, fundebug。也就是说，greetingAsync的回调函数后执行。在网站开发中，和服务器交互的时候需要不断地发送各种请求，而一个页面可能有几十个请求。如果我们一个一个按照顺序来请求并等待结果，串行的执行会使得网页加载很慢。通过异步的方式，我们可以先发请求，然后在回调中处理请求结果，高效低并发处理。</p>
-<p>下面通过一个例子来描述整个执行过程：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> first = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'First message'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> second = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Second message'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> third = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Third message'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">first();</span><br><span class="line">setTimeout(second, <span class="number">0</span>);</span><br><span class="line">third();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出:</span></span><br><span class="line">  <span class="comment">// First message</span></span><br><span class="line">  <span class="comment">// Third message</span></span><br><span class="line">  <span class="comment">// Second message</span></span><br></pre></td></tr></table></figure></p>
+<p>接下来通过例子来帮助理解：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">breed, name</span>) </span>&#123;</span><br><span class="line">  (<span class="keyword">this</span>.breed = breed), (<span class="keyword">this</span>.name = name);</span><br><span class="line">&#125;</span><br><span class="line">Dog.prototype.describe = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> is a <span class="subst">$&#123;<span class="keyword">this</span>.breed&#125;</span>`</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> rusty = <span class="keyword">new</span> Dog(<span class="string">"Beagle"</span>, <span class="string">"Rusty"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* .prototype 属性包含了构造函数以及构造函数中在prototype上定义的属性。*/</span></span><br><span class="line"><span class="built_in">console</span>.log(Dog.prototype); <span class="comment">// &#123; describe: ƒ , constructor: ƒ &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用Dog构造函数构造的对象 */</span></span><br><span class="line"><span class="built_in">console</span>.log(rusty); <span class="comment">//  &#123; breed: "Beagle", name: "Rusty" &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 从构造函数的原型中继承下来的属性或函数 */</span></span><br><span class="line"><span class="built_in">console</span>.log(rusty.describe()); <span class="comment">// "Rusty is a Beagle"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* .__proto__ 属性指向构造函数的.prototype属性 */</span></span><br><span class="line"><span class="built_in">console</span>.log(rusty.__proto__); <span class="comment">// &#123; describe: ƒ , constructor: ƒ &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* .constructor 属性指向构造函数 */</span></span><br><span class="line"><span class="built_in">console</span>.log(rusty.constructor); <span class="comment">// ƒ Dog(breed, name) &#123; ... &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>原型链是指对象之间通过 prototype 链接起来，形成一个有向的链条。当访问一个对象的某个属性的时候，JavaScript 引擎会首先查看该对象是否包含该属性。如果没有，就去查找对象的 prototype 中是否包含。以此类推，直到找到该属性或则找到最后一个对象。最后一个对象的 prototype 默认为 null。</p>
+<h3 id="拥有-vs-继承"><a href="#拥有-vs-继承" class="headerlink" title="拥有 vs 继承"></a>拥有 vs 继承</h3><p>一个对象有两种属性，分别是它自身定义的和继承的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Car.prototype.wheels = <span class="number">4</span>;</span><br><span class="line">Car.prototype.airbags = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> Car();</span><br><span class="line">myCar.color = <span class="string">"black"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  原型链中的属性也可以通过in来查看:  */</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"airbags"</span> <span class="keyword">in</span> myCar); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(myCar.wheels); <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(myCar.year); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*  通过hasOwnProperty来查看是否拥有该属性:  */</span></span><br><span class="line"><span class="built_in">console</span>.log(myCar.hasOwnProperty(<span class="string">"airbags"</span>)); <span class="comment">// false — Inherited</span></span><br><span class="line"><span class="built_in">console</span>.log(myCar.hasOwnProperty(<span class="string">"color"</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>Object.create(obj) 创建一个新的对象，prototype 指向 obj。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dog = &#123; <span class="attr">legs</span>: <span class="number">4</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> myDog = <span class="built_in">Object</span>.create(dog);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myDog.hasOwnProperty(<span class="string">"legs"</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(myDog.legs); <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(myDog.__proto__ === dog); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="继承是引用传值"><a href="#继承是引用传值" class="headerlink" title="继承是引用传值"></a>继承是引用传值</h3><p>继承属性都是通过引用的形式。看例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> objProt = &#123; <span class="attr">text</span>: <span class="string">"original"</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> objAttachedToProt = <span class="built_in">Object</span>.create(objProt);</span><br><span class="line"><span class="built_in">console</span>.log(objAttachedToProt.text); <span class="comment">// original</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 我们更改objProt的text属性，objAttachedToProt的text属性同样更改了</span></span><br><span class="line">objProt.text = <span class="string">"prototype property changed"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(objAttachedToProt.text); <span class="comment">// prototype property changed</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 但是如果我们讲一个新的对象赋值给objProt，那么objAttachedToProt的text属性不受影响</span></span><br><span class="line">objProt = &#123; <span class="attr">text</span>: <span class="string">"replacing property"</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(objAttachedToProt.text); <span class="comment">// prototype property changed</span></span><br></pre></td></tr></table></figure>
+<h3 id="异步-JavaScript"><a href="#异步-JavaScript" class="headerlink" title="异步 JavaScript"></a>异步 JavaScript</h3><p>JavaScript 是一个单线程程序语言，也就是说 JavaScript 引擎一次只能执行某一段代码。它导致的问题就是：如果有一段代码需要耗费很长的时间执行，其它的操作就被卡住了。JavaScript 使用 Call Stack 来记录函数的调用。一个 Call Stack 可以看成是一摞书。最后一本书放在最上面，也最先被移走。最先放的书在最底层，最后被移走。</p>
+<p>为了避免复杂代码占用 CPU 太长时间，一个解法就是定义异步回调函数。我们自己来定义一个异步函数看看：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greetingAsync</span>(<span class="params">name, callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> greeting = <span class="string">"hello, "</span> + name;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">_</span> =&gt;</span> callback(greeting), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greetingAsync(<span class="string">"fundebug"</span>, <span class="built_in">console</span>.log);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"start greeting"</span>);</span><br></pre></td></tr></table></figure>
+<p>我们在 greetingAsync 中构造了 greeting 语句，然后通过 setTimeout 定义了异步，callback 函数，是为了让用户自己去定义 greeting 的具体方式。为方便起见，我们时候直接使用 console.log。</p>
+<p>上面代码执行首先会打印 start greeting，然后才是 hello, fundebug。也就是说，greetingAsync 的回调函数后执行。在网站开发中，和服务器交互的时候需要不断地发送各种请求，而一个页面可能有几十个请求。如果我们一个一个按照顺序来请求并等待结果，串行的执行会使得网页加载很慢。通过异步的方式，我们可以先发请求，然后在回调中处理请求结果，高效低并发处理。</p>
+<p>下面通过一个例子来描述整个执行过程：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> first = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"First message"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> second = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Second message"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> third = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Third message"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">first();</span><br><span class="line">setTimeout(second, <span class="number">0</span>);</span><br><span class="line">third();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出:</span></span><br><span class="line"><span class="comment">// First message</span></span><br><span class="line"><span class="comment">// Third message</span></span><br><span class="line"><span class="comment">// Second message</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>初始状态下，浏览器控制台没有输出，并且事件管理器(Event Manager)是空的；</li>
 <li>first()被添加到调用栈</li>
-<li>将console.log(“First message”)加到调用栈</li>
+<li>将 console.log(“First message”)加到调用栈</li>
 <li>console.log(“First message”)执行并输出“First message”到控制台</li>
 <li>console.log(“First message”)从调用栈中移除</li>
 <li>first()从调用栈中移除</li>
 <li>setTimeout(second, 0)加到调用栈</li>
-<li>setTimeout(second, 0)执行，0ms之后，second()被加到回调队列</li>
+<li>setTimeout(second, 0)执行，0ms 之后，second()被加到回调队列</li>
 <li>setTimeout(second, 0)从调用栈中移除</li>
 <li>third()加到调用栈</li>
 <li>console.log(“Third message”)加到调用栈</li>
 <li>console.log(“Third message”)执行并输出“Third message”到控制台</li>
 <li>console.log(“Third message”)从调用栈中移除</li>
 <li>third()从调用栈中移除</li>
-<li>Event Loop 将second()从回调队列移到调用栈</li>
+<li>Event Loop 将 second()从回调队列移到调用栈</li>
 <li>console.log(“Second message”)加到调用栈</li>
 <li>console.log(“Second message”)Second message”到控制台</li>
 <li>console.log(“Second message”)从调用栈中移除</li>
 <li>Second()从调用栈中移除</li>
 </ol>
-<p>特别注意的是：second()函数在0ms之后并没有立即执行，你传入到setTimeout()函数的时间和second()延迟执行的时间并不一定直接相关。事件管理器等到setTimeout()设置的时间到期才会将其加入回调队列，而回调队列中它执行的时间和它在队列中的位置以及它前面的函数的执行时间有关。</p>
+<p>特别注意的是：second()函数在 0ms 之后并没有立即执行，你传入到 setTimeout()函数的时间和 second()延迟执行的时间并不一定直接相关。事件管理器等到 setTimeout()设置的时间到期才会将其加入回调队列，而回调队列中它执行的时间和它在队列中的位置以及它前面的函数的执行时间有关。</p>
 <p><a href="https://blog.fundebug.com/2018/01/29/the-definitive-javascript-handbook-for-a-developer-interview-3/" target="_blank" rel="noopener">原文地址</a></p>
 
       
@@ -605,7 +617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -616,7 +628,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -627,7 +639,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -701,7 +713,7 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.kancloud.cn/dennis/tgjavascript/241800" title="JavaScript半知半解" target="_blank">JavaScript半知半解</a>
+                    <a href="https://github.com/yygmind/blog" title="木易杨" target="_blank">木易杨</a>
                   </li>
                 
               </ul>
@@ -723,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#new关键字"><span class="nav-number">1.</span> <span class="nav-text">new关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型和继承"><span class="nav-number">2.</span> <span class="nav-text">原型和继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链"><span class="nav-number">3.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拥有vs继承"><span class="nav-number">4.</span> <span class="nav-text">拥有vs继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承是引用传值"><span class="nav-number">5.</span> <span class="nav-text">继承是引用传值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步JavaScript"><span class="nav-number">6.</span> <span class="nav-text">异步JavaScript</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#new-关键字"><span class="nav-number">1.</span> <span class="nav-text">new 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型和继承"><span class="nav-number">2.</span> <span class="nav-text">原型和继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链"><span class="nav-number">3.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拥有-vs-继承"><span class="nav-number">4.</span> <span class="nav-text">拥有 vs 继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承是引用传值"><span class="nav-number">5.</span> <span class="nav-text">继承是引用传值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步-JavaScript"><span class="nav-number">6.</span> <span class="nav-text">异步 JavaScript</span></a></li></ol></div>
             
 
           </div>
@@ -929,324 +941,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

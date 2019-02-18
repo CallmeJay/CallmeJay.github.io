@@ -81,25 +81,25 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jay's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml" />
 
 
 
 
 
 
-<meta name="description" content="原生函数（native function）,也是JavaScript的内建函数（built-in function）.常见的原生函数有：  String() Number() Boolean() Array() Object() Function() RegExp() Date() Error() Symbol()">
+<meta name="description" content="原生函数（native function）,也是 JavaScript 的内建函数（built-in function）.常见的原生函数有：  String() Number() Boolean() Array() Object() Function() RegExp() Date() Error() Symbol()">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习笔记（原生函数）">
 <meta property="og:url" content="https://callmejay.github.io/2018/07/29/学习笔记（原生函数）/index.html">
-<meta property="og:site_name" content="Jay&#39;s Blog">
-<meta property="og:description" content="原生函数（native function）,也是JavaScript的内建函数（built-in function）.常见的原生函数有：  String() Number() Boolean() Array() Object() Function() RegExp() Date() Error() Symbol()">
+<meta property="og:site_name" content="Jay Bein&#39;s Blog">
+<meta property="og:description" content="原生函数（native function）,也是 JavaScript 的内建函数（built-in function）.常见的原生函数有：  String() Number() Boolean() Array() Object() Function() RegExp() Date() Error() Symbol()">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-29T09:04:57.042Z">
+<meta property="og:updated_time" content="2019-02-18T10:49:14.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记（原生函数）">
-<meta name="twitter:description" content="原生函数（native function）,也是JavaScript的内建函数（built-in function）.常见的原生函数有：  String() Number() Boolean() Array() Object() Function() RegExp() Date() Error() Symbol()">
+<meta name="twitter:description" content="原生函数（native function）,也是 JavaScript 的内建函数（built-in function）.常见的原生函数有：  String() Number() Boolean() Array() Object() Function() RegExp() Date() Error() Symbol()">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title>学习笔记（原生函数） | Jay's Blog</title>
+  <title>学习笔记（原生函数） | Jay Bein's Blog</title>
   
 
 
@@ -165,12 +165,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jay's Blog</span>
+        <span class="site-title">Jay Bein's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">知其然，知其所以然。</h1>
+        <h1 class="site-subtitle" itemprop="description">有事做，有人爱，有所期待。</h1>
       
   </div>
 
@@ -258,22 +258,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -315,7 +319,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
+      <meta itemprop="name" content="Jay Bein's Blog">
     </span>
 
     
@@ -395,7 +399,7 @@
       
 
       
-        <p>原生函数（native function）,也是JavaScript的内建函数（built-in function）.<br>常见的原生函数有：</p>
+        <p>原生函数（native function）,也是 JavaScript 的内建函数（built-in function）.<br>常见的原生函数有：</p>
 <ul>
 <li>String()</li>
 <li>Number()</li>
@@ -414,44 +418,44 @@
 <p><strong>通过构造函数(如 <code>new String(&#39;abc&#39;)</code>)创造出来的是封装了基本类型值（如‘abc’）的封装对象。</strong></p>
 <p>可以通过<code>console.log(a)</code>来查看封装对象。</p>
 <p>需要注意的是，<code>new String(&#39;abc&#39;)</code>创造出来的是字符串’abc’的封装对象，而不是基本类型值’abc’。</p>
-<h3 id="内部属性-class"><a href="#内部属性-class" class="headerlink" title="内部属性[[class]]"></a>内部属性[[class]]</h3><p>所有typeof返回值为“object”的对象都包含一个内部属性[[class]],这个属性无法访问，只能通过<code>Object.prototype.toString()</code>来查看。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toSting([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) <span class="comment">// [object Array]</span></span><br></pre></td></tr></table></figure>
+<h3 id="内部属性-class"><a href="#内部属性-class" class="headerlink" title="内部属性[[class]]"></a>内部属性[[class]]</h3><p>所有 typeof 返回值为“object”的对象都包含一个内部属性[[class]],这个属性无法访问，只能通过<code>Object.prototype.toString()</code>来查看。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toSting([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">// [object Array]</span></span><br></pre></td></tr></table></figure>
 <p>数组的内部[[class]]属性值是“Array”。对象的内部[[class]]属性和创建该对象的内建函数相对应。但是</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="literal">null</span>) <span class="comment">// '[object Null]'</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="literal">undefined</span>) <span class="comment">// '[object Undefined]'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="literal">null</span>); <span class="comment">// '[object Null]'</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="literal">undefined</span>); <span class="comment">// '[object Undefined]'</span></span><br></pre></td></tr></table></figure>
 <p>虽然是’null’和’undefined’这样的原生函数并不存在，但是内部[[class]]的属性值仍然是‘Null’和‘Undefined’</p>
 <p>其他的基本类型值（如字符串，布尔，数字）的情况有所不同，通常称为‘包装’（boxing）;</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="string">'123'</span>) <span class="comment">// [object String]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="number">123</span>) <span class="comment">// [object Number]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="literal">false</span>) <span class="comment">// [object Boolean]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="string">"123"</span>); <span class="comment">// [object String]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="number">123</span>); <span class="comment">// [object Number]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString(<span class="literal">false</span>); <span class="comment">// [object Boolean]</span></span><br></pre></td></tr></table></figure>
 <p>上面的基本类型值被各自的封装对象包装，所以他们的内部[[class]]属性值“String”,“Number”,“Boolean”。</p>
-<h3 id="封装对象包装"><a href="#封装对象包装" class="headerlink" title="封装对象包装"></a>封装对象包装</h3><p>封装对象（object wrapper）扮演者重要的角色。我们都知道基本类型没有.length和.toString()这样的属性和方法，那他们是如何做到的呢？没错！就是通过封装对象访问的。此时JavaScript会自动为 基本类型值 包装（box或者wrap）一个封装对象。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'abc'</span>;</span><br><span class="line"></span><br><span class="line">a.length <span class="comment">// 3</span></span><br><span class="line">a.toUpperCase() <span class="comment">// ABC</span></span><br></pre></td></tr></table></figure>
-<p>这时候我们会想：如果我们要经常使用属性和方法。为甚不一开始就创建封装对象，这样JavaScript引擎就不用每次都自动创建了。But~~实际上 <strong>浏览器已经做了性能优化，直接使用封装对象反而会降低执行效率</strong>。所以我们不需要直接使用封装对象，让JS引擎自己去决定什么时候使用封装对象。</p>
-<h3 id="封装对象释疑"><a href="#封装对象释疑" class="headerlink" title="封装对象释疑"></a>封装对象释疑</h3><p>比如Boolean</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!a)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Oops'</span>); <span class="comment">// 实际上不会执行到这里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们为false创建了一个封装对象，然而该对象总是返回真值（truthy）。</p>
-<p>✔️如果想要自行封装基本类型值，可以使用<code>Object(..)</code>函数（不带new关键字）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'abc'</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">String</span>(a);</span><br><span class="line"><span class="keyword">var</span> c = <span class="built_in">Object</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> a  <span class="comment">// string</span></span><br><span class="line"><span class="keyword">typeof</span> b  <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span> c  <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line">b <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">// true</span></span><br><span class="line">c <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(b); <span class="comment">// [object String]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(c); <span class="comment">// [object String]</span></span><br></pre></td></tr></table></figure>
+<h3 id="封装对象包装"><a href="#封装对象包装" class="headerlink" title="封装对象包装"></a>封装对象包装</h3><p>封装对象（object wrapper）扮演者重要的角色。我们都知道基本类型没有.length 和.toString()这样的属性和方法，那他们是如何做到的呢？没错！就是通过封装对象访问的。此时 JavaScript 会自动为 基本类型值 包装（box 或者 wrap）一个封装对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"abc"</span>;</span><br><span class="line"></span><br><span class="line">a.length; <span class="comment">// 3</span></span><br><span class="line">a.toUpperCase(); <span class="comment">// ABC</span></span><br></pre></td></tr></table></figure>
+<p>这时候我们会想：如果我们要经常使用属性和方法。为甚不一开始就创建封装对象，这样 JavaScript 引擎就不用每次都自动创建了。But~~实际上 <strong>浏览器已经做了性能优化，直接使用封装对象反而会降低执行效率</strong>。所以我们不需要直接使用封装对象，让 JS 引擎自己去决定什么时候使用封装对象。</p>
+<h3 id="封装对象释疑"><a href="#封装对象释疑" class="headerlink" title="封装对象释疑"></a>封装对象释疑</h3><p>比如 Boolean</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!a) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Oops"</span>); <span class="comment">// 实际上不会执行到这里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们为 false 创建了一个封装对象，然而该对象总是返回真值（truthy）。</p>
+<p>✔️ 如果想要自行封装基本类型值，可以使用<code>Object(..)</code>函数（不带 new 关键字）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">String</span>(a);</span><br><span class="line"><span class="keyword">var</span> c = <span class="built_in">Object</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> a; <span class="comment">// string</span></span><br><span class="line"><span class="keyword">typeof</span> b; <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span> c; <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line">b <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">// true</span></span><br><span class="line">c <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(b); <span class="comment">// [object String]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(c); <span class="comment">// [object String]</span></span><br></pre></td></tr></table></figure>
 <p>再次强调，<strong>我们一般不推荐使用封装对象。</strong></p>
-<h3 id="拆封"><a href="#拆封" class="headerlink" title="拆封"></a>拆封</h3><p>✔️如果想得到封装对象中的基本类型值，可以使用<code>valueOf()</code>函数：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abc'</span>);</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">22</span>);</span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">a.valueOf();<span class="comment">// 'abc'</span></span><br><span class="line">b.valueOf();<span class="comment">// 22</span></span><br><span class="line">c.valueOf(); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="拆封"><a href="#拆封" class="headerlink" title="拆封"></a>拆封</h3><p>✔️ 如果想得到封装对象中的基本类型值，可以使用<code>valueOf()</code>函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"abc"</span>);</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">22</span>);</span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">a.valueOf(); <span class="comment">// 'abc'</span></span><br><span class="line">b.valueOf(); <span class="comment">// 22</span></span><br><span class="line">c.valueOf(); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>在需要用到封装对象中的基本类型值得地方会发生隐式拆封。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abc'</span>);</span><br><span class="line"><span class="keyword">var</span> b = a + <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> a;<span class="comment">// 'object'</span></span><br><span class="line"><span class="keyword">typeof</span> b; <span class="comment">// 'string'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"abc"</span>);</span><br><span class="line"><span class="keyword">var</span> b = a + <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> a; <span class="comment">// 'object'</span></span><br><span class="line"><span class="keyword">typeof</span> b; <span class="comment">// 'string'</span></span><br></pre></td></tr></table></figure>
 <h3 id="原生函数作为构造函数"><a href="#原生函数作为构造函数" class="headerlink" title="原生函数作为构造函数"></a>原生函数作为构造函数</h3><p>关于数组（array），对象（object），函数（function）和正则表达式，实际上，使用常量和使用构造函数效果是一样的。（创建的值都是通过封装对象来包装）。</p>
-<h4 id="Array"><a href="#Array" class="headerlink" title="Array(..)"></a>Array(..)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数Array(..)不要求必须带 new 关键字，不带时，它会被自动补上</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line">a; <span class="comment">// [1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">b; <span class="comment">// [1,2,3]</span></span><br></pre></td></tr></table></figure>
-<p>Array构造函数只带一个参数时，会被作为数组的预设长度(length),创造出来的只是一个空数组。</p>
+<h4 id="Array"><a href="#Array" class="headerlink" title="Array(..)"></a>Array(..)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数Array(..)不要求必须带 new 关键字，不带时，它会被自动补上</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">a; <span class="comment">// [1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">b; <span class="comment">// [1,2,3]</span></span><br></pre></td></tr></table></figure>
+<p>Array 构造函数只带一个参数时，会被作为数组的预设长度(length),创造出来的只是一个空数组。</p>
 <blockquote>
 <p>我们将包含至少一个“空单元”的数组称为“稀疏数组”.</p>
 </blockquote>
-<h4 id="Date-和Error"><a href="#Date-和Error" class="headerlink" title="Date(..)和Error(..)"></a>Date(..)和Error(..)</h4><p>创建日期对象必须使用 new Date()。 Date(..)主要是用来获取当前的Unix时间戳（从1970年1月1日开始计算。以秒为单位）。</p>
-<p>构造函数Error(..)带不带new关键字都可以。<br>创建错误对象（error object）主要是为了获得当前运行栈的上下文。栈的上下文信息包括函数调用栈信息和产生错误的代码行号，以便于调试（debug）。</p>
-<p>错误对象通常与throw一起使用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(x)&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'x was not be provided'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>错误对象至少包含一个message属性。最好的办法是调用toSting()来获得经过格式化的便于阅读的错误信息。</p>
-<h4 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol()"></a>Symbol()</h4><p>ES6中新加入了一个基本数据类型–符号（Symbol）。符号是具有唯一性的特殊值（并非绝对）。用它来命名对象属性不容易导致重名。</p>
+<h4 id="Date-和-Error"><a href="#Date-和-Error" class="headerlink" title="Date(..)和 Error(..)"></a>Date(..)和 Error(..)</h4><p>创建日期对象必须使用 new Date()。 Date(..)主要是用来获取当前的 Unix 时间戳（从 1970 年 1 月 1 日开始计算。以秒为单位）。</p>
+<p>构造函数 Error(..)带不带 new 关键字都可以。<br>创建错误对象（error object）主要是为了获得当前运行栈的上下文。栈的上下文信息包括函数调用栈信息和产生错误的代码行号，以便于调试（debug）。</p>
+<p>错误对象通常与 throw 一起使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (x) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"x was not be provided"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>错误对象至少包含一个 message 属性。最好的办法是调用 toSting()来获得经过格式化的便于阅读的错误信息。</p>
+<h4 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol()"></a>Symbol()</h4><p>ES6 中新加入了一个基本数据类型–符号（Symbol）。符号是具有唯一性的特殊值（并非绝对）。用它来命名对象属性不容易导致重名。</p>
 <p>符号可以用作属性名，但是无论是在代码还是控制台上都无法查看和访问它的值，只会显示为诸如<code>Symbol(Symbol.create)</code>这样的值。</p>
-<p>ES6中有一些预定义符号，以Symbol的静态属性形式出现， 如Symbol.create,Symbol.iterator等。可以这样用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj[<span class="built_in">Symbol</span>.iterator] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">/*..*/</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>✔️我们可以使用Symbol(..)原生构造函数来自定义符号。但它比较特殊，不能带new关键字，否则会报错：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysym = <span class="built_in">Symbol</span>(<span class="string">'my own symbol'</span>);</span><br><span class="line">mysym; <span class="comment">// Symbol(my own symbol)</span></span><br><span class="line">mysym.toString(); <span class="comment">// "Symbol(my own symbol)"</span></span><br><span class="line"><span class="keyword">typeof</span> mysym; <span class="comment">// 'symbol'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line">a[mysym] = <span class="string">'abc'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.getOwmPropertySymbols(a); <span class="comment">// [Symbol(my own symbol)]</span></span><br></pre></td></tr></table></figure>
+<p>ES6 中有一些预定义符号，以 Symbol 的静态属性形式出现， 如 Symbol.create,Symbol.iterator 等。可以这样用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj[<span class="built_in">Symbol</span>.iterator] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">/*..*/</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>✔️ 我们可以使用 Symbol(..)原生构造函数来自定义符号。但它比较特殊，不能带 new 关键字，否则会报错：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysym = <span class="built_in">Symbol</span>(<span class="string">"my own symbol"</span>);</span><br><span class="line">mysym; <span class="comment">// Symbol(my own symbol)</span></span><br><span class="line">mysym.toString(); <span class="comment">// "Symbol(my own symbol)"</span></span><br><span class="line"><span class="keyword">typeof</span> mysym; <span class="comment">// 'symbol'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line">a[mysym] = <span class="string">"abc"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.getOwmPropertySymbols(a); <span class="comment">// [Symbol(my own symbol)]</span></span><br></pre></td></tr></table></figure>
 <p>虽然符号实际上并非私有属性（通过<code>Object.getOwmPropertySymbols(..)</code>便可以公开获得对象中的所有符号），但是它却主要用于私有或者特殊属性。很多人稀罕用它来替代有下划线（_）前缀的属性，而下划线前缀通常用于命名私有或特殊属性。</p>
 
       
@@ -522,8 +526,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/29/学习笔记（强制类型转换）/" rel="prev" title="学习笔记（强制类型转换）">
-                学习笔记（强制类型转换） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/17/CSS3之animation/" rel="prev" title="CSS3之animation">
+                CSS3之animation <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -610,7 +614,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +625,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -632,7 +636,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -706,7 +710,7 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.kancloud.cn/dennis/tgjavascript/241800" title="JavaScript半知半解" target="_blank">JavaScript半知半解</a>
+                    <a href="https://github.com/yygmind/blog" title="木易杨" target="_blank">木易杨</a>
                   </li>
                 
               </ul>
@@ -728,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内部属性-class"><span class="nav-number">1.</span> <span class="nav-text">内部属性[[class]]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装对象包装"><span class="nav-number">2.</span> <span class="nav-text">封装对象包装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装对象释疑"><span class="nav-number">3.</span> <span class="nav-text">封装对象释疑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拆封"><span class="nav-number">4.</span> <span class="nav-text">拆封</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生函数作为构造函数"><span class="nav-number">5.</span> <span class="nav-text">原生函数作为构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Array"><span class="nav-number">5.1.</span> <span class="nav-text">Array(..)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-和Error"><span class="nav-number">5.2.</span> <span class="nav-text">Date(..)和Error(..)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol"><span class="nav-number">5.3.</span> <span class="nav-text">Symbol()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内部属性-class"><span class="nav-number">1.</span> <span class="nav-text">内部属性[[class]]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装对象包装"><span class="nav-number">2.</span> <span class="nav-text">封装对象包装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装对象释疑"><span class="nav-number">3.</span> <span class="nav-text">封装对象释疑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拆封"><span class="nav-number">4.</span> <span class="nav-text">拆封</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生函数作为构造函数"><span class="nav-number">5.</span> <span class="nav-text">原生函数作为构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Array"><span class="nav-number">5.1.</span> <span class="nav-text">Array(..)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-和-Error"><span class="nav-number">5.2.</span> <span class="nav-text">Date(..)和 Error(..)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol"><span class="nav-number">5.3.</span> <span class="nav-text">Symbol()</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -934,324 +938,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

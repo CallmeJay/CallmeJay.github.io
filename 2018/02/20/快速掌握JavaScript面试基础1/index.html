@@ -81,25 +81,25 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jay's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml" />
 
 
 
 
 
 
-<meta name="description" content="类型和类型转换在JavaScript中有7个内置类型：null,undefined,boolean,number,string,object和symbol（ES6)。 除了object以外，其他都叫做基本类型。123456typeof 0 //numbertypeof true // booleantypeof &apos;abc&apos; // stringtypeof null // objecttypeof">
+<meta name="description" content="类型和类型转换在 JavaScript 中有 7 个内置类型：null,undefined,boolean,number,string,object 和 symbol（ES6)。 除了 object 以外，其他都叫做基本类型。 123456typeof 0; //numbertypeof true; // booleantypeof &quot;abc&quot;; // stringtypeof null; //">
 <meta name="keywords" content="基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速掌握JavaScript面试基础1">
 <meta property="og:url" content="https://callmejay.github.io/2018/02/20/快速掌握JavaScript面试基础1/index.html">
-<meta property="og:site_name" content="Jay&#39;s Blog">
-<meta property="og:description" content="类型和类型转换在JavaScript中有7个内置类型：null,undefined,boolean,number,string,object和symbol（ES6)。 除了object以外，其他都叫做基本类型。123456typeof 0 //numbertypeof true // booleantypeof &apos;abc&apos; // stringtypeof null // objecttypeof">
+<meta property="og:site_name" content="Jay Bein&#39;s Blog">
+<meta property="og:description" content="类型和类型转换在 JavaScript 中有 7 个内置类型：null,undefined,boolean,number,string,object 和 symbol（ES6)。 除了 object 以外，其他都叫做基本类型。 123456typeof 0; //numbertypeof true; // booleantypeof &quot;abc&quot;; // stringtypeof null; //">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-30T12:48:24.455Z">
+<meta property="og:updated_time" content="2019-02-18T10:50:17.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速掌握JavaScript面试基础1">
-<meta name="twitter:description" content="类型和类型转换在JavaScript中有7个内置类型：null,undefined,boolean,number,string,object和symbol（ES6)。 除了object以外，其他都叫做基本类型。123456typeof 0 //numbertypeof true // booleantypeof &apos;abc&apos; // stringtypeof null // objecttypeof">
+<meta name="twitter:description" content="类型和类型转换在 JavaScript 中有 7 个内置类型：null,undefined,boolean,number,string,object 和 symbol（ES6)。 除了 object 以外，其他都叫做基本类型。 123456typeof 0; //numbertypeof true; // booleantypeof &quot;abc&quot;; // stringtypeof null; //">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title>快速掌握JavaScript面试基础1 | Jay's Blog</title>
+  <title>快速掌握JavaScript面试基础1 | Jay Bein's Blog</title>
   
 
 
@@ -165,12 +165,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jay's Blog</span>
+        <span class="site-title">Jay Bein's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">知其然，知其所以然。</h1>
+        <h1 class="site-subtitle" itemprop="description">有事做，有人爱，有所期待。</h1>
       
   </div>
 
@@ -258,22 +258,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -315,7 +319,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
+      <meta itemprop="name" content="Jay Bein's Blog">
     </span>
 
     
@@ -395,58 +399,77 @@
       
 
       
-        <h3 id="类型和类型转换"><a href="#类型和类型转换" class="headerlink" title="类型和类型转换"></a>类型和类型转换</h3><p>在JavaScript中有7个内置类型：null,undefined,boolean,number,string,object和symbol（ES6)。</p>
-<p>除了object以外，其他都叫做基本类型。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">0</span> <span class="comment">//number</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span> <span class="comment">// boolean</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">'abc'</span> <span class="comment">// string</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>(<span class="string">'Hi'</span>) <span class="comment">// symbol</span></span><br></pre></td></tr></table></figure></p>
+        <h3 id="类型和类型转换"><a href="#类型和类型转换" class="headerlink" title="类型和类型转换"></a>类型和类型转换</h3><p>在 JavaScript 中有 7 个内置类型：null,undefined,boolean,number,string,object 和 symbol（ES6)。</p>
+<p>除了 object 以外，其他都叫做基本类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">0</span>; <span class="comment">//number</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>; <span class="comment">// boolean</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">"abc"</span>; <span class="comment">// string</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>; <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>; <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>(<span class="string">"Hi"</span>); <span class="comment">// symbol</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <ul>
 <li>Null vs. Undefined</li>
 </ul>
-<p><strong>Undefined</strong>表示未定义。对于没有初始化的变量，函数调用时未提供的函数参数，不存在的对象属性，它们的默认值就是undefined。如果一个函数没有返回语句，那么默认的返回值也是undefined。</p>
-<p><strong>Null</strong>表示值为空。一个变量我们可以将其赋值为null,表示当前没有值。</p>
+<p><strong>Undefined</strong>表示未定义。对于没有初始化的变量，函数调用时未提供的函数参数，不存在的对象属性，它们的默认值就是 undefined。如果一个函数没有返回语句，那么默认的返回值也是 undefined。</p>
+<p><strong>Null</strong>表示值为空。一个变量我们可以将其赋值为 null,表示当前没有值。</p>
 <ul>
 <li>隐式转换</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'Joey'</span>;</span><br><span class="line"><span class="keyword">if</span> (name) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name + <span class="string">" doesn't share food!"</span>)  <span class="comment">// Joey doesn’t share food!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在if语句的条件判断中，name从字符串转换为布尔型。在if的代码块中，在控制台将name原原本本打印出来。你知道在什么情况下字符串会转换为真，什么时候为假么？</p>
-<p><code>&quot;&quot;，0， null，undefined, NaN, false 会自动转换为false</code>。其它的都会转换为真：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>)         <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">'hello'</span>)      <span class="comment">// true </span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">'0'</span>)          <span class="comment">// true </span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">' '</span>)          <span class="comment">// true </span></span><br><span class="line"><span class="built_in">Boolean</span>([])           <span class="comment">// true </span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;) <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"Joey"</span>;</span><br><span class="line"><span class="keyword">if</span> (name) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name + <span class="string">" doesn't share food!"</span>); <span class="comment">// Joey doesn’t share food!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 if 语句的条件判断中，name 从字符串转换为布尔型。在 if 的代码块中，在控制台将 name 原原本本打印出来。你知道在什么情况下字符串会转换为真，什么时候为假么？</p>
+<p><code>&quot;&quot;，0， null，undefined, NaN, false 会自动转换为false</code>。其它的都会转换为真：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">"hello"</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">"0"</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">" "</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>([]); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>空数组、对象、函数定义都会自动转换为真。</p>
 <ul>
-<li>String &amp; Number之间的转换</li>
-<li>第一个你要非常小心的是<code>+</code>操作符。因为它同时用于数字相加和字符串拼接。</li>
+<li>String &amp; Number 之间的转换<br>-</li>
 </ul>
-<p><code>*,/,-</code>只用于数字运算，当这些操作符和字符串一起使用，那么字符串会被强制转换为数字。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="string">"2"</span> = <span class="string">"12"</span></span><br><span class="line"><span class="string">""</span> + <span class="number">1</span> + <span class="number">0</span> = <span class="string">"10"</span></span><br><span class="line"><span class="string">""</span> - <span class="number">1</span> + <span class="number">0</span> = <span class="number">-1</span></span><br><span class="line"><span class="string">"-9\n"</span> + <span class="number">5</span> = <span class="string">"-9\n5"</span></span><br><span class="line"><span class="string">"-9\n"</span> - <span class="number">5</span> = <span class="number">-14</span></span><br><span class="line"><span class="string">"2"</span> * <span class="string">"3"</span> = <span class="number">6</span></span><br><span class="line"><span class="number">4</span> + <span class="number">5</span> + <span class="string">"px"</span> = <span class="string">"9px"</span></span><br><span class="line"><span class="string">"$"</span> + <span class="number">4</span> + <span class="number">5</span> = <span class="string">"$45"</span></span><br><span class="line"><span class="string">"4"</span> - <span class="number">2</span> = <span class="number">2</span></span><br><span class="line"><span class="string">"4px"</span> - <span class="number">2</span> = <span class="literal">NaN</span></span><br><span class="line"><span class="literal">null</span> + <span class="number">1</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>第一个你要非常小心的是<code>+</code>操作符。因为它同时用于数字相加和字符串拼接。</p>
+<p><code>*,/,-</code>只用于数字运算，当这些操作符和字符串一起使用，那么字符串会被强制转换为数字。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="string">"2"</span> = <span class="string">"12"</span></span><br><span class="line"><span class="string">""</span> + <span class="number">1</span> + <span class="number">0</span> = <span class="string">"10"</span></span><br><span class="line"><span class="string">""</span> - <span class="number">1</span> + <span class="number">0</span> = <span class="number">-1</span></span><br><span class="line"><span class="string">"-9\n"</span> + <span class="number">5</span> = <span class="string">"-9\n5"</span></span><br><span class="line"><span class="string">"-9\n"</span> - <span class="number">5</span> = <span class="number">-14</span></span><br><span class="line"><span class="string">"2"</span> * <span class="string">"3"</span> = <span class="number">6</span></span><br><span class="line"><span class="number">4</span> + <span class="number">5</span> + <span class="string">"px"</span> = <span class="string">"9px"</span></span><br><span class="line"><span class="string">"$"</span> + <span class="number">4</span> + <span class="number">5</span> = <span class="string">"$45"</span></span><br><span class="line"><span class="string">"4"</span> - <span class="number">2</span> = <span class="number">2</span></span><br><span class="line"><span class="string">"4px"</span> - <span class="number">2</span> = <span class="literal">NaN</span></span><br><span class="line"><span class="literal">null</span> + <span class="number">1</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>== vs. ===</li>
 </ul>
 <p>一个广泛被接受的认知就是：==判断值是否相等，===同时判断值是否相等和类型是否相同。但是，这里有些误解。</p>
-<p>实际上，==在验证相等性的时候，会对类型不同的值做一个类型转换。===对要判断的值不做类型转换。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> == <span class="string">'2'</span>            <span class="comment">// True</span></span><br><span class="line"><span class="number">2</span> === <span class="string">'2'</span>           <span class="comment">// False</span></span><br><span class="line"><span class="literal">undefined</span> == <span class="literal">null</span>   <span class="comment">// True</span></span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">null</span>  <span class="comment">// False</span></span><br></pre></td></tr></table></figure></p>
-<p>类型转换有很多取巧的地方，要注意：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'0'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(a)); <span class="comment">// True</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="literal">false</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(b)); <span class="comment">// False</span></span><br><span class="line"><span class="string">``</span><span class="string">`	</span></span><br><span class="line"><span class="string">你认为下面的相等判断会输出什么值呢?</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="built_in">console</span>.log(a == b);</span><br></pre></td></tr></table></figure></p>
-<p>实际上会返回true。知道为什么吗？</p>
-<p><strong>如果你将一个布尔类型的和非布尔类型的判断，JavaScript会将布尔类型的转换为数字然后再比对。</strong><br>执行过程如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'0'</span> == <span class="literal">false</span>   (<span class="number">1</span>)</span><br><span class="line"><span class="string">'0'</span> == <span class="number">0</span>       (<span class="number">2</span>)</span><br><span class="line"> <span class="number">0</span>  == <span class="number">0</span>       (<span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
-<p>所以，最终变成了0==0，当然返回true啦。</p>
-<p>一些比较容易掉坑的比较，我在这里列出来：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">false</span> == <span class="string">""</span>  <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> == []  <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> == &#123;&#125;  <span class="comment">// false</span></span><br><span class="line"><span class="string">""</span> == <span class="number">0</span>      <span class="comment">// true</span></span><br><span class="line"><span class="string">""</span> == []     <span class="comment">// true</span></span><br><span class="line"><span class="string">""</span> == &#123;&#125;     <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span> == []      <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span> == &#123;&#125;      <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span> == <span class="literal">null</span>    <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="值-vs-引用"><a href="#值-vs-引用" class="headerlink" title="值 vs. 引用"></a>值 vs. 引用</h3><p>对于基本类型的值，赋值是通过值拷贝的形式；比如：null，undefined，boolean，number，string和ES6的symbol。对于复杂类型的值，通过引用拷贝的形式赋值。比如：对象、对象包括数组和函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;        <span class="comment">// 'a' hold a copy of the value 2.</span></span><br><span class="line"><span class="keyword">var</span> b = a;        <span class="comment">// 'b' is always a copy of the value in 'a'</span></span><br><span class="line">b++;</span><br><span class="line"><span class="built_in">console</span>.log(a);   <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(b);   <span class="comment">// 3</span></span><br><span class="line"><span class="keyword">var</span> c = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> d = c;        <span class="comment">// 'd' is a reference to the shared value</span></span><br><span class="line">d.push( <span class="number">4</span> );      <span class="comment">// Mutates the referenced value (object)</span></span><br><span class="line"><span class="built_in">console</span>.log(c);   <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="built_in">console</span>.log(d);   <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="comment">/* Compound values are equal by reference */</span></span><br><span class="line"><span class="keyword">var</span> e = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="built_in">console</span>.log(c === d);  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(c === e);  <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<p>如果想对复杂类型的值进行值拷贝，你需要自己去对所有子元素进行拷贝。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> copy = c.slice()    <span class="comment">// 'copy' 即使copy和c相同，但是copy指向新的值</span></span><br><span class="line"><span class="built_in">console</span>.log(c);           <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="built_in">console</span>.log(copy);        <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="built_in">console</span>.log(c === copy);  <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<p>实际上，==在验证相等性的时候，会对类型不同的值做一个类型转换。===对要判断的值不做类型转换。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> == <span class="string">"2"</span>; <span class="comment">// True</span></span><br><span class="line"><span class="number">2</span> === <span class="string">"2"</span>; <span class="comment">// False</span></span><br><span class="line"><span class="literal">undefined</span> == <span class="literal">null</span>; <span class="comment">// True</span></span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">null</span>; <span class="comment">// False</span></span><br></pre></td></tr></table></figure>
+<p>类型转换有很多取巧的地方，要注意：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">"0"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(a)); <span class="comment">// True</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="literal">false</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(b)); <span class="comment">// False</span></span><br></pre></td></tr></table></figure>
+<p>你认为下面的相等判断会输出什么值呢?</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a == b);</span><br></pre></td></tr></table></figure>
+<p>实际上会返回 true。知道为什么吗？</p>
+<p><strong>如果你将一个布尔类型的和非布尔类型的判断，JavaScript 会将布尔类型的转换为数字然后再比对。</strong><br>执行过程如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"0"</span> == <span class="literal">false</span>(<span class="number">1</span>);</span><br><span class="line"><span class="string">"0"</span> == <span class="number">0</span>(<span class="number">2</span>);</span><br><span class="line"><span class="number">0</span> == <span class="number">0</span>(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>所以，最终变成了 0==0，当然返回 true 啦。</p>
+<p>一些比较容易掉坑的比较，我在这里列出来：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">false</span> == <span class="string">""</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> == []; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> == &#123;&#125;; <span class="comment">// false</span></span><br><span class="line"><span class="string">""</span> == <span class="number">0</span>; <span class="comment">// true</span></span><br><span class="line"><span class="string">""</span> == []; <span class="comment">// true</span></span><br><span class="line"><span class="string">""</span> == &#123;&#125;; <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span> == []; <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span> == &#123;&#125;; <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span> == <span class="literal">null</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="值-vs-引用"><a href="#值-vs-引用" class="headerlink" title="值 vs. 引用"></a>值 vs. 引用</h3><p>对于基本类型的值，赋值是通过值拷贝的形式；比如：null，undefined，boolean，number，string 和 ES6 的 symbol。对于复杂类型的值，通过引用拷贝的形式赋值。比如：对象、对象包括数组和函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>; <span class="comment">// 'a' hold a copy of the value 2.</span></span><br><span class="line"><span class="keyword">var</span> b = a; <span class="comment">// 'b' is always a copy of the value in 'a'</span></span><br><span class="line">b++;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 3</span></span><br><span class="line"><span class="keyword">var</span> c = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> d = c; <span class="comment">// 'd' is a reference to the shared value</span></span><br><span class="line">d.push(<span class="number">4</span>); <span class="comment">// Mutates the referenced value (object)</span></span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="built_in">console</span>.log(d); <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="comment">/* Compound values are equal by reference */</span></span><br><span class="line"><span class="keyword">var</span> e = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="built_in">console</span>.log(c === d); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(c === e); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>如果想对复杂类型的值进行值拷贝，你需要自己去对所有子元素进行拷贝。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> copy = c.slice(); <span class="comment">// 'copy' 即使copy和c相同，但是copy指向新的值</span></span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="built_in">console</span>.log(copy); <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="built_in">console</span>.log(c === copy); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <h3 id="作用域（Scope）"><a href="#作用域（Scope）" class="headerlink" title="作用域（Scope）"></a>作用域（Scope）</h3><p>作用域是程序的执行环境，它包含了在当前位置可访问的变量和函数。</p>
-<p>全局作用域是最外层的作用域，在函数外面定义的变量属于全局作用域，可以被任何其他子作用域访问。在浏览器中，window对象就是全局作用域。</p>
-<p>局部作用域是在函数内部的作用域。在局部作用域定义的变量只能在该作用域以及其子作用域被访问。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innermost</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> c = <span class="number">3</span>;</span><br><span class="line">      <span class="built_in">console</span>.log(a, b, c);   <span class="comment">// 1 2 3</span></span><br><span class="line">    &#125;</span><br><span class="line">    innermost();</span><br><span class="line">    <span class="built_in">console</span>.log(a, b);        <span class="comment">// 1 2 — 'c' is not defined</span></span><br><span class="line">  &#125;</span><br><span class="line">  inner();</span><br><span class="line">  <span class="built_in">console</span>.log(a);             <span class="comment">// 1 — 'b' and 'c' are not defined</span></span><br><span class="line">&#125;</span><br><span class="line">outer();</span><br></pre></td></tr></table></figure></p>
+<p>全局作用域是最外层的作用域，在函数外面定义的变量属于全局作用域，可以被任何其他子作用域访问。在浏览器中，window 对象就是全局作用域。</p>
+<p>局部作用域是在函数内部的作用域。在局部作用域定义的变量只能在该作用域以及其子作用域被访问。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innermost</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> c = <span class="number">3</span>;</span><br><span class="line">      <span class="built_in">console</span>.log(a, b, c); <span class="comment">// 1 2 3</span></span><br><span class="line">    &#125;</span><br><span class="line">    innermost();</span><br><span class="line">    <span class="built_in">console</span>.log(a, b); <span class="comment">// 1 2 — 'c' is not defined</span></span><br><span class="line">  &#125;</span><br><span class="line">  inner();</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 1 — 'b' and 'c' are not defined</span></span><br><span class="line">&#125;</span><br><span class="line">outer();</span><br></pre></td></tr></table></figure>
 <p>你可以将作用域想象成一系列不断变小的门。如果一个个子不高的人可以穿过最小的门(局部最小作用域)，那么必然可以穿过任何比它大的门(外部作用域)。</p>
-<h3 id="提升-Hoisting"><a href="#提升-Hoisting" class="headerlink" title="提升(Hoisting)"></a>提升(Hoisting)</h3><p>在编译过程中，将var和function的定义移动到他们作用域最前面的行为叫做提升。</p>
-<p>整个函数定义会被提升。所以，你可以在函数还未定义之前调用它，而不用担心找不到该函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(toSquare(<span class="number">3</span>));  <span class="comment">// 9</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSquare</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n*n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="提升-Hoisting"><a href="#提升-Hoisting" class="headerlink" title="提升(Hoisting)"></a>提升(Hoisting)</h3><p>在编译过程中，将 var 和 function 的定义移动到他们作用域最前面的行为叫做提升。</p>
+<p>整个函数定义会被提升。所以，你可以在函数还未定义之前调用它，而不用担心找不到该函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(toSquare(<span class="number">3</span>)); <span class="comment">// 9</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSquare</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n * n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>变量只会被部分提升。而且只有变量的声明会被提升，赋值不会动。</p>
-<p>let和const不会被提升。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;  <span class="comment">/* Original code */</span></span><br><span class="line">  <span class="built_in">console</span>.log(i);  <span class="comment">// undefined</span></span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">10</span></span><br><span class="line">  <span class="built_in">console</span>.log(i);  <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;  <span class="comment">/* Compilation phase */</span></span><br><span class="line">  <span class="keyword">var</span> i;</span><br><span class="line">  <span class="built_in">console</span>.log(i);  <span class="comment">// undefined</span></span><br><span class="line">  i = <span class="number">10</span></span><br><span class="line">  <span class="built_in">console</span>.log(i);  <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ES6 let &amp; const</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);  <span class="comment">// ReferenceError: i is not defined</span></span><br><span class="line">  <span class="keyword">const</span> i = <span class="number">10</span></span><br><span class="line">  <span class="built_in">console</span>.log(i);  <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);  <span class="comment">// ReferenceError: i is not defined</span></span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">10</span></span><br><span class="line">  <span class="built_in">console</span>.log(i);  <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>let 和 const 不会被提升。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">/* Original code */</span></span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// undefined</span></span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">10</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">/* Compilation phase */</span></span><br><span class="line">  <span class="keyword">var</span> i;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// undefined</span></span><br><span class="line">  i = <span class="number">10</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ES6 let &amp; const</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// ReferenceError: i is not defined</span></span><br><span class="line">  <span class="keyword">const</span> i = <span class="number">10</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// ReferenceError: i is not defined</span></span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">10</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="函数表达式和函数声明"><a href="#函数表达式和函数声明" class="headerlink" title="函数表达式和函数声明"></a>函数表达式和函数声明</h3><ul>
 <li>函数表达式</li>
 </ul>
-<p>一个函数表达式是在函数执行到函数表达式定义的位置才开始创建，并被使用。它不会被提升。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一个函数表达式是在函数执行到函数表达式定义的位置才开始创建，并被使用。它不会被提升。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>函数声明</li>
 </ul>
-<p>函数声明的函数可以在文件中任意位置调用，因为它会被提升。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="变量：var，let和const"><a href="#变量：var，let和const" class="headerlink" title="变量：var，let和const"></a>变量：var，let和const</h3><p>在ES6之前，只能使用var来声明变量。在一个函数体中声明的变量和函数，周围的作用域内无法访问。在块作用域if和for中声明的变量，可以在if和for的外部被访问。</p>
-<p>注意：如果没有使用var,let或则const关键字声明的变量将会绑定到全局作用域上。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(s) <span class="comment">// undefined</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="string">'Hi'</span>;</span><br><span class="line">    undeclaredVar = <span class="string">'I am automatically created in global scope'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(s) <span class="comment">// 'Hi'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(s);  <span class="comment">// Error — ReferenceError: s is not defined</span></span><br><span class="line">greeting();</span><br><span class="line"><span class="built_in">console</span>.log(undeclaredVar) <span class="comment">// 'I am automatically created in global scope'</span></span><br></pre></td></tr></table></figure></p>
-<p>ES6的let和const都是新引入的关键字。它们不会被提升，而且是块作用域。也就是说被大括号包围起来的区域声明的变量外部将不可访问。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> g1 = <span class="string">'global 1'</span></span><br><span class="line"><span class="keyword">let</span> g2 = <span class="string">'global 2'</span></span><br><span class="line">&#123;   <span class="comment">/* Creating a new block scope */</span></span><br><span class="line">    g1 = <span class="string">'new global 1'</span></span><br><span class="line">    <span class="keyword">let</span> g2 = <span class="string">'local global 2'</span></span><br><span class="line">    <span class="built_in">console</span>.log(g1)   <span class="comment">// 'new global 1'</span></span><br><span class="line">    <span class="built_in">console</span>.log(g2)   <span class="comment">// 'local global 2'</span></span><br><span class="line">    <span class="built_in">console</span>.log(g3)   <span class="comment">// ReferenceError: g3 is not defined</span></span><br><span class="line">    <span class="keyword">let</span> g3 = <span class="string">'I am not hoisted'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(g1)    <span class="comment">// 'new global 1'</span></span><br><span class="line"><span class="built_in">console</span>.log(g2)    <span class="comment">// 'global 2'</span></span><br></pre></td></tr></table></figure></p>
-<p>一个常见的误解是：使用const声明的变量，其值不可更改。准确地说它不可以被重新赋值，但是可以更改。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> tryMe = <span class="string">'initial assignment'</span>;</span><br><span class="line">tryMe = <span class="string">'this has been reassigned'</span>;  <span class="comment">// TypeError: Assignment to constant variable.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// You cannot reassign but you can change it…</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="string">'Ted'</span>, <span class="string">'is'</span>, <span class="string">'awesome!'</span>];</span><br><span class="line">array[<span class="number">0</span>] = <span class="string">'Barney'</span>;</span><br><span class="line">array[<span class="number">3</span>] = <span class="string">'Suit up!'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(array);     <span class="comment">// [“Barney”, “is”, “awesome!”, “Suit up!”]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> airplane = &#123;&#125;;</span><br><span class="line">airplane.wings = <span class="number">2</span>;</span><br><span class="line">airplane.passengers = <span class="number">200</span>;</span><br><span class="line"><span class="built_in">console</span>.log(airplane);   <span class="comment">// &#123;passengers: 200, wings: 2&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>函数声明的函数可以在文件中任意位置调用，因为它会被提升。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="变量：var，let-和-const"><a href="#变量：var，let-和-const" class="headerlink" title="变量：var，let 和 const"></a>变量：var，let 和 const</h3><p>在 ES6 之前，只能使用 var 来声明变量。在一个函数体中声明的变量和函数，周围的作用域内无法访问。在块作用域 if 和 for 中声明的变量，可以在 if 和 for 的外部被访问。</p>
+<p>注意：如果没有使用 var,let 或则 const 关键字声明的变量将会绑定到全局作用域上。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(s); <span class="comment">// undefined</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="string">"Hi"</span>;</span><br><span class="line">    undeclaredVar = <span class="string">"I am automatically created in global scope"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(s); <span class="comment">// 'Hi'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(s); <span class="comment">// Error — ReferenceError: s is not defined</span></span><br><span class="line">greeting();</span><br><span class="line"><span class="built_in">console</span>.log(undeclaredVar); <span class="comment">// 'I am automatically created in global scope'</span></span><br></pre></td></tr></table></figure>
+<p>ES6 的 let 和 const 都是新引入的关键字。它们不会被提升，而且是块作用域。也就是说被大括号包围起来的区域声明的变量外部将不可访问。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> g1 = <span class="string">"global 1"</span>;</span><br><span class="line"><span class="keyword">let</span> g2 = <span class="string">"global 2"</span>;</span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">/* Creating a new block scope */</span></span><br><span class="line">  g1 = <span class="string">"new global 1"</span>;</span><br><span class="line">  <span class="keyword">let</span> g2 = <span class="string">"local global 2"</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(g1); <span class="comment">// 'new global 1'</span></span><br><span class="line">  <span class="built_in">console</span>.log(g2); <span class="comment">// 'local global 2'</span></span><br><span class="line">  <span class="built_in">console</span>.log(g3); <span class="comment">// ReferenceError: g3 is not defined</span></span><br><span class="line">  <span class="keyword">let</span> g3 = <span class="string">"I am not hoisted"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(g1); <span class="comment">// 'new global 1'</span></span><br><span class="line"><span class="built_in">console</span>.log(g2); <span class="comment">// 'global 2'</span></span><br></pre></td></tr></table></figure>
+<p>一个常见的误解是：使用 const 声明的变量，其值不可更改。准确地说它不可以被重新赋值，但是可以更改。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> tryMe = <span class="string">"initial assignment"</span>;</span><br><span class="line">tryMe = <span class="string">"this has been reassigned"</span>; <span class="comment">// TypeError: Assignment to constant variable.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// You cannot reassign but you can change it…</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="string">"Ted"</span>, <span class="string">"is"</span>, <span class="string">"awesome!"</span>];</span><br><span class="line">array[<span class="number">0</span>] = <span class="string">"Barney"</span>;</span><br><span class="line">array[<span class="number">3</span>] = <span class="string">"Suit up!"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(array); <span class="comment">// [“Barney”, “is”, “awesome!”, “Suit up!”]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> airplane = &#123;&#125;;</span><br><span class="line">airplane.wings = <span class="number">2</span>;</span><br><span class="line">airplane.passengers = <span class="number">200</span>;</span><br><span class="line"><span class="built_in">console</span>.log(airplane); <span class="comment">// &#123;passengers: 200, wings: 2&#125;</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://blog.fundebug.com/2018/01/15/the-definitive-javascript-handbook-for-a-developer-interview/" target="_blank" rel="noopener">原文地址</a></p>
 
       
@@ -605,7 +628,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -616,7 +639,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -627,7 +650,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -701,7 +724,7 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.kancloud.cn/dennis/tgjavascript/241800" title="JavaScript半知半解" target="_blank">JavaScript半知半解</a>
+                    <a href="https://github.com/yygmind/blog" title="木易杨" target="_blank">木易杨</a>
                   </li>
                 
               </ul>
@@ -723,7 +746,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型和类型转换"><span class="nav-number">1.</span> <span class="nav-text">类型和类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值-vs-引用"><span class="nav-number">2.</span> <span class="nav-text">值 vs. 引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域（Scope）"><span class="nav-number">3.</span> <span class="nav-text">作用域（Scope）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提升-Hoisting"><span class="nav-number">4.</span> <span class="nav-text">提升(Hoisting)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数表达式和函数声明"><span class="nav-number">5.</span> <span class="nav-text">函数表达式和函数声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量：var，let和const"><span class="nav-number">6.</span> <span class="nav-text">变量：var，let和const</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型和类型转换"><span class="nav-number">1.</span> <span class="nav-text">类型和类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值-vs-引用"><span class="nav-number">2.</span> <span class="nav-text">值 vs. 引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域（Scope）"><span class="nav-number">3.</span> <span class="nav-text">作用域（Scope）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提升-Hoisting"><span class="nav-number">4.</span> <span class="nav-text">提升(Hoisting)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数表达式和函数声明"><span class="nav-number">5.</span> <span class="nav-text">函数表达式和函数声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量：var，let-和-const"><span class="nav-number">6.</span> <span class="nav-text">变量：var，let 和 const</span></a></li></ol></div>
             
 
           </div>
@@ -929,324 +952,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

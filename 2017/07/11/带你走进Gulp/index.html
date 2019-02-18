@@ -81,7 +81,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jay's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml" />
 
 
 
@@ -93,10 +93,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="带你走进Gulp">
 <meta property="og:url" content="https://callmejay.github.io/2017/07/11/带你走进Gulp/index.html">
-<meta property="og:site_name" content="Jay&#39;s Blog">
+<meta property="og:site_name" content="Jay Bein&#39;s Blog">
 <meta property="og:description" content="Gulp是一款前端自动化构建工具。通俗的来说，就是你本来需要很多条指令才可以完成的事情，通过Gulp你可能只需要一条指令。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-10T09:29:37.037Z">
+<meta property="og:updated_time" content="2019-02-18T10:50:11.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="带你走进Gulp">
 <meta name="twitter:description" content="Gulp是一款前端自动化构建工具。通俗的来说，就是你本来需要很多条指令才可以完成的事情，通过Gulp你可能只需要一条指令。">
@@ -135,7 +135,7 @@
 
 
 
-  <title>带你走进Gulp | Jay's Blog</title>
+  <title>带你走进Gulp | Jay Bein's Blog</title>
   
 
 
@@ -165,12 +165,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jay's Blog</span>
+        <span class="site-title">Jay Bein's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">知其然，知其所以然。</h1>
+        <h1 class="site-subtitle" itemprop="description">有事做，有人爱，有所期待。</h1>
       
   </div>
 
@@ -258,22 +258,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -315,7 +319,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay's Blog">
+      <meta itemprop="name" content="Jay Bein's Blog">
     </span>
 
     
@@ -395,31 +399,37 @@
       
 
       
-        <p><code>Gulp</code>是一款前端自动化构建工具。通俗的来说，就是你本来需要很多条指令才可以完成的事情，通过<code>Gulp</code>你可能只需要一条指令。<br><a id="more"></a></p>
-<h3 id="Gulp是什么鬼"><a href="#Gulp是什么鬼" class="headerlink" title="Gulp是什么鬼"></a>Gulp是什么鬼</h3><p>首先，我很确定它不是鬼。对于之前接触过<code>Webpack</code>的人来说，很大的一个疑惑可能就是：这两者有什么区别？因为<code>Webpack</code>几乎能做全部我们需要做的事情，<code>Gulp</code>存在的意义是什么？我只能说：存在即合理。<br><code>Gulp</code>貌似是一款取代<code>Grunt</code>的工具，我没有去了解过<code>Grunt</code>，可能是因为没时间，而且好像也不是很有必要。<code>Gulp</code>的核心功能是<strong>自动化任务流程，简化操作</strong>。比如你需要做打包、编译、压缩、合并等一些乱七八糟的事情，不用<code>Gulp</code>，你可能需要一步一步的“自己”来，而有了<code>Gulp</code>，你预先将这些乱七八糟的事情定义好交给<code>Gulp</code>，然后在特定时刻，<code>Gulp</code>自动将这些事情全都做了。<br>而<code>Webpack</code>的核心功能应该是集中在模块管理上，不过它同样可以通过各种插件，做很多事情。过于纠结这两者的区别也没什么必要。<code>Gulp</code>简单，学起来也就一两天的事。<code>Webpack</code>相对要复杂很多，而且对于新手也有很多坑，但不可忽略它确实很强大。这里的建议是，都学一下，毕竟这是现在最火的两款开发工具。</p>
+        <p><code>Gulp</code>是一款前端自动化构建工具。通俗的来说，就是你本来需要很多条指令才可以完成的事情，通过<code>Gulp</code>你可能只需要一条指令。</p>
+<a id="more"></a>
+<h3 id="Gulp-是什么鬼"><a href="#Gulp-是什么鬼" class="headerlink" title="Gulp 是什么鬼"></a>Gulp 是什么鬼</h3><p>首先，我很确定它不是鬼。对于之前接触过<code>Webpack</code>的人来说，很大的一个疑惑可能就是：这两者有什么区别？因为<code>Webpack</code>几乎能做全部我们需要做的事情，<code>Gulp</code>存在的意义是什么？我只能说：存在即合理。<br><code>Gulp</code>貌似是一款取代<code>Grunt</code>的工具，我没有去了解过<code>Grunt</code>，可能是因为没时间，而且好像也不是很有必要。<code>Gulp</code>的核心功能是<strong>自动化任务流程，简化操作</strong>。比如你需要做打包、编译、压缩、合并等一些乱七八糟的事情，不用<code>Gulp</code>，你可能需要一步一步的“自己”来，而有了<code>Gulp</code>，你预先将这些乱七八糟的事情定义好交给<code>Gulp</code>，然后在特定时刻，<code>Gulp</code>自动将这些事情全都做了。<br>而<code>Webpack</code>的核心功能应该是集中在模块管理上，不过它同样可以通过各种插件，做很多事情。过于纠结这两者的区别也没什么必要。<code>Gulp</code>简单，学起来也就一两天的事。<code>Webpack</code>相对要复杂很多，而且对于新手也有很多坑，但不可忽略它确实很强大。这里的建议是，都学一下，毕竟这是现在最火的两款开发工具。</p>
 <h3 id="很重要的几个概念"><a href="#很重要的几个概念" class="headerlink" title="很重要的几个概念"></a>很重要的几个概念</h3><p><code>Gulp</code>不算复杂，去<a href="http://www.gulpjs.com.cn/" target="_blank" rel="noopener">官网</a>也就那么一丁点儿的介绍，所以学习之前有必要先知道一些概念。</p>
 <h4 id="配置文件（gulpfile-js）"><a href="#配置文件（gulpfile-js）" class="headerlink" title="配置文件（gulpfile.js）"></a>配置文件（gulpfile.js）</h4><p><code>Gulp</code>既然是一款工具，就得做一些事情，具体要做些什么，还得由我们来指定。在哪里指定，就是在它的配置文件<code>gulpfile.js</code>中，该文件位于项目的根目录下。以后所有<code>Gulp</code>相关的配置语句都是写在<code>gulpfile.js</code>文件中。</p>
-<h4 id="任务（Task）"><a href="#任务（Task）" class="headerlink" title="任务（Task）"></a>任务（Task）</h4><p><code>Gulp</code>把需要做的一些事情定义成一个个的任务，每一个任务都有一个名字，然后通过命令调用这个任务的名字，就可以执行该任务对应的代码。如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// gulpfile.js 文件中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// style 任务</span></span><br><span class="line">gulp.task(<span class="string">'style'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 一些要做的事情</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// build 任务</span></span><br><span class="line">gulp.task(<span class="string">'build'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">// 要做的事情 </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="任务（Task）"><a href="#任务（Task）" class="headerlink" title="任务（Task）"></a>任务（Task）</h4><p><code>Gulp</code>把需要做的一些事情定义成一个个的任务，每一个任务都有一个名字，然后通过命令调用这个任务的名字，就可以执行该任务对应的代码。如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// gulpfile.js 文件中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// style 任务</span></span><br><span class="line">gulp.task(<span class="string">"style"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 一些要做的事情</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// build 任务</span></span><br><span class="line">gulp.task(<span class="string">"build"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 要做的事情</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><p>前面定义的都是一些空任务，啥也不会做。因为<code>Gulp</code>本身不会做任何“事情”，它只负责把那些要做的事情准备（分类、串联）好。具体谁来做，那就是插件。</p>
-<p><code>Gulp</code>有很多插件，几乎能满足你的各种需求。我想对于初学者来说有个疑问：我怎么知道我需要的插件叫什么？那么，我在这里先列出一些插件。我也不知道这些是不是常用的插件，不过看起来好像比较常用。<br>*gulp-connect：可以跑一个本地服务器，貌似现在应该不会有人直接将index.html拖到浏览器来调试吧；</p>
+<p><code>Gulp</code>有很多插件，几乎能满足你的各种需求。我想对于初学者来说有个疑问：我怎么知道我需要的插件叫什么？那么，我在这里先列出一些插件。我也不知道这些是不是常用的插件，不过看起来好像比较常用。<br>*gulp-connect：可以跑一个本地服务器，貌似现在应该不会有人直接将 index.html 拖到浏览器来调试吧；</p>
 <ul>
-<li><code>gulp-concat</code>：看清了，这是concat，用来合并文件的；</li>
+<li><code>gulp-concat</code>：看清了，这是 concat，用来合并文件的；</li>
 <li><code>gulp-clean</code>：删除文件用的；</li>
 <li><code>gulp-rename</code>：重命名文件；</li>
-<li><code>gulp-minify-html</code>：压缩html用的；</li>
-<li><code>gulp-inject</code>：可以将css样式和js脚本文件插入到html文件中；</li>
-<li><code>gulp-minify-css</code>：压缩css；</li>
-<li><code>gulp-uglify</code>：压缩js；</li>
+<li><code>gulp-minify-html</code>：压缩 html 用的；</li>
+<li><code>gulp-inject</code>：可以将 css 样式和 js 脚本文件插入到 html 文件中；</li>
+<li><code>gulp-minify-css</code>：压缩 css；</li>
+<li><code>gulp-uglify</code>：压缩 js；</li>
 <li><code>gulp-imagemin</code>：压缩图片；</li>
-<li><code>gulp-postcss</code>：自动添加css中的前缀，很实用的家伙。</li>
+<li><code>gulp-postcss</code>：自动添加 css 中的前缀，很实用的家伙。</li>
 </ul>
 <p>就这些吧，看清楚长啥样就好了。正如你看到的那样，<code>Gulp</code>所有的插件都是以<code>gulp-</code>开头。对于那些有点经验的人来说，要什么插件可能一般都是直接去<code>npm</code>或<code>github</code>上搜索。对于不知道怎么搜的（一般都是不知道关键词），就老老实实百度吧。<br>一个很好的习惯就是<strong>平时多记录</strong>和<strong>总结</strong>，因为很多插件在不同的工具和平台中，叫法基本上都是一样的。另外，这里还给一个官方收录的<a href="https://gulpjs.com/plugins/" target="_blank" rel="noopener">插件列表</a>。</p>
-<h4 id="具体使用方法"><a href="#具体使用方法" class="headerlink" title="具体使用方法"></a>具体使用方法</h4><p><code>Gulp</code>的安装就不说了，需要的直接看看<a href="http://www.gulpjs.com.cn/docs/getting-started/" target="_blank" rel="noopener">这里</a>。<br>先举一个栗子（玩玩）：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入gulp，无需解释</span></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="comment">// 引入插件</span></span><br><span class="line"><span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>)，</span><br><span class="line">    sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>)，</span><br><span class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义任务</span></span><br><span class="line">gulp.task(<span class="string">'server'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 使用 connect 插件创建一个服务器</span></span><br><span class="line">    connect.server(&#123;</span><br><span class="line">        <span class="comment">// 这里是传入的一些配置项</span></span><br><span class="line">        root: <span class="string">'dist'</span>,</span><br><span class="line">        livereload: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'style'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 匹配资源文件</span></span><br><span class="line">    gulp.src(<span class="string">'./src/**/*.scss'</span>)</span><br><span class="line">    <span class="comment">// 对匹配到的 文件 传到一个插件中</span></span><br><span class="line">    .pipe(sass(&#123;    <span class="comment">// 用sass插件处理 匹配到的文件</span></span><br><span class="line">        <span class="comment">// 插件的配置项</span></span><br><span class="line">        outputStyle: <span class="string">'compressed'</span></span><br><span class="line">        <span class="comment">// 插件的功能 打印错误信息</span></span><br><span class="line">    &#125;).on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">    <span class="comment">// 串联 将sass处理后的文件 传送到下一个插件中</span></span><br><span class="line">    <span class="comment">// 将文件 输出到指定目录下</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist'</span>))</span><br><span class="line">    <span class="comment">// 重新加载 服务器</span></span><br><span class="line">    .pipe(connect.reload());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'script'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/**/*.js'</span>)</span><br><span class="line">    .pipe(uglify())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist'</span>))</span><br><span class="line">    .pipe(connect.reload());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认任务 要等到数组中的任务执行完之后 才执行</span></span><br><span class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'style'</span>, <span class="string">'script'</span>, <span class="string">'server'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 监听 匹配到的文件是否改变</span></span><br><span class="line">    <span class="comment">// 一旦变化就执行 数组 中的任务</span></span><br><span class="line">    gulp.watch(<span class="string">'./src/js/*.js'</span>, [<span class="string">'script'</span>]);</span><br><span class="line">    gulp.watch(<span class="string">'./src/css/*.scss'</span>, [<span class="string">'style'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><code>Gulp</code>的基本使用大概就这些，<code>gulpfile.js</code>文件大概就是这个样子的。对于该配置文件，命令行只需执行一条语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure></p>
-<p>没错，就这样！该指令会自动执行<strong>默认的任务</strong>。如果要指定具体的任务，后面直接跟上任务名即可，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp server</span><br></pre></td></tr></table></figure></p>
-<h4 id="如何使用插件"><a href="#如何使用插件" class="headerlink" title="如何使用插件"></a>如何使用插件</h4><p>一般典型的用法就是直接将插件传入<code>.pipe</code>函数中，插件的配置项通过一个对象传入插件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.pipe(uglify())</span><br></pre></td></tr></table></figure></p>
+<h4 id="具体使用方法"><a href="#具体使用方法" class="headerlink" title="具体使用方法"></a>具体使用方法</h4><p><code>Gulp</code>的安装就不说了，需要的直接看看<a href="http://www.gulpjs.com.cn/docs/getting-started/" target="_blank" rel="noopener">这里</a>。<br>先举一个栗子（玩玩）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入gulp，无需解释</span></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="comment">// 引入插件</span></span><br><span class="line"><span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>)，</span><br><span class="line">    sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>)，</span><br><span class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义任务</span></span><br><span class="line">gulp.task(<span class="string">'server'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 使用 connect 插件创建一个服务器</span></span><br><span class="line">    connect.server(&#123;</span><br><span class="line">        <span class="comment">// 这里是传入的一些配置项</span></span><br><span class="line">        root: <span class="string">'dist'</span>,</span><br><span class="line">        livereload: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'style'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 匹配资源文件</span></span><br><span class="line">    gulp.src(<span class="string">'./src/**/*.scss'</span>)</span><br><span class="line">    <span class="comment">// 对匹配到的 文件 传到一个插件中</span></span><br><span class="line">    .pipe(sass(&#123;    <span class="comment">// 用sass插件处理 匹配到的文件</span></span><br><span class="line">        <span class="comment">// 插件的配置项</span></span><br><span class="line">        outputStyle: <span class="string">'compressed'</span></span><br><span class="line">        <span class="comment">// 插件的功能 打印错误信息</span></span><br><span class="line">    &#125;).on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">    <span class="comment">// 串联 将sass处理后的文件 传送到下一个插件中</span></span><br><span class="line">    <span class="comment">// 将文件 输出到指定目录下</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist'</span>))</span><br><span class="line">    <span class="comment">// 重新加载 服务器</span></span><br><span class="line">    .pipe(connect.reload());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'script'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/**/*.js'</span>)</span><br><span class="line">    .pipe(uglify())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist'</span>))</span><br><span class="line">    .pipe(connect.reload());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认任务 要等到数组中的任务执行完之后 才执行</span></span><br><span class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'style'</span>, <span class="string">'script'</span>, <span class="string">'server'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 监听 匹配到的文件是否改变</span></span><br><span class="line">    <span class="comment">// 一旦变化就执行 数组 中的任务</span></span><br><span class="line">    gulp.watch(<span class="string">'./src/js/*.js'</span>, [<span class="string">'script'</span>]);</span><br><span class="line">    gulp.watch(<span class="string">'./src/css/*.scss'</span>, [<span class="string">'style'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>Gulp</code>的基本使用大概就这些，<code>gulpfile.js</code>文件大概就是这个样子的。对于该配置文件，命令行只需执行一条语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure>
+<p>没错，就这样！该指令会自动执行<strong>默认的任务</strong>。如果要指定具体的任务，后面直接跟上任务名即可，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp server</span><br></pre></td></tr></table></figure>
+<h4 id="如何使用插件"><a href="#如何使用插件" class="headerlink" title="如何使用插件"></a>如何使用插件</h4><p>一般典型的用法就是直接将插件传入<code>.pipe</code>函数中，插件的配置项通过一个对象传入插件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.pipe(uglify())</span><br></pre></td></tr></table></figure>
 <p>一般若没有特殊要求，可以省略配置项。<code>gulp.src()</code>和<code>.pipe()</code>都会返回一个叫<code>Vinyl files</code>的<code>stream</code>（我也不知道是个什么鬼），所以这些方法是可以串联起来的。</p>
-<h4 id="谈几个API"><a href="#谈几个API" class="headerlink" title="谈几个API"></a>谈几个API</h4><p>这里列出一些比较常用的API接口，详细用法请参阅<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="noopener">官方文档</a></p>
+<h4 id="谈几个-API"><a href="#谈几个-API" class="headerlink" title="谈几个 API"></a>谈几个 API</h4><p>这里列出一些比较常用的 API 接口，详细用法请参阅<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="noopener">官方文档</a></p>
 <ul>
 <li><code>gulp.src</code>：匹配文件用的；</li>
 <li><code>gulp.dest</code>：输出文件到指定目录；</li>
@@ -434,7 +444,8 @@
 <li><code>*.*</code>：能匹配<code>aaa.js</code>，<code>b.css</code>；</li>
 <li><code>a/**/*.js</code>：能匹配<code>a/b/c/d/ef.js</code>，<code>a/b/c.js</code>。</li>
 </ul>
-<p>还要说明一点，语句<code>gulp.dest(&#39;dist&#39;)</code>中的<code>dist</code>表示在项目<strong>根目录</strong>下生成<code>dist</code>目录。输出的文件路径是<code>*</code>号匹配到的文件名（未被修改的情况下），上面例子中输出的目录结构是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 假设原文件路径</span><br><span class="line">- src</span><br><span class="line">    - css</span><br><span class="line">        - a.scss</span><br><span class="line">    - js</span><br><span class="line">        - b.js</span><br><span class="line"></span><br><span class="line">// 输出的文件路径</span><br><span class="line">- dist</span><br><span class="line">    - css</span><br><span class="line">        - a.css</span><br><span class="line">    - js</span><br><span class="line">        - b.js</span><br></pre></td></tr></table></figure></p>
+<p>还要说明一点，语句<code>gulp.dest(&#39;dist&#39;)</code>中的<code>dist</code>表示在项目<strong>根目录</strong>下生成<code>dist</code>目录。输出的文件路径是<code>*</code>号匹配到的文件名（未被修改的情况下），上面例子中输出的目录结构是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 假设原文件路径</span><br><span class="line">- src</span><br><span class="line">    - css</span><br><span class="line">        - a.scss</span><br><span class="line">    - js</span><br><span class="line">        - b.js</span><br><span class="line"></span><br><span class="line">// 输出的文件路径</span><br><span class="line">- dist</span><br><span class="line">    - css</span><br><span class="line">        - a.css</span><br><span class="line">    - js</span><br><span class="line">        - b.js</span><br></pre></td></tr></table></figure>
 <p>默认情况下，<code>dist</code>只会替换<code>*</code>号之前的路径，当然也可以自己修改，具体自行参阅<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="noopener">官方文档</a></p>
 <blockquote>
 <p><a href="http://www.jianshu.com/p/081a3de6be93" target="_blank" rel="noopener">传送门</a></p>
@@ -596,7 +607,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -607,7 +618,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -618,7 +629,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -692,7 +703,7 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.kancloud.cn/dennis/tgjavascript/241800" title="JavaScript半知半解" target="_blank">JavaScript半知半解</a>
+                    <a href="https://github.com/yygmind/blog" title="木易杨" target="_blank">木易杨</a>
                   </li>
                 
               </ul>
@@ -714,7 +725,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gulp是什么鬼"><span class="nav-number">1.</span> <span class="nav-text">Gulp是什么鬼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#很重要的几个概念"><span class="nav-number">2.</span> <span class="nav-text">很重要的几个概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件（gulpfile-js）"><span class="nav-number">2.1.</span> <span class="nav-text">配置文件（gulpfile.js）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任务（Task）"><span class="nav-number">2.2.</span> <span class="nav-text">任务（Task）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件"><span class="nav-number">2.3.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体使用方法"><span class="nav-number">2.4.</span> <span class="nav-text">具体使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用插件"><span class="nav-number">2.5.</span> <span class="nav-text">如何使用插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈几个API"><span class="nav-number">2.6.</span> <span class="nav-text">谈几个API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件匹配原则"><span class="nav-number">2.7.</span> <span class="nav-text">文件匹配原则</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gulp-是什么鬼"><span class="nav-number">1.</span> <span class="nav-text">Gulp 是什么鬼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#很重要的几个概念"><span class="nav-number">2.</span> <span class="nav-text">很重要的几个概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件（gulpfile-js）"><span class="nav-number">2.1.</span> <span class="nav-text">配置文件（gulpfile.js）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任务（Task）"><span class="nav-number">2.2.</span> <span class="nav-text">任务（Task）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件"><span class="nav-number">2.3.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体使用方法"><span class="nav-number">2.4.</span> <span class="nav-text">具体使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用插件"><span class="nav-number">2.5.</span> <span class="nav-text">如何使用插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈几个-API"><span class="nav-number">2.6.</span> <span class="nav-text">谈几个 API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件匹配原则"><span class="nav-number">2.7.</span> <span class="nav-text">文件匹配原则</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -920,324 +931,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 
