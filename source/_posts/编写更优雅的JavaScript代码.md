@@ -4,6 +4,7 @@ date: 2018-09-10 13:46:33
 categories: JavaScript
 tags: ES6
 ---
+
 ### 代码技巧
 
 #### 优先 ES6 新特性写法
@@ -36,7 +37,7 @@ render(){
   const { downloadList } = this.props.store.downloadList
   let items = downloadList && downloadList.items || []
   let itemCount = downloadList && downloadList.itemCount || 10
-  
+
   return <Table dataSource={items} pagination={{total: itemCount}} />
 }
 // 优化后
@@ -56,27 +57,27 @@ render(){
 // 对象配置法
 // 函数内部有条件判断，且 return 值时，满足条件立即return，而不要在结尾return
 const foo = v => {
-  if (v === 'name') {
-    return 'bao'
-  } else if (v === 'age') {
-    return '18'
-  } else if (v === 'height') {
-    return '180'
+  if (v === "name") {
+    return "bao";
+  } else if (v === "age") {
+    return "18";
+  } else if (v === "height") {
+    return "180";
   }
-}
+};
 const cfg = {
-  name: 'bao',
-  age: '18',
-  height: '180'
-}
-const foo = v => cfg[v]
+  name: "bao",
+  age: "18",
+  height: "180"
+};
+const foo = v => cfg[v];
 
 // 数组配置法
-if (value === 'hello' || value === 'world' || value === 'blabla') {
+if (value === "hello" || value === "world" || value === "blabla") {
   // ...
 }
 // 配置数组形式
-const rightValue = ['hello', 'world', 'blabla']
+const rightValue = ["hello", "world", "blabla"];
 if (rightValue.includes[value]) {
   // ...
 }
@@ -85,19 +86,19 @@ if (rightValue.includes[value]) {
 #### 善用 && 、 || 和 三元运算
 
 ```js
-if (name === 'bao') {
-  someFunc()
+if (name === "bao") {
+  someFunc();
 }
 
-name === 'bao' && someFunc()
+name === "bao" && someFunc();
 
-if (name === 'bao') {
-  someFunc()
+if (name === "bao") {
+  someFunc();
 } else {
-  elseFunc()
+  elseFunc();
 }
 
-name === 'bao' ? someFunc() : elseFunc()
+name === "bao" ? someFunc() : elseFunc();
 ```
 
 #### 对象属性变量应用
@@ -106,58 +107,58 @@ name === 'bao' ? someFunc() : elseFunc()
 
 ```js
 if (isMember) {
-  let res = await actions.getMemberInfo(params)
+  let res = await actions.getMemberInfo(params);
 } else {
-  let res = await actions.getCommonUserInfo(params)
+  let res = await actions.getCommonUserInfo(params);
 }
 
-const actionName = isMember ? 'getMemberInfo' : 'getCommonUserInfo'
-let res = await actions[actionName](params)
+const actionName = isMember ? "getMemberInfo" : "getCommonUserInfo";
+let res = await actions[actionName](params);
 ```
 
 #### 用 Array.map(), Array.filter() 代替数组 for 循环实现简易写法
 
 ```js
-let arr = [1, 2, 3, 4, 'A', 'B']
+let arr = [1, 2, 3, 4, "A", "B"];
 
 // 1. 取出 arr 中数字项为新数组
-let numArr = []
-for(let i in arr){
-  if(typeof arr[i] === 'number'){
-    numArr.push(arr[i])
+let numArr = [];
+for (let i in arr) {
+  if (typeof arr[i] === "number") {
+    numArr.push(arr[i]);
   }
 }
 
 // 改用filter
-let numArr2 = arr.filter(item => typeof item === 'number')
-console.log(numArr2) // [1,2,3,4]
+let numArr2 = arr.filter(item => typeof item === "number");
+console.log(numArr2); // [1,2,3,4]
 
 // 2. 获得新数组，元素是 arr 每个元素作为 value, key 为 arr 下标的对象, 不修改 arr
-let strArr = []
-for(let i in arr){
-  strArr.push({[i]: arr[i]})
+let strArr = [];
+for (let i in arr) {
+  strArr.push({ [i]: arr[i] });
 }
 // 改用 map
-let strArr2 = arr.map((item, i) => ({[i]: arr[i]}))
-console.log(strArr2) // [ { '0': 1 },{ '1': 2 },{ '2': 3 }, { '3': 4 }, { '4': 'A' }, { '5': 'B' } ]
+let strArr2 = arr.map((item, i) => ({ [i]: arr[i] }));
+console.log(strArr2); // [ { '0': 1 },{ '1': 2 },{ '2': 3 }, { '3': 4 }, { '4': 'A' }, { '5': 'B' } ]
 ```
 
 #### 浅拷贝、深拷贝 复杂数据类型对象深拷贝建议使用库来实现，如 [lodash.cloneDeep](http://lodash.think2011.net/cloneDeep)
 
 ```js
 // 浅拷贝
-let obj1 = { a: 11, b: { ba: 22 } }
-let obj2 = {...obj1}
+let obj1 = { a: 11, b: { ba: 22 } };
+let obj2 = { ...obj1 };
 console.log(obj2); // ​​​​​{ a: 11, b: { ba: 22 } }​​​​​
 
 console.log(obj1 === obj2); // false
 console.log(obj2.b === obj1.b); // true
 
 // 深拷贝，这种方法需要对象能够被 json 序列化
-let obj3 = JSON.parse(JSON.stringify(obj1))
+let obj3 = JSON.parse(JSON.stringify(obj1));
 console.log(obj3); //  ​​​​​{ a: 11, b: { ba: 22 } }​​​​​
-console.log(obj3===obj1); // false
-console.log(obj3.b===obj1.b); // true
+console.log(obj3 === obj1); // false
+console.log(obj3.b === obj1.b); // true
 ```
 
 ### 更高效的代码
@@ -175,9 +176,9 @@ let obj = {
       }
     }
   }
-}
+};
 
-let age = obj.person.man.bao.age
+let age = obj.person.man.bao.age;
 // use age do many things
 ```
 
@@ -194,7 +195,7 @@ let obj = {
       }
     }
   }
-}
-obj.person = null
-delete obj.person
+};
+obj.person = null;
+delete obj.person;
 ```

@@ -4,10 +4,15 @@ date: 2017-06-20 19:46:53
 categories: JavaScript
 tags: DOM
 ---
-今天主要是讲js的DOM元素的位置关系的三大系列：offset系列，scroll系列，client系列。希望你看完之后能更加了解，熟练应用。let's go~
+
+今天主要是讲 js 的 DOM 元素的位置关系的三大系列：offset 系列，scroll 系列，client 系列。希望你看完之后能更加了解，熟练应用。let's go~
+
 <!--more-->
-### offset系列
-#### offset系列的5个属性
+
+### offset 系列
+
+#### offset 系列的 5 个属性
+
 ```js
 1. offsetLeft : 用于获取元素到最近的定位父盒子的左侧距离
     * 计算方式: 当前元素的左边框的左侧到定位父盒子的左边框右侧
@@ -26,14 +31,19 @@ tags: DOM
 5. offsetParent :用于获取该元素中有定位的最近父级元素
     * 如果当前元素的父级元素都没有进行定位,那么offsetParent为body
 ```
-#### 与style.(left/top/width/height)的区别:
+
+#### 与 style.(left/top/width/height)的区别:
+
 ```js
 1. offset系列的是只读属性,而通过style的方式可以读写
 2. offset系列返回的数值类型(结果四舍五入),style返回的是字符串
 3. offsetLeft 和 offsetTop 可以返回没有定位的元素的left值和top值,而style不可以
 ```
-### scroll系列
-#### scroll系列的4个属性
+
+### scroll 系列
+
+#### scroll 系列的 4 个属性
+
 ```js
 1. scrollHeight :元素中内容的实际高度(没有边框)
     * 如果内容不足,就是元素的高度
@@ -45,7 +55,9 @@ tags: DOM
 
 4. scrollLeft : onscroll事件发生时,元素向左卷曲出去的距离
 ```
+
 #### 兼容问题
+
 ```js
 * 未声明 DTD: 谷歌,火狐,IE9+支持
 
@@ -53,7 +65,7 @@ tags: DOM
 
 * 已经声明DTD:IE8以下支持
 
- document.documentElement.scrollTop/scrollLeft 
+ document.documentElement.scrollTop/scrollLeft
 
 * 火狐/谷歌/ie9+以上支持的
 
@@ -72,8 +84,11 @@ function getScroll() {
 1. 取得scrollLeft值: getScroll().left
 2. 取得scrollTop值: getScroll().top
 ```
-### client系列
-#### client系列的4个常用属性
+
+### client 系列
+
+#### client 系列的 4 个常用属性
+
 ```js
 1. clientWidth : 获取网页可视区域的宽度
 
@@ -83,8 +98,11 @@ function getScroll() {
 
 4. clientY :获取鼠标事件发生时的应用客户端区域的垂直坐标
 ```
+
 #### 兼容问题
-##### clientWidth 和 clientHeight的兼容问题
+
+##### clientWidth 和 clientHeight 的兼容问题
+
 ```js
 //由浏览器对象不同导致
 
@@ -123,7 +141,9 @@ function client(){
 1. 取得clientWidth的值: client().width
 2. 取得clientHeight的值: client().height
 ```
-##### clientX 和 clientY的兼容问题
+
+##### clientX 和 clientY 的兼容问题
+
 ```js
 //由事件参数对象的兼容性问题导致
 
@@ -155,7 +175,9 @@ var evtTools={
     }
 };
 ```
+
 ### 总结
+
 ```js
 网页可见区域宽： document.body.clientWidth;
 网页可见区域高： document.body.clientHeight;
