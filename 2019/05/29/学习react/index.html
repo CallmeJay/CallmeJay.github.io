@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。  挂载过程： 123456789-&amp;gt; constructor()-&amp;gt; componentWillMount()-&amp;gt; render()// 然后构造 DOM 元素插入页面-&amp;gt; componentDidMount">
+<meta name="description" content="组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习react">
 <meta property="og:url" content="https://callmejay.github.io/2019/05/29/学习react/index.html">
 <meta property="og:site_name" content="Jay Bein&#39;s Blog">
-<meta property="og:description" content="组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。  挂载过程： 123456789-&amp;gt; constructor()-&amp;gt; componentWillMount()-&amp;gt; render()// 然后构造 DOM 元素插入页面-&amp;gt; componentDidMount">
+<meta property="og:description" content="组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-26T02:50:29.637Z">
+<meta property="og:updated_time" content="2019-06-26T04:02:15.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习react">
-<meta name="twitter:description" content="组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。  挂载过程： 123456789-&amp;gt; constructor()-&amp;gt; componentWillMount()-&amp;gt; render()// 然后构造 DOM 元素插入页面-&amp;gt; componentDidMount">
+<meta name="twitter:description" content="组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。">
 
 
 
@@ -380,6 +380,7 @@
         <blockquote>
 <p>组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。</p>
 </blockquote>
+<a id="more"></a>
 <p>挂载过程：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-&gt; constructor()</span><br><span class="line">-&gt; componentWillMount()</span><br><span class="line">-&gt; render()</span><br><span class="line">// 然后构造 DOM 元素插入页面</span><br><span class="line">-&gt; componentDidMount()</span><br><span class="line">// ...</span><br><span class="line">// 即将从页面中删除</span><br><span class="line">-&gt; componentWillUnmount()</span><br><span class="line">// 从页面中删除</span><br></pre></td></tr></table></figure>
 <blockquote>

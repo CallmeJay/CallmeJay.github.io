@@ -103,11 +103,12 @@
     <link href="https://callmejay.github.io/2019/05/29/%E5%AD%A6%E4%B9%A0react/"/>
     <id>https://callmejay.github.io/2019/05/29/学习react/</id>
     <published>2019-05-29T02:44:39.000Z</published>
-    <updated>2019-06-26T02:50:29.637Z</updated>
+    <updated>2019-06-26T04:02:15.214Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。</p>
 </blockquote>
+<a id="more"></a>
 <p>挂载过程：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-&gt; constructor()</span><br><span class="line">-&gt; componentWillMount()</span><br><span class="line">-&gt; render()</span><br><span class="line">// 然后构造 DOM 元素插入页面</span><br><span class="line">-&gt; componentDidMount()</span><br><span class="line">// ...</span><br><span class="line">// 即将从页面中删除</span><br><span class="line">-&gt; componentWillUnmount()</span><br><span class="line">// 从页面中删除</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -140,8 +141,6 @@
       &lt;blockquote&gt;
 &lt;p&gt;组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;挂载过程：&lt;/p&gt;
-&lt;figure cl
     
     </summary>
     
