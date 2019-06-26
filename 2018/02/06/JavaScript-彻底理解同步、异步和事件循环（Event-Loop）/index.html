@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/message&queue">
 <meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/ajax%E7%BA%BF%E7%A8%8B">
 <meta property="og:image" content="http://oonulpk6h.bkt.clouddn.com/event_loop.png">
-<meta property="og:updated_time" content="2019-02-18T10:44:38.888Z">
+<meta property="og:updated_time" content="2019-05-27T08:52:03.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript:彻底理解同步、异步和事件循环（Event Loop）">
 <meta name="twitter:description" content="学习 JavaScript 的时候了解到 JavaScript 是单线程的，刚开始很疑惑，单线程怎么处理网络请求、文件读写等耗时操作呢？效率岂不是会很低？随着对这方面内容的了解和深入，知道了其中的奥秘。本篇文章就主要讲解一下 JavaScript 怎么处理异步问题。">
@@ -465,8 +465,8 @@
 <p><strong>微队列，microtask，也叫 jobs。</strong> 另一些异步任务的回调会依次进入 micro task queue，等待后续被调用，这些异步任务包括：</p>
 <ul>
 <li>process.nextTick (Node 独有)</li>
-<li>Promise</li>
-<li>Object.observe</li>
+<li>Promise.then()</li>
+<li>Object.observe(废弃)</li>
 <li>MutationObserver</li>
 </ul>
 <p>（注：这里只针对浏览器和 NodeJS）</p>
@@ -681,7 +681,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -703,7 +703,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

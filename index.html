@@ -309,6 +309,285 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2019/06/10/基础知识总结-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay Bein">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay Bein's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/10/基础知识总结-3/" itemprop="url">基础知识总结-3</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T16:50:37+08:00">
+                2019-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>主要是针对面试中口述问题</p>
+</blockquote>
+<h3 id="说一下JS的Event-Loop"><a href="#说一下JS的Event-Loop" class="headerlink" title="说一下JS的Event Loop"></a>说一下JS的Event Loop</h3><p>简单总结如下：</p>
+<ol>
+<li>JS是单线程的，其上面的所有任务都是在两个地方执行：执行栈和任务队列。前者是存放同步任务；后者是异步任务有结果后，就在其中放入一个事件。</li>
+<li>当执行栈的任务都执行完了（栈空），js会读取任务队列，并将可以执行的任务从任务队列丢到执行栈中执行。</li>
+<li>这个过程是循环进行，所以称作Loop。</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/10/基础知识总结-3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2019/05/29/学习react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay Bein">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jay Bein's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/29/学习react/" itemprop="url">学习react</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-29T10:44:39+08:00">
+                2019-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>组件的挂载指的是将组件渲染并且构造 DOM 元素然后插入页面的过程。这是一个从无到有的过程，React.js 提供一些生命周期函数可以给我们在这个过程中做一些操作。</p>
+</blockquote>
+<p>挂载过程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-&gt; constructor()</span><br><span class="line">-&gt; componentWillMount()</span><br><span class="line">-&gt; render()</span><br><span class="line">// 然后构造 DOM 元素插入页面</span><br><span class="line">-&gt; componentDidMount()</span><br><span class="line">// ...</span><br><span class="line">// 即将从页面中删除</span><br><span class="line">-&gt; componentWillUnmount()</span><br><span class="line">// 从页面中删除</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>组件的私有方法都用 <code>_</code> 开头，所有事件监听的方法都用 <code>handle</code> 开头。把事件监听方法传给组件的时候，属性名用 <code>on</code> 开头。</p>
+</blockquote>
+<h4 id="组件的内容编写顺序如下"><a href="#组件的内容编写顺序如下" class="headerlink" title="组件的内容编写顺序如下"></a>组件的内容编写顺序如下</h4><ol>
+<li>static 开头的类属性，如 <code>defaultProps</code>、<code>propTypes</code>。</li>
+<li>构造函数，<code>constructor</code>。</li>
+<li>getter/setter（还不了解的同学可以暂时忽略）。</li>
+<li>组件生命周期。</li>
+<li><code>_</code> 开头的私有方法。</li>
+<li>事件监听方法，<code>handle*</code>。</li>
+<li><code>render*</code>开头的方法，有时候 <code>render()</code> 方法里面的内容会分开到不同函数里面进行，这些函数都以 <code>render*</code> 开头。</li>
+<li><code>render()</code> 方法。</li>
+</ol>
+<h4 id="什么是高阶组件（Higher-Order-Component）"><a href="#什么是高阶组件（Higher-Order-Component）" class="headerlink" title="什么是高阶组件（Higher-Order Component）"></a>什么是高阶组件（Higher-Order Component）</h4><blockquote>
+<p>高阶组件就是一个函数，传给它一个组件，它返回一个新的组件。新的组件使用传入的组件作为子组件。</p>
+</blockquote>
+<p>作用：高阶组件的作用是用于代码复用，可以把组件之间可复用的代码、逻辑抽离到高阶组件当中。新的组件和传入的组件通过 props 传递信息。</p>
+<h3 id="纯函数（Pure-Function）"><a href="#纯函数（Pure-Function）" class="headerlink" title="纯函数（Pure Function）"></a>纯函数（Pure Function）</h3><blockquote>
+<p>一个函数的返回结果只依赖于它的参数，并且在执行过程里面没有副作用</p>
+</blockquote>
+<p>除了修改外部的变量，一个函数在执行过程中还有很多方式产生外部可观察的变化，比如说调用 DOM API 修改页面，或者你发送了 Ajax 请求，还有调用 window.reload 刷新浏览器，甚至是 console.log 往控制台打印数据也是副作用。</p>
+<p>纯函数很严格，也就是说你几乎除了计算数据以外什么都不能干，计算的时候还不能依赖除了函数参数以外的数据。</p>
+<p>为什么要煞费苦心地构建纯函数？因为纯函数非常“靠谱”，执行一个纯函数你不用担心它会干什么坏事，它不会产生不可预料的行为，也不会对外部产生影响。不管何时何地，你给它什么它就会乖乖地吐出什么。如果你的应用程序大多数函数都是由纯函数组成，那么你的程序测试、调试起来会非常方便。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2019/04/09/必会的手写面试题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -383,6 +662,12 @@
             <h3 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h3><blockquote>
 <p>只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。  用途是实现多参函数。</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="实现深拷贝"><a href="#实现深拷贝" class="headerlink" title="实现深拷贝"></a>实现深拷贝</h3><p>浅拷贝的方法有： <code>Object.assign()</code>,<code>Array.from()</code>,<code>Array.slice()</code>,<code>Array.concat()</code></p>
+<blockquote>
+<p>递归方法实现深度克隆原理：遍历对象、数组直到里边都是基本数据类型，然后再去复制，就是深度拷贝</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义检测数据类型的功能函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkedType</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(target).slice(<span class="number">8</span>, <span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现深度克隆---对象/数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//判断拷贝的数据类型</span></span><br><span class="line">  <span class="comment">//初始化变量result 成为最终克隆的数据</span></span><br><span class="line">  <span class="keyword">let</span> result,</span><br><span class="line">    targetType = checkedType(target)</span><br><span class="line">  <span class="keyword">if</span> (targetType === <span class="string">'Object'</span>) &#123;</span><br><span class="line">    result = &#123;&#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (targetType === <span class="string">'Array'</span>) &#123;</span><br><span class="line">    result = []</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//遍历目标数据</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> target) &#123;</span><br><span class="line">    <span class="comment">//获取遍历数据结构的每一项值。</span></span><br><span class="line">    <span class="keyword">let</span> value = target[i]</span><br><span class="line">    <span class="comment">//判断目标结构里的每一值是否存在对象/数组</span></span><br><span class="line">    <span class="keyword">if</span> (checkedType(value) === <span class="string">'Object'</span> || checkedType(value) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">      <span class="comment">//对象/数组里嵌套了对象/数组</span></span><br><span class="line">      <span class="comment">//继续遍历获取到value值</span></span><br><span class="line">      result[i] = clone(value)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">//获取到value值是基本的数据类型或者是函数。</span></span><br><span class="line">      result[i] = value</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1419,307 +1704,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/06/22/JavaScript立即执行函数-IIFE-与闭包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay Bein">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay Bein's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/22/JavaScript立即执行函数-IIFE-与闭包/" itemprop="url">JavaScript立即执行函数(IIFE)与闭包</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T18:08:02+08:00">
-                2018-06-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>一直没搞清楚立即执行函数和闭包之间的关系，总结一下：</p>
-<ol>
-<li>闭包有很多种理解：访问不到内部作用域，函数就是这样，所以函数就是闭包；</li>
-<li>闭包还有一种理解：通过把函数内部的变量和方法返回出来，这样外部作用域就可以访问内部作用域了，并且立即执行函数和闭包之间没有必然的联系，虽然它们经常结合一起使用；</li>
-<li>立即执行函数只是一种函数的调用方式；</li>
-<li>闭包的目的则是外部函数可以访问内部函数的作用域；</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/22/JavaScript立即执行函数-IIFE-与闭包/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmejay.github.io/2018/06/11/设计模式之发布订阅模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jay Bein">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jay Bein's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/11/设计模式之发布订阅模式/" itemprop="url">设计模式之发布订阅模式</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T14:34:55+08:00">
-                2018-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近在看设计模式的知识，而且在工作当中，做一些打点需求的时候，正好直接利用了发布订阅模式去实现的，这让我对发布订阅这种设计模式更加的感兴趣了，于是借此机会也和大家说说这个好东东吧！</p>
-<p>其实在早期还是用jq开发的时代，有很多地方，我们都会出现发布订阅的影子，例如有trigger和on方法</p>
-<p>再到现在的vue中，emit和on方法。他们都似乎不约而同的自带了发布订阅属性一般，让开发变得更加高效好用起来</p>
-<p>那么废话不多说了，先来看看发布订阅模式到底何方神圣吧</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/11/设计模式之发布订阅模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1774,7 +1758,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1796,7 +1780,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

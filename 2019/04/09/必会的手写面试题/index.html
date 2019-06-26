@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="函数柯里化 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。  用途是实现多参函数。">
+<meta name="description" content="函数柯里化 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。  用途是实现多参函数。  12 实现深拷贝浅拷贝的方法有： Object.assign(),Array.from(),Array.slice(),Array.concat()  递归方法实现深度克隆原理：遍历对象、数组直到里边都是基本数据类型，然后再去复制，就是深度拷贝  12345678910111213141516">
 <meta name="keywords" content="手写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="必会的手写面试题">
 <meta property="og:url" content="https://callmejay.github.io/2019/04/09/必会的手写面试题/index.html">
 <meta property="og:site_name" content="Jay Bein&#39;s Blog">
-<meta property="og:description" content="函数柯里化 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。  用途是实现多参函数。">
+<meta property="og:description" content="函数柯里化 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。  用途是实现多参函数。  12 实现深拷贝浅拷贝的方法有： Object.assign(),Array.from(),Array.slice(),Array.concat()  递归方法实现深度克隆原理：遍历对象、数组直到里边都是基本数据类型，然后再去复制，就是深度拷贝  12345678910111213141516">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-09T10:29:01.661Z">
+<meta property="og:updated_time" content="2019-06-26T02:50:38.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="必会的手写面试题">
-<meta name="twitter:description" content="函数柯里化 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。  用途是实现多参函数。">
+<meta name="twitter:description" content="函数柯里化 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。  用途是实现多参函数。  12 实现深拷贝浅拷贝的方法有： Object.assign(),Array.from(),Array.slice(),Array.concat()  递归方法实现深度克隆原理：遍历对象、数组直到里边都是基本数据类型，然后再去复制，就是深度拷贝  12345678910111213141516">
 
 
 
@@ -380,6 +380,12 @@
         <h3 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h3><blockquote>
 <p>只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。  用途是实现多参函数。</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="实现深拷贝"><a href="#实现深拷贝" class="headerlink" title="实现深拷贝"></a>实现深拷贝</h3><p>浅拷贝的方法有： <code>Object.assign()</code>,<code>Array.from()</code>,<code>Array.slice()</code>,<code>Array.concat()</code></p>
+<blockquote>
+<p>递归方法实现深度克隆原理：遍历对象、数组直到里边都是基本数据类型，然后再去复制，就是深度拷贝</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义检测数据类型的功能函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkedType</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(target).slice(<span class="number">8</span>, <span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现深度克隆---对象/数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//判断拷贝的数据类型</span></span><br><span class="line">  <span class="comment">//初始化变量result 成为最终克隆的数据</span></span><br><span class="line">  <span class="keyword">let</span> result,</span><br><span class="line">    targetType = checkedType(target)</span><br><span class="line">  <span class="keyword">if</span> (targetType === <span class="string">'Object'</span>) &#123;</span><br><span class="line">    result = &#123;&#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (targetType === <span class="string">'Array'</span>) &#123;</span><br><span class="line">    result = []</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//遍历目标数据</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> target) &#123;</span><br><span class="line">    <span class="comment">//获取遍历数据结构的每一项值。</span></span><br><span class="line">    <span class="keyword">let</span> value = target[i]</span><br><span class="line">    <span class="comment">//判断目标结构里的每一值是否存在对象/数组</span></span><br><span class="line">    <span class="keyword">if</span> (checkedType(value) === <span class="string">'Object'</span> || checkedType(value) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">      <span class="comment">//对象/数组里嵌套了对象/数组</span></span><br><span class="line">      <span class="comment">//继续遍历获取到value值</span></span><br><span class="line">      result[i] = clone(value)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">//获取到value值是基本的数据类型或者是函数。</span></span><br><span class="line">      result[i] = value</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -448,6 +454,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/29/学习react/" rel="prev" title="学习react">
+                学习react <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -533,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -555,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -651,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数柯里化"><span class="nav-number">1.</span> <span class="nav-text">函数柯里化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数柯里化"><span class="nav-number">1.</span> <span class="nav-text">函数柯里化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现深拷贝"><span class="nav-number">2.</span> <span class="nav-text">实现深拷贝</span></a></li></ol></div>
             
 
           </div>

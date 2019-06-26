@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>https://callmejay.github.io/2019/02/18/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-2/</loc>
+    <lastmod>2019-06-26T03:03:29.107Z</lastmod>
+    <data>
+        <display>
+        <title>基础知识总结-2</title>
+        <pubTime>2019-02-18T10:39:09.000Z</pubTime>
+        
+        <tag>基础</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://callmejay.github.io/2019/04/09/%E5%BF%85%E4%BC%9A%E7%9A%84%E6%89%8B%E5%86%99%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
-    <lastmod>2019-04-09T10:29:01.661Z</lastmod>
+    <lastmod>2019-06-26T02:50:38.242Z</lastmod>
     <data>
         <display>
         <title>必会的手写面试题</title>
@@ -21,17 +38,74 @@
 
     
   <url>
-    <loc>https://callmejay.github.io/2019/02/18/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-2/</loc>
-    <lastmod>2019-04-02T08:31:08.922Z</lastmod>
+    <loc>https://callmejay.github.io/2019/05/29/%E5%AD%A6%E4%B9%A0react/</loc>
+    <lastmod>2019-06-26T02:50:29.637Z</lastmod>
     <data>
         <display>
-        <title>基础知识总结-2</title>
-        <pubTime>2019-02-18T10:39:09.000Z</pubTime>
+        <title>学习react</title>
+        <pubTime>2019-05-29T02:44:39.000Z</pubTime>
+        
+        <tag>react</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2019/06/10/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-3/</loc>
+    <lastmod>2019-06-26T02:45:12.959Z</lastmod>
+    <data>
+        <display>
+        <title>基础知识总结-3</title>
+        <pubTime>2019-06-10T08:50:37.000Z</pubTime>
         
         <tag>基础</tag>
          
          
            
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2018/02/06/JavaScript-%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E5%90%8C%E6%AD%A5%E3%80%81%E5%BC%82%E6%AD%A5%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88Event-Loop%EF%BC%89/</loc>
+    <lastmod>2019-05-27T08:52:03.152Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript:彻底理解同步、异步和事件循环（Event Loop）</title>
+        <pubTime>2018-02-06T13:05:10.000Z</pubTime>
+        
+        <tag>Event Loop</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://callmejay.github.io/2018/03/17/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2019-05-23T07:07:49.394Z</lastmod>
+    <data>
+        <display>
+        <title>排序算法</title>
+        <pubTime>2018-03-17T09:19:10.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
+          
         </display>
     </data>
     </url>
@@ -143,26 +217,6 @@
         <pubTime>2017-07-12T13:01:02.000Z</pubTime>
         
         <tag>面试题</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2018/03/17/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2019-02-18T10:50:44.877Z</lastmod>
-    <data>
-        <display>
-        <title>排序算法</title>
-        <pubTime>2018-03-17T09:19:10.000Z</pubTime>
-        
-        <tag>算法</tag>
          
          
            
@@ -663,26 +717,6 @@
         <pubTime>2017-08-15T13:38:59.000Z</pubTime>
         
         <tag>轮播</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://callmejay.github.io/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://callmejay.github.io/2018/02/06/JavaScript-%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E5%90%8C%E6%AD%A5%E3%80%81%E5%BC%82%E6%AD%A5%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88Event-Loop%EF%BC%89/</loc>
-    <lastmod>2019-02-18T10:44:38.888Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript:彻底理解同步、异步和事件循环（Event Loop）</title>
-        <pubTime>2018-02-06T13:05:10.000Z</pubTime>
-        
-        <tag>Event Loop</tag>
          
          
            
