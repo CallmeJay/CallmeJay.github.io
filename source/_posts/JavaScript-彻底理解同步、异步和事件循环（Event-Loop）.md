@@ -126,8 +126,8 @@ JS 引擎线程从消息队列中读取任务是不断循环的，每次栈被�
 **微队列，microtask，也叫 jobs。** 另一些异步任务的回调会依次进入 micro task queue，等待后续被调用，这些异步任务包括：
 
 - process.nextTick (Node 独有)
-- Promise
-- Object.observe
+- Promise.then()
+- Object.observe(废弃)
 - MutationObserver
 
 （注：这里只针对浏览器和 NodeJS）
