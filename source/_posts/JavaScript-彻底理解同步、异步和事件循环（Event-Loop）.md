@@ -132,6 +132,9 @@ JS 引擎线程从消息队列中读取任务是不断循环的，每次栈被�
 
 （注：这里只针对浏览器和 NodeJS）
 
+由此我们得到的执行顺序应该为：
+**script(主程序代码)—>process.nextTick—>Promises...——>setTimeout——>setInterval——>setImmediate——> I/O——>UI rendering**
+
 ### 浏览器的 Event Loop
 
 ![event loop](http://oonulpk6h.bkt.clouddn.com/event_loop.png)
