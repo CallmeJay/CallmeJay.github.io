@@ -88,13 +88,13 @@
 
 
 
-<meta name="description" content="前端基础进阶系列 执行上下文每次当控制器转到可执行代码的时候，就会进入一个执行上下文。执行上下文可以理解为当前代码的执行环境，它会形成一个作用域。JavaScript中的运行环境大概包括三种情况。  全局环境：JavaScript代码运行起来会首先进入该环境 函数环境：当函数被调用执行时，会进入当前函数中执行代码 eval（不建议使用，可忽略）">
+<meta name="description" content="前端基础进阶系列 内存空间在学习内存空间之前，我们需要对三种数据结构有一个直观的认知。他们分别是堆(heap)，栈(stack)与队列(queue)。 栈数据结构有 后进先出(LIFO) 特点。堆数据结构是一种树状结构。它的存取数据的方式，则与书架与书非常相似。队列是一种先进先出（FIFO）的数据结构 基础数据类型大小固定，按值访问，存放在栈内存中。引用数据类型大小不固定，按引用访问，存放在堆内存">
 <meta name="keywords" content="基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础知识总结-2">
 <meta property="og:url" content="https://callmejay.github.io/2019/02/18/基础知识总结-2/index.html">
 <meta property="og:site_name" content="Jay Bein&#39;s Blog">
-<meta property="og:description" content="前端基础进阶系列 执行上下文每次当控制器转到可执行代码的时候，就会进入一个执行上下文。执行上下文可以理解为当前代码的执行环境，它会形成一个作用域。JavaScript中的运行环境大概包括三种情况。  全局环境：JavaScript代码运行起来会首先进入该环境 函数环境：当函数被调用执行时，会进入当前函数中执行代码 eval（不建议使用，可忽略）">
+<meta property="og:description" content="前端基础进阶系列 内存空间在学习内存空间之前，我们需要对三种数据结构有一个直观的认知。他们分别是堆(heap)，栈(stack)与队列(queue)。 栈数据结构有 后进先出(LIFO) 特点。堆数据结构是一种树状结构。它的存取数据的方式，则与书架与书非常相似。队列是一种先进先出（FIFO）的数据结构 基础数据类型大小固定，按值访问，存放在栈内存中。引用数据类型大小不固定，按引用访问，存放在堆内存">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/599584-58d31e5b80737ca0.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/19704583/60147757-43b78280-9801-11e9-8527-5e81d3bb687f.png">
@@ -102,10 +102,10 @@
 <meta property="og:image" content="https://user-images.githubusercontent.com/19704583/60147875-94c77680-9801-11e9-85c1-39c161f5c78f.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/19704583/60147945-c3455180-9801-11e9-868b-bcd82fae5812.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/19704583/60147997-f5ef4a00-9801-11e9-8eb7-9be4340d69ed.png">
-<meta property="og:updated_time" content="2019-06-26T03:03:29.107Z">
+<meta property="og:updated_time" content="2019-06-26T08:34:02.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础知识总结-2">
-<meta name="twitter:description" content="前端基础进阶系列 执行上下文每次当控制器转到可执行代码的时候，就会进入一个执行上下文。执行上下文可以理解为当前代码的执行环境，它会形成一个作用域。JavaScript中的运行环境大概包括三种情况。  全局环境：JavaScript代码运行起来会首先进入该环境 函数环境：当函数被调用执行时，会进入当前函数中执行代码 eval（不建议使用，可忽略）">
+<meta name="twitter:description" content="前端基础进阶系列 内存空间在学习内存空间之前，我们需要对三种数据结构有一个直观的认知。他们分别是堆(heap)，栈(stack)与队列(queue)。 栈数据结构有 后进先出(LIFO) 特点。堆数据结构是一种树状结构。它的存取数据的方式，则与书架与书非常相似。队列是一种先进先出（FIFO）的数据结构 基础数据类型大小固定，按值访问，存放在栈内存中。引用数据类型大小不固定，按引用访问，存放在堆内存">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/599584-58d31e5b80737ca0.png">
 
 
@@ -385,6 +385,10 @@
 
       
         <p><a href="https://www.jianshu.com/p/cd3fee40ef59" target="_blank" rel="noopener">前端基础进阶系列</a></p>
+<h3 id="内存空间"><a href="#内存空间" class="headerlink" title="内存空间"></a>内存空间</h3><p>在学习内存空间之前，我们需要对三种数据结构有一个直观的认知。他们分别是堆(heap)，栈(stack)与队列(queue)。</p>
+<p>栈数据结构有 后进先出(LIFO) 特点。<br>堆数据结构是一种树状结构。它的存取数据的方式，则与书架与书非常相似。<br>队列是一种先进先出（FIFO）的数据结构</p>
+<p>基础数据类型大小固定，按值访问，存放在栈内存中。引用数据类型大小不固定，按引用访问，存放在堆内存中。</p>
+<p>JavaScript不允许直接访问堆内存中的位置，因此我们不能直接操作对象的堆内存空间。在操作对象时，实际上是在操作对象的引用而不是实际的对象。因此，引用类型的值都是按引用访问的。这里的引用，我们可以理解为保存在变量对象中的一个地址，该地址与堆内存的实际值相关联。</p>
 <h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>每次当控制器转到可执行代码的时候，就会进入一个执行上下文。<strong>执行上下文可以理解为当前代码的执行环境，它会形成一个作用域</strong>。JavaScript中的运行环境大概包括三种情况。</p>
 <ul>
 <li>全局环境：JavaScript代码运行起来会首先进入该环境</li>
@@ -680,7 +684,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -702,7 +706,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -798,7 +802,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行上下文"><span class="nav-number">1.</span> <span class="nav-text">执行上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量对象（Variable-Object）"><span class="nav-number">1.1.</span> <span class="nav-text">变量对象（Variable Object）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局上下文的变量对象"><span class="nav-number">1.2.</span> <span class="nav-text">全局上下文的变量对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">2.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域链"><span class="nav-number">3.</span> <span class="nav-text">作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">4.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this-指向"><span class="nav-number">5.</span> <span class="nav-text">this 指向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用apply-call实现继承"><span class="nav-number">5.1.</span> <span class="nav-text">使用apply/call实现继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结一"><span class="nav-number">6.</span> <span class="nav-text">总结一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象"><span class="nav-number">7.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#工厂模式"><span class="nav-number">7.1.</span> <span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数"><span class="nav-number">7.2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型"><span class="nav-number">7.3.</span> <span class="nav-text">原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链"><span class="nav-number">7.4.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">7.5.</span> <span class="nav-text">继承</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存空间"><span class="nav-number">1.</span> <span class="nav-text">内存空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行上下文"><span class="nav-number">2.</span> <span class="nav-text">执行上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量对象（Variable-Object）"><span class="nav-number">2.1.</span> <span class="nav-text">变量对象（Variable Object）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局上下文的变量对象"><span class="nav-number">2.2.</span> <span class="nav-text">全局上下文的变量对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">3.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域链"><span class="nav-number">4.</span> <span class="nav-text">作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">5.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this-指向"><span class="nav-number">6.</span> <span class="nav-text">this 指向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用apply-call实现继承"><span class="nav-number">6.1.</span> <span class="nav-text">使用apply/call实现继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结一"><span class="nav-number">7.</span> <span class="nav-text">总结一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象"><span class="nav-number">8.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#工厂模式"><span class="nav-number">8.1.</span> <span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数"><span class="nav-number">8.2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型"><span class="nav-number">8.3.</span> <span class="nav-text">原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链"><span class="nav-number">8.4.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">8.5.</span> <span class="nav-text">继承</span></a></li></ol></li></ol></div>
             
 
           </div>
