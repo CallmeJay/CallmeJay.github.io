@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +27,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -55,9 +55,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -75,13 +75,13 @@
 
 
 
-  <meta name="keywords" content="原型," />
+  <meta name="keywords" content="原型,">
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml">
 
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="https://callmejay.github.io/2018/02/08/JavaScript之原型和原型链/"/>
+  <link rel="canonical" href="https://callmejay.github.io/2018/02/08/JavaScript之原型和原型链/">
 
 
 
@@ -170,7 +170,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Jay Bein's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -200,7 +200,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -210,7 +210,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -220,7 +220,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -230,7 +230,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -240,7 +240,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -253,7 +253,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -321,7 +321,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
@@ -357,7 +357,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -415,14 +415,14 @@
 <p>那这个函数的 prototype 属性到底指向的是什么呢？</p>
 <p>其实，函数的 prototype 属性指向了一个对象，这个对象正是<strong>调用该构造函数而创建的实例</strong>的原型，也就是这个例子中的 person1 和 person2 的原型。</p>
 <p>那什么是原型呢？可以这样理解：每一个 JavaScript 对象（null 除外）在创建的时候就会与之关联另一个对象，这个对象就是我们所说的原型，每一个对象都会从原型‘继承’属性。</p>
-<p>让我们用一张图表示构造函数和实例原型之间的关系：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype1.png" alt=""><br>在这张图中我们用的<code>Object.prototype</code>表示实例原型。</p>
+<p>让我们用一张图表示构造函数和实例原型之间的关系：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype1.png" alt><br>在这张图中我们用的<code>Object.prototype</code>表示实例原型。</p>
 <p>那么我们该怎么表示实例与实例原型，也就是 person 和 Person.prototype 之间的关系呢？</p>
 <h3 id="proto"><a href="#proto" class="headerlink" title="__proto__"></a>__proto__</h3><p>这是每一个 JavaScript 对象（null 除外）都具有的一个属性，叫__proto__，这个属性会指向该对象的原型，证明如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person.__proto__ === Person.prototype); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>更新关系图：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype2.png" alt=""><br>既然实例对象和构造函数都可以指向原型，那么原型是否有属性指向构造函数或者实例呢？</p>
+<p>更新关系图：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype2.png" alt><br>既然实例对象和构造函数都可以指向原型，那么原型是否有属性指向构造函数或者实例呢？</p>
 <h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>指向实例倒是没有，因为一个构造函数可以生成多个实例，但是原型指向构造函数倒是有的，这就是第三个属性: constructor，每个原型都有一个 constructor 属性指向关联的构造函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Person === <span class="built_in">Object</span>.prototype.constructor);</span><br></pre></td></tr></table></figure>
-<p>再更新关系图：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype3.png" alt=""><br>综上所述:</p>
+<p>再更新关系图：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype3.png" alt><br>综上所述:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person.__proto__ === Person.prototype); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log((Person.prototype.constructor = Person)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 顺便学习一个ES5的方法,可以获得对象的原型</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(person) === Person.prototype); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>了解了构造函数、实例原型、和实例之间的关系，接下来我们讲讲实例和原型的关系。</p>
 <h3 id="实例与原型"><a href="#实例与原型" class="headerlink" title="实例与原型"></a>实例与原型</h3><p>当读取实例的属性时，如果找不到，就会查找与对象关联的原型中的属性，如果还查不到，就去找原型的原型，一直找到最顶层为止。<br>举个例子：</p>
@@ -432,16 +432,16 @@
 <p>但是万一没找到呢，原型的原型又是什么呢？</p>
 <h3 id="原型的原型"><a href="#原型的原型" class="headerlink" title="原型的原型"></a>原型的原型</h3><p>在前面，我们已经讲了原型也是一个对象，既然是对象，那我们就可以用最原始的方式创建它：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="string">"Kevin"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">// Kevin</span></span><br></pre></td></tr></table></figure>
-<p>其实原型对象就是通过 Object 构造函数生成的，结合之前所讲，实例的__proto__指向构造函数的 prototype,所以载更新关系图：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype4.png" alt=""></p>
+<p>其实原型对象就是通过 Object 构造函数生成的，结合之前所讲，实例的__proto__指向构造函数的 prototype,所以载更新关系图：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype4.png" alt></p>
 <h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>那 Object.prototype 的原型呢？<br>null, 我们可以打印：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>然而 null 究竟代表了什么呢？</p>
 <blockquote>
 <p>null 代表’没有对象’，即该处不该有值。</p>
 </blockquote>
-<p><img src="http://oonulpk6h.bkt.clouddn.com/null&amp;undefined.png" alt=""><br>所以 Object.prototype.__proto__的值为 null 跟 Object.prototype 没有原型，其实表达了一个意思。</p>
+<p><img src="http://oonulpk6h.bkt.clouddn.com/null&amp;undefined.png" alt><br>所以 Object.prototype.__proto__的值为 null 跟 Object.prototype 没有原型，其实表达了一个意思。</p>
 <p>所以查找属性的时候查到 Object.prototype 就可以停止查找了。</p>
-<p>最后一张关系图：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype5.png" alt=""></p>
+<p>最后一张关系图：<br><img src="http://oonulpk6h.bkt.clouddn.com/prototype5.png" alt></p>
 <p>顺便还要说一下，图中由相互关联的原型组成的链状结构就是<strong>原型链</strong>，也就是蓝色的这条线。</p>
 <h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><h4 id="constructor"><a href="#constructor" class="headerlink" title="constructor"></a>constructor</h4><p>首先是 constructor 属性，例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person.constructor == Person); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
@@ -470,14 +470,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Jay Bein 微信支付"/>
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Jay Bein 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jay Bein 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jay Bein 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -592,9 +592,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="Jay Bein" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Jay Bein">
             
               <p class="site-author-name" itemprop="name">Jay Bein</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -668,7 +666,7 @@
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
               </a>
             </div>
           
@@ -691,19 +689,11 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://github.com/InterviewMap/CS-Interview-Knowledge-Map" title="InterviewMap" target="_blank">InterviewMap</a>
+                    <a href="https://github.com/KieSun" title="InterviewMap" target="_blank">InterviewMap</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://github.com/KieSun/Front-end-knowledge" title="KieSun" target="_blank">KieSun</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://github.com/amandakelake/blog" title="amandakelake" target="_blank">amandakelake</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://github.com/yygmind/blog" title="木易杨" target="_blank">木易杨</a>
+                    <a href="https://muyiy.cn/blog/" title="木易杨" target="_blank">木易杨</a>
                   </li>
                 
               </ul>

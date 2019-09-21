@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +27,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -55,9 +55,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -75,13 +75,13 @@
 
 
 
-  <meta name="keywords" content="jQuery," />
+  <meta name="keywords" content="jQuery,">
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jay Bein's Blog" type="application/atom+xml">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="https://callmejay.github.io/2017/05/22/jQuery设计思想/"/>
+  <link rel="canonical" href="https://callmejay.github.io/2017/05/22/jQuery设计思想/">
 
 
 
@@ -163,7 +163,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Jay Bein's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -193,7 +193,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -203,7 +203,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -213,7 +213,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -223,7 +223,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -233,7 +233,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -246,7 +246,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -314,7 +314,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Bein">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
@@ -350,7 +350,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -402,7 +402,7 @@
         <p>jQuery 是目前使用最广泛的 javascript 函数库。</p>
 <h2 id="选择网页元素"><a href="#选择网页元素" class="headerlink" title="选择网页元素"></a>选择网页元素</h2><p>jQuery 的基本设计思想和主要用法，就是 <strong>“选择某个网页元素，然后对其进行某种操作”</strong>。这是它区别于其他 Javascript 库的根本特点。<br>使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为\$），然后得到被选中的元素。</p>
 <a id="more"></a>
-<p>选择表达式可以是<a href="">CSS 选择器</a>：</p>
+<p>选择表达式可以是<a href>CSS 选择器</a>：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>); <span class="comment">//选择整个文档对象</span></span><br><span class="line">$(<span class="string">"#myId"</span>); <span class="comment">//选择ID为myId的网页元素</span></span><br><span class="line">$(<span class="string">"div.myClass"</span>); <span class="comment">// 选择class为myClass的div元素</span></span><br><span class="line">$(<span class="string">"input[name=first]"</span>); <span class="comment">// 选择name属性等于first的input元素</span></span><br></pre></td></tr></table></figure>
 <p>也可以是 jQuery<a href="http://api.jquery.com/category/selectors/" target="_blank" rel="noopener">特有的表达式</a>：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"a:first"</span>); <span class="comment">//选择网页中第一个a元素</span></span><br><span class="line">$(<span class="string">"tr:odd"</span>); <span class="comment">//选择表格的奇数行</span></span><br><span class="line">$(<span class="string">"#myForm :input"</span>); <span class="comment">// 选择表单中的input元素</span></span><br><span class="line">$(<span class="string">"div:visible"</span>); <span class="comment">//选择可见的div元素</span></span><br><span class="line">$(<span class="string">"div:gt(2)"</span>); <span class="comment">// 选择所有的div元素，除了前三个</span></span><br><span class="line">$(<span class="string">"div:animated"</span>); <span class="comment">// 选择当前处于动画状态的div元素</span></span><br></pre></td></tr></table></figure>
@@ -478,14 +478,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Jay Bein 微信支付"/>
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Jay Bein 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jay Bein 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jay Bein 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -600,9 +600,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="Jay Bein" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Jay Bein">
             
               <p class="site-author-name" itemprop="name">Jay Bein</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -676,7 +674,7 @@
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
               </a>
             </div>
           
@@ -699,19 +697,11 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://github.com/InterviewMap/CS-Interview-Knowledge-Map" title="InterviewMap" target="_blank">InterviewMap</a>
+                    <a href="https://github.com/KieSun" title="InterviewMap" target="_blank">InterviewMap</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://github.com/KieSun/Front-end-knowledge" title="KieSun" target="_blank">KieSun</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://github.com/amandakelake/blog" title="amandakelake" target="_blank">amandakelake</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://github.com/yygmind/blog" title="木易杨" target="_blank">木易杨</a>
+                    <a href="https://muyiy.cn/blog/" title="木易杨" target="_blank">木易杨</a>
                   </li>
                 
               </ul>
