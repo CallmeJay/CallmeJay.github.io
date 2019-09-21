@@ -46,6 +46,59 @@ el.hasChildNode(); // 判断节点是否包含子节点，包含返回true，不
 el.cloneChild(true/false); // 默认为false，只复制当前节点，为true时它的所有子节点也一起复制。它也是存在内存中，也需要向页面里添加。
 ```
 
+* document
+  * 功能
+    * getElementById$('#aaa')
+    * getElementByTagName$('div')
+    * getElementsByClassName$('.aaa')
+    * getElementsByName 只用在表单元素中
+
+* document object
+  * 属性：
+    * className，style
+    * id
+    * name,value(表单元素)
+    * href,src…(对应的元素)
+    * innerHTML
+    * children
+    * parentNode
+
+  * 功能方法：
+    * setAttribute/getAttribute
+    * appendChild
+
+* DOM与节点的关系：
+  * node:
+  * childNodes[]
+  * parentNode
+  * firstChild
+  * getElementsByTagName('元素标签')
+  * lastchild
+  * nextSibling
+  * previousSibling
+  * children[index]children 不是w3c标准 但是各大浏览器兼容性很好
+
+* DOM方法小结
+
+* cloneNode 返回当前节点的拷贝
+* createAttribute 创建新的属性
+* 插入节点
+  * node.insertBefore()
+  * node.insertAdjacentElement()
+* 删除节点
+  * node.remove()
+  * node.removeChild()
+  * node.removeNode()
+
+* 替换节点
+  * node.replaceChild()
+  * node.replaceNode()
+  * node.swapNode()
+
+* node.cloneNode(bAll)返回复制复制节点引用
+* node.contains() 是否有子节点
+* node.hasChildNodes()是否有子节点
+
 ## 操作元素属性
 
 ```js

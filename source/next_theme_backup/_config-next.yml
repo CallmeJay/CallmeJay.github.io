@@ -156,10 +156,8 @@ links:
   #Title: http://example.com/
   mqyqingfeng: https://github.com/mqyqingfeng/Blog
   Web-Series: https://github.com/wxyyxc1992/Web-Series
-  InterviewMap: https://github.com/InterviewMap/CS-Interview-Knowledge-Map
-  KieSun: https://github.com/KieSun/Front-end-knowledge
-  amandakelake: https://github.com/amandakelake/blog
-  木易杨: https://github.com/yygmind/blog
+  InterviewMap: https://github.com/KieSun
+  木易杨: https://muyiy.cn/blog/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -603,7 +601,7 @@ calendar:
 
 # Algolia Search
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 10
   labels:
@@ -614,7 +612,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
 local_search:
-  enable: true
+  enable: false
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto

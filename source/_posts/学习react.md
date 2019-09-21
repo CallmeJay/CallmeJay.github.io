@@ -15,22 +15,23 @@ virtual-dom也就是使用js的数据结构来表示dom元素的结构，因为�
 挂载过程：
 
 ```text
+//我们叫构造函数，它是ES6的基本语法。虽然它和生命周期函数的性质一样，但不能认为是生命周期函数。
 -> constructor()
--> componentWillMount()
+-> componentWillMount()（废弃）
 -> render()
 // 然后构造 DOM 元素插入页面
 -> componentDidMount()
 // ...
-// 组件将要接收新的props执行 这个方法在初始化render时不会被调用。
+// 组件将要接收新的props执行 这个方法在初始化render时不会被调用。（废弃）
 -> componentWillReceiveProps(nextProps)
 
 // 判断组件是否应该重新渲染，默认是true 在组件接收到新的props或者state时被调用。在初始化时或者使用forceUpdate时不被调用。
 -> shouldComponentUpdate(nextProps, nextState)
 
-// 组件将要重新渲染 在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用。 不能调用setState。造成死循环，导致程序崩溃。
+// 组件将要重新渲染 在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用。 不能调用setState。造成死循环，导致程序崩溃。（废弃）
 -> componentWillUpdate(nextProps, nextState)
 
-// 组件重新渲染完成 不能调用setState。造成死循环，导致程序崩溃。
+// 组件重新渲染完成 直接调用 setState()，但请注意它必须被包裹在一个条件语件里，否则会导致死循环。导致额外的重新渲染，会影响组件性能。会在更新后会被立即调用。首次渲染不会执行此方法。
 -> componentDidUpdate(prevProps, prevState, snapshot)
 
 // ...
@@ -38,6 +39,15 @@ virtual-dom也就是使用js的数据结构来表示dom元素的结构，因为�
 -> componentWillUnmount()
 // 从页面中删除
 ```
+
+挂载阶段
+
+constructor => getDreivedStateFromProps(props, state) => render => componentDidMount => 结束
+
+更新阶段
+
+getDreivedStateFromProps(props, state) => shouldComponentUpdate(nextProps, nextState) =>(返回true) render => getSnapshotBeforeUpdate(prevProps, prevState) => componentDidUpdate(prevProps, prevState, snapshot)=> 结束
+
 
 ![React生命周期](https://user-images.githubusercontent.com/19704583/61278476-db980300-a7e6-11e9-974a-1c62001c3dce.jpeg)
 
@@ -121,7 +131,7 @@ parentClick = (e) => {
 
 render() {
   return (
-    <div onClick={this.parentClick} ref={ref => this.parent = ref}>
+    <div onClick={this.parentClick} ref={ref => {this.parent = ref}}>
       test
     </div>
   )
@@ -190,9 +200,42 @@ function Story(props) {
 }
 ```
 
-### 字符串字面量
+### 为何要在componentDidMount里面发送请求
 
-```jsx
-<MyComponent message="hello world" />
-<MyComponent message={'hello world'} />
-```
+1. componentDidmount 是在组件完全挂载后才会执行，在此方法中调用setState 会触发重新渲染，最重要的是，这是官方推荐的！
+2. constructor 调用是在一开始，组件未挂载，所以不能用。
+3. componentWillMount 调用在 constructor 后，在这里的代码调用 setState 不会出发重新渲染，所以不用。
+
+
+### 深入 setState 机制
+
+[setState什么时候是异步，什么时候是同步](https://github.com/sisterAn/blog/issues/26)
+
+### 最新React生命周期变动
+
+* 舍弃
+  * componentWillMount
+  * componentWillReceiveProps
+  * componentWillUpdate
+* 新增
+  * getDerivedStateFromProps （少用）
+  * getSnapshotBeforeUpdate （在最近一次渲染输出（提交到 DOM 节点）之前调用）
+
+React16引入了React Fiber的概念，导致了componentWillMount，componentWillReceiveProps，shouldComponentUpdate，componentWillUpdate这些生命周期出现了可能被调用不止一次的可能。
+
+会导致组件不必要的更新，父组件渲染即使没有改变props 也会调用componentWillReceivePorps
+
+### getDerivedStateFromProps
+
+派生一个state，根据传入的props进行state的更新
+
+static getDerivedStateFromProps(nextProps, prevState)接收两个参数（它内部你只能访问到组件上的这两个参数），第一个为接收到的新参数，第二是是当前的state。会返回一个对象用来更新state不需要可以返回null
+
+触发执⾏的条件有哪些？
+
+* 组件挂载的时候
+* 接收到新的props时
+* 组件卸载时
+* 父组件更新
+* 内部组件执行了state 可以总结为一句话，此静态方法会在render之前被调用，在初始挂载以及后续更新的时候都会被调用。
+
