@@ -1286,8 +1286,10 @@
         
           <h2 id="什么是”非构造函数”的继承？"><a href="#什么是”非构造函数”的继承？" class="headerlink" title="什么是”非构造函数”的继承？"></a>什么是”非构造函数”的继承？</h2><p>比如，现在有一个对象，叫做”中国人”。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Chinese = &#123;</span><br><span class="line">  nation: <span class="string">"中国"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>还有一个对象，叫做”医生”。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Doctor = &#123;</span><br><span class="line">  career: <span class="string">"医生"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>请问怎样才能让”医生”去继承”中国人”，也就是说，我怎样才能生成一个”中国医生”的对象？<br>这里要注意，这两个对象都是普通对象，不是构造函数，无法使用构造函数方法实现”继承”。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1436,8 +1438,10 @@
         
           <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天要介绍的是，对象之间的”继承”的五种方法。<br>比如，现在有一个”动物”对象的构造函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.species = <span class="string">"动物"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>还有一个”猫”对象的构造函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>怎样才能使”猫”继承”动物”呢？</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1731,7 +1735,7 @@
       
         
           <p>jQuery 是目前使用最广泛的 javascript 函数库。</p>
-<h2 id="选择网页元素"><a href="#选择网页元素" class="headerlink" title="选择网页元素"></a>选择网页元素</h2><p>jQuery 的基本设计思想和主要用法，就是 <strong>“选择某个网页元素，然后对其进行某种操作”</strong>。这是它区别于其他 Javascript 库的根本特点。<br>使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为\$），然后得到被选中的元素。</p>
+<h2 id="选择网页元素"><a href="#选择网页元素" class="headerlink" title="选择网页元素"></a>选择网页元素</h2><p>jQuery 的基本设计思想和主要用法，就是 <strong>“选择某个网页元素，然后对其进行某种操作”</strong>。这是它区别于其他 Javascript 库的根本特点。<br>使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/22/jQuery设计思想/#more" rel="contents">
@@ -1945,7 +1949,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -379,38 +379,16 @@
 
       
         
-          
-            <p><strong>前端工程化是什么</strong>？</p>
+          <p><strong>前端工程化是什么</strong>？</p>
 <p>这是个很大的概念，但是在我们的日常开发中又很常见。当我们对一个工程进行设计并把它拆分成各个组件和模块时，我们是在做工程化；当我们用 Webpack 构建项目，配置好各个环境的打包配置时，我们是在做工程化；当我们为项目添加了 ESLint，并在每次提交之前自动检查代码质量时，我们是在做工程化。</p>
 <p>如果要用一句话来概括，在我的理解中前端工程化是把前端开发工作带入到更加系统和规范体系的一系列过程。这个过程会包括源代码的预编译、模块处理、代码压缩等构建方面的工作。工程化会尽可能保证开发者的开发体验更加友好，保证源代码的质量以及依赖的完整性。工程化也会尽可能高效地将构建完成后的代码送达给客户端，来追求更加良好的用户体验。所有这些都属于工程化。</p>
-<h2 id="走向正轨的第一步——模块化"><a href="#走向正轨的第一步——模块化" class="headerlink" title="走向正轨的第一步——模块化"></a>走向正轨的第一步——模块化</h2><p>一个设计良好的系统应该是模块化的。一个最简单的原因，在一个模块化的系统中，当外界的需求亦或环境变化的时候，开发者可以更快地将问题定位到相应的模块，而不必面对纠缠在一起的逻辑不知如何下手。模块化可以使系统具备更强的可维护性。</p>
-<p>被封装良好的模块应该具备特定且单一的功能，对外界只提供接口，而将具体实现封装在内部。Webpack 中有一个核心的理念——”一切皆模块”，即 HTML、JavaScript、CSS、图片等等都是模块，在后面的文章中会展开讲。</p>
-<p>另外在将代码提供给客户端之前，开发者可以通过 Browserify、Webpack 这些工具将工程代码进行打包，把所有依赖模块打包为单一的 JavaScript 文件。这样一来，对于开发者而言开发体验更加友好，因为开发中每次需要关注的仅仅是单个模块，而不是堆放在一起的上千行 JavaScript 文件；而对于客户端来说则只用接受单一的打包产物，解决了文件数量过多导致 HTTP 请求耗时长的问题。解决模块之间的依赖，并根据依赖树进行打包，是工程化解决的最基本的问题之一。</p>
-<h3 id="什么是模块"><a href="#什么是模块" class="headerlink" title="什么是模块"></a>什么是模块</h3><p>在软件工程设计中，我们通常将具有特定功能的代码封装为模块。比如在一个 Web 应用里，可能会有专门负责处理网络请求的模块、专门负责日期处理的模块、专门负责渲染的模块等等，每个模块各自发挥着不同的作用，都是系统不可缺少的一部分。</p>
-<p>具体到代码层面，模块则是一个较为笼统和宽泛的概念，实现的形式并不一样。在一些情况下，一个文件可以包含多个模块，也可以与模块一一对应。比如在工程中也许会有一个 error.js 专门用于错误处理，或者通过 util.js 来放各种工具函数，由每个文件负责一个单一的功能。</p>
-<h3 id="为什么要使用模块"><a href="#为什么要使用模块" class="headerlink" title="为什么要使用模块"></a>为什么要使用模块</h3><p>模块化的设计可以为系统带来很多好处，在我看来最重要的有以下几个：</p>
-<p><strong>1.作用域封装</strong>：在 JavaScript 中代码执行的顶层作用域即是全局作用域，这意味着变量和函数定义很容易冲突。而使用模块将代码封装起来，可保证内部实现不会暴露在全局作用域中，我们只需将模块的功能通过接口的方式暴露出去给其它模块调用即可，避免了污染全局命名空间的问题。</p>
-<p><strong>2.重用性</strong>：在工程中经常会出现重复的部分，比如一个 Web 应用中各个页面共同的 header、footer，最原始的开发方式是将同样的代码复制粘贴到各个地方。这种做法的缺点是当这些共同的部分发生改变时，我们需要逐一改动每个地方的代码。</p>
-<p>而如果把实现一类功能的代码封装为模块之后，就可以提供给各个调用者。比如说应用中有一个 Dialog 组件，可以把它的结构和样式封装起来，在不同的页面中调用它。假如 Dialog 的样式需要调整，那么只要调整该模块那么相当于此修改对所有页面都生效。</p>
-<p><strong>3.解除耦合</strong>：试想一下如果有一个几千行代码的文件在你的工程里，内部实现了各种各样的功能并且互相调用，这样的代码调试起来有多痛苦。将系统分解为模块的一个很重要意义就是解除各部分之间的耦合。当系统的某个部分需要发生改变的时候，通过模块我们可以快速定位问题。由于模块把功能的具体实现封装在了内部，只要模块间的接口不变，模块内部的变化对于外面的其它部分并没有感知。因此通过模块化可以提升系统的可维护性。</p>
-<p><strong>4.按需加载</strong>：如果没有模块，所有的代码将被放在一个大文件里面统统塞给用户。当页面不断地增加功能，不断地添加代码，最终的文件只会越来越大，而页面也打开地越来越慢，对于用户来说非常不友好。使用模块化来拆分逻辑可以使页面需要的资源最先被加载，而后续的模块在恰当的时机再进行异步加载，从而让页面加载速度更快，用户也得到更好的体验。</p>
-<h3 id="CommonJS-与-Node-js-模块系统"><a href="#CommonJS-与-Node-js-模块系统" class="headerlink" title="CommonJS 与 Node.js 模块系统"></a>CommonJS 与 Node.js 模块系统</h3><p>CommonJS 是于 2009 年提出的 JavaScript 规范，它最开始是为了定义服务端标准，而非用于浏览器环境。之后 Node.js 采用并实现了它的部分规范，在模块系统上进行了一些调整。一般来说，我们不会严格区分 CommonJS 与 Node.js 的模块标准，详述两种标准的区别超出了本文的范围，在下文中我会直接使用 CommonJS 来进行表述。</p>
-<p>Browserify 的出现带来了浏览器环境模块的变革。它是一个运行在 Node 环境下的模块打包工具，可以把模块按照 Node.js 的模块规则合并为浏览器支持的形式，这使得浏览器端的框架类库也可以按照 CommonJS 的形式编写。随着 Node.js 以及 npm 流行，近两年来对于开发者来说遵循 CommonJS 标准来编写和使用模块已经成为了一个基本通识。</p>
-<h3 id="ES6-Module"><a href="#ES6-Module" class="headerlink" title="ES6 Module"></a>ES6 Module</h3><p>ES6 Module 是目前比较推荐开发者使用的模块标准。之所以在过去我们有各种不同的模块化标准是因为 JavaScript 这门语言本身不具备模块化的特性，而现在 ES6 中已经具备了。ES6 Module 的模块语法和 CommonJS 很像，它通过 <code>import</code> 和 <code>export</code> 来进行模块的导入和导出。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math <span class="keyword">from</span> <span class="string">'./math'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在 ES6 Module 中也是每个文件作为一个模块。和 CommonJS 不同的是，ES6 Module 的模块的依赖是静态的，或者说是在编译时确定的，而不是运行时确定的。</p>
-<p>举个例子，我们可以在 CommonJS 中的 <code>if</code> 语句中 <code>require</code> 模块，根据代码运行时 if 的判断条件决定是否要引入该模块。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据运行时条件确定是否引入</span></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">Date</span>.now() &gt; <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2019-01-01'</span>)) &#123;</span><br><span class="line">  <span class="built_in">require</span>(<span class="string">'./my_module'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>而在 ES6 Module 中则不允许这样做，<code>import</code> 必须在代码的顶层作用域，这意味着你不能把它放在 <code>if</code> 等代码块中。ES6 Module 这样规定的原因在于可以使编译器在编译阶段就可以获取到整个依赖树，从而进行代码静态分析层面的优化，比如检测出哪些模块是从来没有被使用过的，然后从打包结果中优化掉等等。</p>
-<h3 id="动态加载模块"><a href="#动态加载模块" class="headerlink" title="动态加载模块"></a>动态加载模块</h3><p>有些场景下我们希望能够动态地去加载一些模块，在 CommonJS 中可以直接使用 <code>require</code> 实现。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(condition) &#123;</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'moduleA'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'moduleB'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是在 ES6 Module 中，由于上面我们提到的 <code>import</code> 是在编译时被处理而非运行时，因此无法实现动态加载的特性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">if</span>(condition) &#123;</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'moduleA'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="string">'foo'</span>;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="string">'bar'</span>;</span><br><span class="line"><span class="keyword">import</span> foobar <span class="keyword">from</span> (foo + bar);</span><br></pre></td></tr></table></figure>
-<p>为了解决这个问题，tc39 提出了一个 <code>import()</code> 函数提案。它可以接受一个参数，指定所加载的模块，并且返回一个 <code>Promise</code> 对象。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="string">'foo'</span>;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="string">'bar'</span>;</span><br><span class="line"><span class="keyword">import</span>(foo + bar).then(<span class="function"><span class="params">module</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foobar loaded:'</span>, <span class="built_in">module</span>);</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>目前 Webpack 从 2.0.0 版本开始已经支持该动态加载形式，在后面的文章中会更加详细地进行介绍。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/webpack前端工程化入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -917,11 +895,13 @@
 <p>只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。  用途是实现多参函数。</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h3 id="实现深拷贝"><a href="#实现深拷贝" class="headerlink" title="实现深拷贝"></a>实现深拷贝</h3><p>浅拷贝的方法有： <code>Object.assign()</code>,<code>Array.from()</code>,<code>Array.slice()</code>,<code>Array.concat()</code></p>
 <blockquote>
 <p>递归方法实现深度克隆原理：遍历对象、数组直到里边都是基本数据类型，然后再去复制，就是深度拷贝</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义检测数据类型的功能函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkedType</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(target).slice(<span class="number">8</span>, <span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现深度克隆---对象/数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//判断拷贝的数据类型</span></span><br><span class="line">  <span class="comment">//初始化变量result 成为最终克隆的数据</span></span><br><span class="line">  <span class="keyword">let</span> result,</span><br><span class="line">    targetType = checkedType(target)</span><br><span class="line">  <span class="keyword">if</span> (targetType === <span class="string">'Object'</span>) &#123;</span><br><span class="line">    result = &#123;&#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (targetType === <span class="string">'Array'</span>) &#123;</span><br><span class="line">    result = []</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//遍历目标数据</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> target) &#123;</span><br><span class="line">    <span class="comment">//获取遍历数据结构的每一项值。</span></span><br><span class="line">    <span class="keyword">let</span> value = target[i]</span><br><span class="line">    <span class="comment">//判断目标结构里的每一值是否存在对象/数组</span></span><br><span class="line">    <span class="keyword">if</span> (checkedType(value) === <span class="string">'Object'</span> || checkedType(value) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">      <span class="comment">//对象/数组里嵌套了对象/数组</span></span><br><span class="line">      <span class="comment">//继续遍历获取到value值</span></span><br><span class="line">      result[i] = clone(value)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">//获取到value值是基本的数据类型或者是函数。</span></span><br><span class="line">      result[i] = value</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
           
         
@@ -1830,7 +1810,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

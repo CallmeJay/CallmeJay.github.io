@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="前言今天要介绍的是，对象之间的”继承”的五种方法。比如，现在有一个”动物”对象的构造函数。 123function Animal() &amp;#123;  this.species = &quot;动物&quot;;&amp;#125; 还有一个”猫”对象的构造函数。 1234function Cat(name, color) &amp;#123;  this.name = name;  this.color = color;&amp;#125;">
+<meta name="description" content="前言今天要介绍的是，对象之间的”继承”的五种方法。比如，现在有一个”动物”对象的构造函数。 123function Animal() &amp;#123;  this.species = &quot;动物&quot;;&amp;#125;  还有一个”猫”对象的构造函数。 1234function Cat(name, color) &amp;#123;  this.name = name;  this.color = color;&amp;#125">
 <meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript面向对象编程之构造函数的继承">
 <meta property="og:url" content="https://callmejay.github.io/2017/05/27/JavaScript面向对象编程之构造函数的继承/index.html">
 <meta property="og:site_name" content="Jay Bein&#39;s Blog">
-<meta property="og:description" content="前言今天要介绍的是，对象之间的”继承”的五种方法。比如，现在有一个”动物”对象的构造函数。 123function Animal() &amp;#123;  this.species = &quot;动物&quot;;&amp;#125; 还有一个”猫”对象的构造函数。 1234function Cat(name, color) &amp;#123;  this.name = name;  this.color = color;&amp;#125;">
+<meta property="og:description" content="前言今天要介绍的是，对象之间的”继承”的五种方法。比如，现在有一个”动物”对象的构造函数。 123function Animal() &amp;#123;  this.species = &quot;动物&quot;;&amp;#125;  还有一个”猫”对象的构造函数。 1234function Cat(name, color) &amp;#123;  this.name = name;  this.color = color;&amp;#125">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-02-18T10:47:33.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript面向对象编程之构造函数的继承">
-<meta name="twitter:description" content="前言今天要介绍的是，对象之间的”继承”的五种方法。比如，现在有一个”动物”对象的构造函数。 123function Animal() &amp;#123;  this.species = &quot;动物&quot;;&amp;#125; 还有一个”猫”对象的构造函数。 1234function Cat(name, color) &amp;#123;  this.name = name;  this.color = color;&amp;#125;">
+<meta name="twitter:description" content="前言今天要介绍的是，对象之间的”继承”的五种方法。比如，现在有一个”动物”对象的构造函数。 123function Animal() &amp;#123;  this.species = &quot;动物&quot;;&amp;#125;  还有一个”猫”对象的构造函数。 1234function Cat(name, color) &amp;#123;  this.name = name;  this.color = color;&amp;#125">
 
 
 
@@ -401,53 +401,77 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天要介绍的是，对象之间的”继承”的五种方法。<br>比如，现在有一个”动物”对象的构造函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.species = <span class="string">"动物"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>还有一个”猫”对象的构造函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>怎样才能使”猫”继承”动物”呢？</p>
 <a id="more"></a>
+
 <h2 id="构造函数绑定"><a href="#构造函数绑定" class="headerlink" title="构造函数绑定"></a>构造函数绑定</h2><p>第一种方法也是最简单的方法，使用 call 或 apply 方法，将父对象的构造函数绑定在子对象上，即在子对象构造函数中加一行：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>) </span>&#123;</span><br><span class="line">  Animal.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>, <span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="prototype-模式"><a href="#prototype-模式" class="headerlink" title="prototype 模式"></a>prototype 模式</h2><p>第二种方法更常见，使用 prototype 属性。<br>如果”猫”的 prototype 对象，指向一个 Animal 的实例，那么所有”猫”的实例，就能继承 Animal 了。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>, <span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
+
 <p>代码的第一行，我们将 Cat 的 prototype 对象指向一个 Animal 的实例。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br></pre></td></tr></table></figure>
+
 <p>它相当于完全删除了 prototype 对象原先的值，然后赋予一个新值。但是，第二行又是什么意思呢？</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype.constructor = Cat;</span><br></pre></td></tr></table></figure>
+
 <p>原来，任何一个 prototype 对象都有一个 constructor 属性，指向它的构造函数。如果没有”Cat.prototype = new Animal();”这一行，Cat.prototype.constructor 是指向 Cat 的；加了这一行以后，Cat.prototype.constructor 指向 Animal。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(Cat.prototype.constructor == Animal); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
 <p>更重要的是，每一个实例也有一个 constructor 属性，默认调用 prototype 对象的 constructor 属性。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(cat1.constructor == Cat.prototype.constructor); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <p>因此，在运行”Cat.prototype = new Animal();”这一行之后，cat1.constructor 也指向 Animal！</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(cat1.constructor == Animal); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <p>这显然会导致继承链的紊乱（cat1 明明是用构造函数 Cat 生成的），因此我们必须手动纠正，将 Cat.prototype 对象的 constructor 值改为 Cat。这就是第二行的意思。<br>这是很重要的一点，编程时务必要遵守。下文都遵循这一点，即如果替换了 prototype 对象，</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o.prototype = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>那么，下一步必然是为新的 prototype 对象加上 constructor 属性，并将这个属性指回原来的构造函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o.prototype.constructor = o;</span><br></pre></td></tr></table></figure>
+
 <h2 id="直接继承-prototype"><a href="#直接继承-prototype" class="headerlink" title="直接继承 prototype"></a>直接继承 prototype</h2><p>第三种方法是对第二种方法的改进。由于 Animal 对象中，不变的属性都可以直接写入 Animal.prototype。所以，我们也可以让 Cat()跳过 Animal()，直接继承 Animal.prototype。<br>现在，我们先将 Animal 对象改写：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Animal.prototype.species = <span class="string">"动物"</span>;</span><br></pre></td></tr></table></figure>
+
 <p>然后，将 Cat 的 prototype 对象，然后指向 Animal 的 prototype 对象，这样就完成了继承。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = Animal.prototype;</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>, <span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
+
 <p>与前一种方法相比，这样做的优点是效率比较高（不用执行和建立 Animal 的实例了），比较省内存。缺点是 Cat.prototype 和 Animal.prototype 现在指向了同一个对象，那么任何对 Cat.prototype 的修改，都会反映到 Animal.prototype。<br>所以，上面这一段代码其实是有问题的。请看第二行</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype.constructor = Cat;</span><br></pre></td></tr></table></figure>
+
 <p>这一句实际上把 Animal.prototype 对象的 constructor 属性也改掉了！</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(Animal.prototype.constructor); <span class="comment">// Cat</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="利用空对象作为中介"><a href="#利用空对象作为中介" class="headerlink" title="利用空对象作为中介"></a>利用空对象作为中介</h2><p>由于”直接继承 prototype”存在上述的缺点，所以就有第四种方法，利用一个空对象作为中介。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">F.prototype = Animal.prototype;</span><br><span class="line">Cat.prototype = <span class="keyword">new</span> F();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br></pre></td></tr></table></figure>
+
 <p>F 是空对象，所以几乎不占内存。这时，修改 Cat 的 prototype 对象，就不会影响到 Animal 的 prototype 对象。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(Animal.prototype.constructor); <span class="comment">// Animal</span></span><br></pre></td></tr></table></figure>
+
 <p>我们将上面的方法，封装成一个函数，便于使用。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">  F.prototype = Parent.prototype;</span><br><span class="line">  Child.prototype = <span class="keyword">new</span> F();</span><br><span class="line">  Child.prototype.constructor = Child;</span><br><span class="line">  Child.uber = Parent.prototype;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>使用的时候，方法如下</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">extend(Cat, Animal);</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>, <span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
+
 <p>这个 extend 函数，就是 YUI 库如何实现继承的方法。<br>另外，说明一点，函数体最后一行</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Child.uber = Parent.prototype;</span><br></pre></td></tr></table></figure>
+
 <p>意思是为子对象设一个 uber 属性，这个属性直接指向父对象的 prototype 属性。（uber 是一个德语词，意思是”向上”、”上一层”。）这等于在子对象上打开一条通道，可以直接调用父对象的方法。这一行放在这里，只是为了实现继承的完备性，纯属备用性质。</p>
 <h2 id="拷贝继承"><a href="#拷贝继承" class="headerlink" title="拷贝继承"></a>拷贝继承</h2><p>上面是采用 prototype 对象，实现继承。我们也可以换一种思路，纯粹采用”拷贝”方法实现继承。简单说，如果把父对象的所有属性和方法，拷贝进子对象，不也能够实现继承吗？这样我们就有了第五种方法。<br>首先，还是把 Animal 的所有不变属性，都放到它的 prototype 对象上。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Animal.prototype.species = <span class="string">"动物"</span>;</span><br></pre></td></tr></table></figure>
+
 <p>然后，再写一个函数，实现属性拷贝的目的。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend2</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> p = Parent.prototype;</span><br><span class="line">  <span class="keyword">var</span> c = Child.prototype;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</span><br><span class="line">    c[i] = p[i];</span><br><span class="line">  &#125;</span><br><span class="line">  c.uber = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这个函数的作用，就是将父对象的 prototype 对象中的属性，一一拷贝给 Child 对象的 prototype 对象。<br>使用的时候，这样写：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">extend2(Cat, Animal);</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>, <span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
+
 <p><a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html" target="_blank" rel="noopener"><em>原文传送门</em></a></p>
 
       
@@ -741,7 +765,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

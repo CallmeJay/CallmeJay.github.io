@@ -698,6 +698,7 @@
         
           <h3 id="构造函数创建对象"><a href="#构造函数创建对象" class="headerlink" title="构造函数创建对象"></a>构造函数创建对象</h3><p>我们先使用构造函数创建一个对象：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line">person.name = <span class="string">"lili"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person.name); <span class="comment">// lili</span></span><br></pre></td></tr></table></figure>
+
 <p>在这个例子中，Person 就是一个构造函数，我们使用 new 创建了一个实例对象 person。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1437,6 +1438,7 @@
         
           <h3 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h3><p><strong>立即执行函数</strong>，即<code>Immediately Invoked Function Expression (IIFE)</code>，正如它的名字，就是创建函数的同时立即执行。它没有绑定任何事件，也无需等待任何异步操作：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 代码</span></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
 <p><code>function(){…}</code>是一个匿名函数，包围它的一对括号将其转换为一个表达式，紧跟其后的一对括号调用了这个函数。<strong>立即执行函数</strong>也可以理解为立即调用一个匿名函数。<strong>立即执行函数</strong>最常见的应用场景就是：将<code>var</code>变量的作用域限制于你们函数内，这样可以避免命名冲突。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1943,7 +1945,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
